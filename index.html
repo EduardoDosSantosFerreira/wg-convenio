@@ -42,7 +42,6 @@
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="./src/assets/img/wg.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./src/assets/img/wg.png">
-    <link rel="manifest" href="/site.webmanifest">
 
     <!-- Social Profiles -->
     <link rel="me" href="https://www.facebook.com/wgconvenio/">
@@ -69,6 +68,7 @@
     <link rel="stylesheet" href="./src/assets/css/utils/aos.css">
     <link rel="stylesheet" href="./src/assets/css/components/footer.css">
     <link rel="stylesheet" href="./src/assets/css/components/navbar.css">
+    <link rel="stylesheet" href="./src/assets/css/components/modal.css">
 </head>
 
 <body>
@@ -1015,6 +1015,46 @@
         </div>
     </div>
 
+
+    <!-- Overlay escuro -->
+    <div id="whatsappOverlay" class="whatsapp-overlay hidden"></div>
+
+    <!-- Card de captura (removi o style inline) -->
+    <div id="whatsappCard" class="card whatsapp-card hidden">
+        <div class="card-body">
+            <button id="closeCard" class="close-btn" aria-label="Fechar">&times;</button>
+            <h5 class="card-title">Cadastre-se para saber mais!</h5>
+            <form id="captureForm">
+                <div class="mb-3">
+                    <label for="userName" class="form-label">Nome completo</label>
+                    <input type="text" class="form-control" id="userName" name="userName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="userPhone" class="form-label">Telefone</label>
+                    <input type="tel" class="form-control" id="userPhone" name="userPhone" required>
+                </div>
+                <div class="mb-3">
+                    <label for="userEmail" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="userEmail" name="userEmail" required>
+                </div>
+                <div class="mb-3">
+                    <label for="userCPF" class="form-label">CPF</label>
+                    <input type="text" class="form-control" id="userCPF" name="userCPF" required>
+                </div>
+                <div class="mb-3">
+                    <label for="userPlan" class="form-label">Selecione seu plano</label>
+                    <select class="form-select" id="userPlan" name="userPlan" required>
+                        <option value="" selected disabled>Selecione um plano</option>
+                        <option value="Plano Bronze - R$ 40,00/mês">Plano Bronze - R$ 40,00/mês</option>
+                        <option value="Plano Prata - R$ 60,00/mês">Plano Prata - R$ 60,00/mês</option>
+                        <option value="Plano Ouro - R$ 900,00/mês">Plano Ouro - R$ 900,00/mês</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Enviar por WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="./src/assets/js/components/navbar.js"></script>
     <script src="./src/assets/js/components/footer.js"></script>
@@ -1025,6 +1065,7 @@
     <script src="./src/assets/js/formindex.js"></script>
     <script src="./src/assets/js/script.js"></script>
     <script src="./src/assets/js/components/scroll.js"></script>
+    <script src="./src/assets/js/components/modal.js"></script>
     <script>
         AOS.init({
             duration: 2000,

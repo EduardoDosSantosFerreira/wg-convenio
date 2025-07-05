@@ -1,0 +1,172 @@
+:root {
+  --whatsapp-z-index: 1050;
+  --whatsapp-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  --whatsapp-border-radius: 10px;
+  --animation-duration: 0.3s;
+  --close-btn-size: 1.8rem;
+  --close-btn-position: 15px;
+  --overlay-color: rgba(0, 0, 0, 0.75);
+  --card-width: 350px;
+  --card-bg-color: #ffffff;
+}
+
+/* Overlay escuro */
+.whatsapp-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--overlay-color);
+  z-index: calc(var(--whatsapp-z-index) - 1);
+  backdrop-filter: blur(4px);
+  animation: fadeIn var(--animation-duration) ease-out forwards;
+}
+
+/* Card principal */
+.whatsapp-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px; /* Aumentado para deixar o card maior */
+  z-index: var(--whatsapp-z-index);
+  box-shadow: var(--whatsapp-shadow);
+  border-radius: var(--whatsapp-border-radius);
+  animation: fadeInScale var(--animation-duration) ease-out forwards;
+  background: var(--card-bg-color);
+  overflow: hidden;
+}
+
+/* Efeitos de animação */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Botão de fechar */
+.close-btn {
+  position: absolute;
+  top: var(--close-btn-position);
+  right: var(--close-btn-position);
+  width: var(--close-btn-size);
+  height: var(--close-btn-size);
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 50%;
+  font-size: calc(var(--close-btn-size) * 0.8);
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.close-btn:hover {
+  background: rgba(0, 0, 0, 0.15);
+  color: #000;
+}
+
+/* Classes de estado */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* Estilos do conteúdo do card */
+.whatsapp-card .card-body {
+  padding: 2rem;
+  position: relative;
+}
+
+.whatsapp-card .card-title {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: center;
+  font-weight: 600;
+}
+
+.whatsapp-card .form-label {
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.whatsapp-card .form-control,
+.whatsapp-card .form-select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+.whatsapp-card .form-control:focus,
+.whatsapp-card .form-select:focus {
+  border-color: #28a745;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.2);
+}
+
+.whatsapp-card .btn-success {
+  background-color: #28a745;
+  border: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.whatsapp-card .btn-success:hover {
+  background-color: #218838;
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+  .whatsapp-card {
+    width: 95%;
+    max-width: var(--card-width);
+  }
+  
+  .whatsapp-card .card-body {
+    padding: 1.5rem;
+  }
+}
+/* Garante que o card não feche ao clicar nele */
+.whatsapp-card {
+  pointer-events: auto; /* Permite interação completa */
+}
+
+/* Overlay não fecha ao clicar, mas mantém o visual */
+.whatsapp-overlay {
+  pointer-events: none; /* Ignora cliques */
+}
+
+/* Exceção: o conteúdo do card deve receber cliques */
+.whatsapp-card .card-body {
+  pointer-events: auto;
+}
+
+/* Melhoria visual para o overlay (opcional) */
+.whatsapp-overlay {
+  cursor: default; /* Remove o cursor de clique */
+}
