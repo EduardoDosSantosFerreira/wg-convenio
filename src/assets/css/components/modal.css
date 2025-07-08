@@ -8,6 +8,9 @@
   --overlay-color: rgba(0, 0, 0, 0.75);
   --card-width: 350px;
   --card-bg-color: #ffffff;
+  --card-max-width: 450px;
+  --mobile-breakpoint: 768px;
+  --small-mobile-breakpoint: 480px;
 }
 
 /* Overlay escuro */
@@ -23,19 +26,23 @@
   animation: fadeIn var(--animation-duration) ease-out forwards;
 }
 
-/* Card principal */
+/* Card principal - agora totalmente responsivo */
 .whatsapp-card {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 450px; /* Aumentado para deixar o card maior */
+  width: 90%;
+  max-width: var(--card-max-width);
+  min-width: 280px;
   z-index: var(--whatsapp-z-index);
   box-shadow: var(--whatsapp-shadow);
   border-radius: var(--whatsapp-border-radius);
   animation: fadeInScale var(--animation-duration) ease-out forwards;
   background: var(--card-bg-color);
   overflow: hidden;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 /* Efeitos de animação */
@@ -55,7 +62,7 @@
   }
 }
 
-/* Botão de fechar */
+/* Botão de fechar melhorado para mobile */
 .close-btn {
   position: absolute;
   top: var(--close-btn-position);
@@ -87,7 +94,7 @@
   visibility: hidden;
 }
 
-/* Estilos do conteúdo do card */
+/* Estilos do conteúdo do card - mais responsivos */
 .whatsapp-card .card-body {
   padding: 2rem;
   position: relative;
@@ -132,6 +139,7 @@
   padding: 0.75rem;
   font-size: 1rem;
   font-weight: 500;
+  width: 100%;
   margin-top: 0.5rem;
   transition: background-color 0.2s;
 }
@@ -140,33 +148,79 @@
   background-color: #218838;
 }
 
-/* Responsividade */
-@media (max-width: 576px) {
+/* Responsividade aprimorada */
+@media (max-width: 768px) {
   .whatsapp-card {
-    width: 95%;
-    max-width: var(--card-width);
+    width: 85%;
+    max-height: 85vh;
   }
   
   .whatsapp-card .card-body {
     padding: 1.5rem;
   }
+  
+  .whatsapp-card .card-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
 }
+
+@media (max-width: 480px) {
+  .whatsapp-card {
+    width: 95%;
+    max-height: 90vh;
+  }
+  
+  .whatsapp-card .card-body {
+    padding: 1.2rem;
+  }
+  
+  .whatsapp-card .card-title {
+    font-size: 1.2rem;
+  }
+  
+  .whatsapp-card .form-control,
+  .whatsapp-card .form-select {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+  
+  .whatsapp-card .btn-success {
+    padding: 0.65rem;
+    font-size: 0.95rem;
+  }
+  
+  .close-btn {
+    width: 1.6rem;
+    height: 1.6rem;
+    font-size: 1rem;
+  }
+}
+
+/* Melhorias para telas muito pequenas (orientação retrato) */
+@media (max-width: 360px) {
+  .whatsapp-card .card-body {
+    padding: 1rem;
+  }
+  
+  .whatsapp-card .card-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+}
+
 /* Garante que o card não feche ao clicar nele */
 .whatsapp-card {
-  pointer-events: auto; /* Permite interação completa */
+  pointer-events: auto;
 }
 
 /* Overlay não fecha ao clicar, mas mantém o visual */
 .whatsapp-overlay {
-  pointer-events: none; /* Ignora cliques */
+  pointer-events: none;
+  cursor: default;
 }
 
 /* Exceção: o conteúdo do card deve receber cliques */
 .whatsapp-card .card-body {
   pointer-events: auto;
-}
-
-/* Melhoria visual para o overlay (opcional) */
-.whatsapp-overlay {
-  cursor: default; /* Remove o cursor de clique */
 }
