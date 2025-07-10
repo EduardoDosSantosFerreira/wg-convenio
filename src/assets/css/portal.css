@@ -83,3 +83,14 @@
   display: block;
   margin-top: var(--small-margin-top);
 }
+
+.whatsapp-icon {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  cursor: pointer;
+  z-index: 999;
+}
+.whatsapp-icon i {
+  color: #25d366;
+}

@@ -235,9 +235,9 @@
 
     </main>
 
-    <!-- VLibras (Acessibilidade) -->
+    <!-- VLibras -->
     <div vw class="enabled">
-        <div vw-access-button class="active" aria-label="Acessibilidade com VLibras"></div>
+        <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
             <div class="vw-plugin-top-wrapper"></div>
         </div>
@@ -263,6 +263,10 @@
     <script src="../assets/js/utils/aos.js" defer></script>
     <script src="../assets/js/components/footer.js" defer></script>
     <script src="../assets/js/components/scroll.js" defer></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
     <script>
         // Carrega a navbar dinamicamente
         document.addEventListener('DOMContentLoaded', function () {
@@ -279,14 +283,8 @@
             });
         });
     </script>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js" defer></script>
-    <script>
-        window.onload = function () {
-            new window.VLibras.Widget('https://vlibras.gov.br/app');
-        }
-    </script>
-    <!-- Eduardo Dos Santos Ferreira -->
 
+    <!-- Eduardo Dos Santos Ferreira -->
 </body>
 
 </html>

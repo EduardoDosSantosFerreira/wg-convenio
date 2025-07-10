@@ -219,3 +219,14 @@ body {
         padding: var(--spacing-lg);
     }
 }
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    cursor: pointer;
+    z-index: 999;
+}
+.whatsapp-icon i {
+    color: #25d366;
+}
