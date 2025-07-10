@@ -20,25 +20,33 @@ body {
     }
 }
 
-header {
-    background-color: var(--primary-color) !important;
-    padding: 3rem 0 !important;
-    background: linear-gradient(135deg, #002147 0%, #004a8f 100%);
-    color: var(--light-text) !important;
+.benefits-header {
+    background: linear-gradient(135deg, var(--primary-color), #004a8f);
+    color: #fff;
+    padding: 4rem 1rem;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
-header h1 {
-    font-weight: 700;
-    font-size: 2.5rem;
+.benefits-header h1 {
+    font-size: 2.75rem;
+    font-weight: 800;
     margin-bottom: 1rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+    display: inline-block;
 }
 
-header p {
-    font-size: 1.2rem;
-    opacity: 0.9;
+.benefits-header h1 i {
+    color: var(--secondary-color);
 }
+
+.benefits-header p {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
 
 .card {
     border: none;

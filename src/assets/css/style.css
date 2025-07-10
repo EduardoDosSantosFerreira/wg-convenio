@@ -36,6 +36,24 @@ body {
   perspective: 1000;
 }
 
+@media (max-width: 600px) {
+  .hero {
+    height: 100vh;
+    min-height: 320px;
+    padding: 3rem 0.5rem 2rem 0.5rem;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
+    height: 70vh;
+    min-height: 250px;
+    padding: 2rem 0.25rem 1.5rem 0.25rem;
+    flex-direction: column;
+  }
+}
+
 .hero h1 {
   color: var(--light);
   font-size: 4rem;
