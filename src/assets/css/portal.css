@@ -27,6 +27,18 @@
   --small-margin-top: 0.2rem;
 }
 
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding-top: 130px;
+}
+
+@media (max-width: 600px) {
+  body {
+      padding-top: 0px;
+  }
+}
+
 .card-funcionalidade {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: var(--card-funcionalidade-radius);

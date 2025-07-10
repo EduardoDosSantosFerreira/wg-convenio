@@ -16,7 +16,6 @@
   --input-focus-shadow: rgba(40, 167, 69, 0.2);
 }
 
-/* Overlay escuro */
 .whatsapp-overlay {
   position: fixed;
   top: 0;
@@ -29,7 +28,6 @@
   animation: fadeIn var(--animation-duration) ease-out forwards;
 }
 
-/* Card principal */
 .whatsapp-card {
   position: fixed;
   top: 50%;
@@ -50,7 +48,6 @@
   flex-direction: column;
 }
 
-/* Efeitos de animação */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -73,7 +70,6 @@
   }
 }
 
-/* Botão de fechar */
 .close-btn {
   position: absolute;
   top: var(--close-btn-position);
@@ -101,13 +97,11 @@
   outline: 2px solid var(--input-focus-color);
 }
 
-/* Classes de estado */
 .hidden {
   display: none !important;
   visibility: hidden;
 }
 
-/* Container do logo */
 .logo-container {
   display: flex;
   justify-content: center;
@@ -121,7 +115,6 @@
   object-fit: contain;
 }
 
-/* Estilos do conteúdo do card */
 .whatsapp-card .card-body {
   padding: 2rem;
   position: relative;
@@ -139,7 +132,6 @@
   line-height: 1.3;
 }
 
-/* Estilos do formulário */
 .form-group {
   margin-bottom: 1rem;
 }
@@ -169,12 +161,10 @@
   box-shadow: 0 0 0 2px var(--input-focus-shadow);
 }
 
-/* Estilo específico para campo CPF */
 input#userCPF {
   font-family: monospace;
 }
 
-/* Botão de submit */
 .btn-success {
   background-color: var(--input-focus-color);
   border: none;
@@ -196,7 +186,6 @@ input#userCPF {
   outline: none;
 }
 
-/* Validação do formulário */
 .form-control:invalid,
 .form-select:invalid {
   border-color: #dc3545;
@@ -207,7 +196,6 @@ input#userCPF {
   box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .whatsapp-card {
     width: 85%;
@@ -285,7 +273,6 @@ input#userCPF {
   }
 }
 
-/* Ajustes para telas com altura muito pequena */
 @media (max-height: 600px) {
   .whatsapp-card {
     max-height: 98vh;
@@ -320,23 +307,19 @@ input#userCPF {
   }
 }
 
-/* Garante que o card não feche ao clicar nele */
 .whatsapp-card {
   pointer-events: auto;
 }
 
-/* Overlay não fecha ao clicar, mas mantém o visual */
 .whatsapp-overlay {
   pointer-events: none;
   cursor: default;
 }
 
-/* Exceção: o conteúdo do card deve receber cliques */
 .whatsapp-card .card-body {
   pointer-events: auto;
 }
 
-/* Foco visível para acessibilidade */
 *:focus {
   outline: 2px solid var(--input-focus-color);
   outline-offset: 2px;
