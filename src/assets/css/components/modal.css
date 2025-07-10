@@ -52,8 +52,13 @@
 
 /* Efeitos de animação */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInScale {
@@ -61,6 +66,7 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
@@ -207,16 +213,16 @@ input#userCPF {
     width: 85%;
     max-height: 85vh;
   }
-  
+
   .whatsapp-card .card-body {
     padding: 1.5rem;
   }
-  
+
   .whatsapp-card .card-title {
     font-size: 1.3rem;
     margin-bottom: 1.2rem;
   }
-  
+
   .logo-img {
     height: 90px;
   }
@@ -227,32 +233,32 @@ input#userCPF {
     width: 95%;
     max-height: 95vh;
   }
-  
+
   .whatsapp-card .card-body {
     padding: 1.2rem;
   }
-  
+
   .whatsapp-card .card-title {
     font-size: 1.2rem;
   }
-  
+
   .form-control,
   .form-select {
     padding: 0.65rem;
     font-size: 0.9rem;
   }
-  
+
   .btn-success {
     padding: 0.65rem;
     font-size: 0.95rem;
   }
-  
+
   .close-btn {
     width: 1.6rem;
     height: 1.6rem;
     font-size: 1rem;
   }
-  
+
   .logo-img {
     height: 80px;
   }
@@ -262,18 +268,18 @@ input#userCPF {
   .whatsapp-card .card-body {
     padding: 1rem;
   }
-  
+
   .whatsapp-card .card-title {
     font-size: 1.1rem;
     margin-bottom: 1rem;
   }
-  
+
   .form-control,
   .form-select {
     padding: 0.55rem;
     font-size: 0.85rem;
   }
-  
+
   .logo-img {
     height: 70px;
   }
@@ -286,28 +292,28 @@ input#userCPF {
     top: 0;
     transform: translate(-50%, 10px);
   }
-  
+
   .whatsapp-card .card-body {
     padding: 1rem;
   }
-  
+
   .whatsapp-card .card-title {
     font-size: 1.1rem;
     margin-bottom: 0.8rem;
   }
-  
+
   .form-control,
   .form-select {
     padding: 0.5rem;
     margin-bottom: 0.7rem;
     font-size: 0.85rem;
   }
-  
+
   .btn-success {
     padding: 0.6rem;
     font-size: 0.9rem;
   }
-  
+
   .logo-img {
     height: 60px;
     margin-bottom: 0.5rem;

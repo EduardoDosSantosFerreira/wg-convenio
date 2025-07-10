@@ -31,28 +31,33 @@
     --font-weight-medium: 500;
     --font-weight-bold: 600;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: var(--font-family);
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
 }
+
 .contact-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: var(--spacing-xxl) var(--spacing-md);
 }
+
 .contact-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--spacing-xl);
     align-items: start;
 }
+
 .contact-card {
     background: var(--white);
     border-radius: var(--border-radius-lg);
@@ -62,24 +67,29 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 .contact-header {
     display: flex;
     align-items: center;
     margin-bottom: var(--spacing-lg);
 }
+
 .contact-icon {
     font-size: var(--font-size-lg);
     color: var(--secondary-color);
     margin-right: var(--spacing-sm);
 }
+
 .contact-title {
     font-size: var(--font-size-lg);
     color: var(--primary-color);
     font-weight: var(--font-weight-bold);
 }
+
 .contact-details {
     margin-bottom: var(--spacing-lg);
 }
+
 .contact-item {
     display: flex;
     align-items: flex-start;
@@ -88,12 +98,15 @@ body {
     border-radius: var(--border-radius-sm);
     transition: background 0.2s ease;
 }
+
 .contact-item.highlight {
     background-color: var(--primary-light);
 }
+
 .contact-item:hover {
     background-color: var(--primary-light);
 }
+
 .contact-detail-icon {
     font-size: var(--font-size-sm);
     color: var(--primary-color);
@@ -101,21 +114,25 @@ body {
     margin-top: 2px;
     min-width: 20px;
 }
+
 .contact-text {
     font-size: var(--font-size-sm);
     color: var(--text-color);
 }
+
 .contact-map {
     margin: var(--spacing-lg) 0;
     border-radius: var(--border-radius-md);
     overflow: hidden;
     box-shadow: var(--shadow-sm);
 }
+
 .contact-social {
     display: flex;
     gap: var(--spacing-md);
     margin-top: auto;
 }
+
 .social-link {
     display: flex;
     align-items: center;
@@ -127,35 +144,42 @@ body {
     border-radius: 50%;
     transition: all 0.3s ease;
 }
+
 .social-link:hover {
     background-color: var(--primary-color);
     color: var(--white);
     transform: translateY(-2px);
 }
+
 .contact-form-container {
     background: var(--white);
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-xl);
     box-shadow: var(--shadow-md);
 }
+
 .form-header {
     display: flex;
     align-items: center;
     margin-bottom: var(--spacing-lg);
 }
+
 .form-icon {
     font-size: var(--font-size-lg);
     color: var(--secondary-color);
     margin-right: var(--spacing-sm);
 }
+
 .form-title {
     font-size: var(--font-size-lg);
     color: var(--primary-color);
     font-weight: var(--font-weight-bold);
 }
+
 .form-group {
     margin-bottom: var(--spacing-md);
 }
+
 .form-label {
     display: block;
     margin-bottom: var(--spacing-xs);
@@ -163,6 +187,7 @@ body {
     color: var(--text-light);
     font-weight: var(--font-weight-medium);
 }
+
 .form-input,
 .form-textarea {
     width: 100%;
@@ -172,16 +197,19 @@ body {
     font-size: var(--font-size-sm);
     transition: all 0.3s ease;
 }
+
 .form-input:focus,
 .form-textarea:focus {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 2px var(--primary-light);
 }
+
 .form-textarea {
     min-height: 120px;
     resize: vertical;
 }
+
 .form-button {
     width: 100%;
     padding: var(--spacing-sm);
@@ -198,22 +226,27 @@ body {
     justify-content: center;
     gap: var(--spacing-xs);
 }
+
 .form-button:hover {
     background-color: var(--secondary-hover);
     transform: translateY(-2px);
     box-shadow: var(--shadow-sm);
 }
+
 .button-icon {
     font-size: var(--font-size-md);
 }
+
 @media (max-width: 768px) {
     .contact-container {
         padding: var(--spacing-lg) var(--spacing-md);
     }
+
     .contact-wrapper {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
     }
+
     .contact-card,
     .contact-form-container {
         padding: var(--spacing-lg);
@@ -227,6 +260,7 @@ body {
     cursor: pointer;
     z-index: 999;
 }
+
 .whatsapp-icon i {
     color: #25d366;
 }

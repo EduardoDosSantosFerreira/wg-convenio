@@ -10,11 +10,13 @@
     opacity: 1;
     pointer-events: auto;
 }
+
 .navbar.hidden {
     top: -3.125rem;
     opacity: 0;
     pointer-events: none;
 }
+
 .navbar-nav .nav-link {
     font-size: 1.125rem;
     font-weight: 500;
@@ -22,81 +24,98 @@
     color: var(--dark);
     transition: var(--transition);
 }
+
 .navbar-nav .nav-link:hover {
     color: var(--primary);
 }
+
 .navbar-toggler {
     border: none;
 }
+
 .dropdown-menu {
     min-width: 12rem;
 }
+
 .dropdown-item {
     font-size: 0.95rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
+
 .dark-mode {
     background-color: #121212 !important;
     color: #f1f1f1 !important;
 }
+
 .dark-mode .navbar {
     background-color: #181818 !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
     border-bottom: 1px solid #333;
     transition: background-color 0.3s ease;
 }
+
 .dark-mode .nav-link {
     color: #e0e0e0 !important;
     transition: color 0.3s ease;
 }
+
 .dark-mode .nav-link:hover,
 .dark-mode .nav-link:focus {
     color: #4ea1d3 !important;
     outline: none;
 }
+
 .dark-mode .navbar-toggler {
     border-color: #4ea1d3 !important;
     color: #4ea1d3 !important;
     transition: border-color 0.3s ease, color 0.3s ease;
 }
+
 .dark-mode .navbar-toggler:hover,
 .dark-mode .navbar-toggler:focus {
     border-color: #76b7f0 !important;
     color: #76b7f0 !important;
     outline: none;
 }
+
 .dark-mode .dropdown-menu {
     background-color: #1f1f1f;
     border: 1px solid #444;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
 }
+
 .dark-mode .dropdown-item {
     color: #ddd;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
+
 .dark-mode .dropdown-item:hover,
 .dark-mode .dropdown-item:focus {
     background-color: #333;
     color: #4ea1d3;
     outline: none;
 }
+
 .dark-mode .nav-link .fas,
 .dark-mode .nav-link .far,
 .dark-mode .nav-link .fab {
     color: #e0e0e0;
     transition: color 0.3s ease;
 }
+
 .dark-mode .nav-link:hover .fas,
 .dark-mode .nav-link:hover .far,
 .dark-mode .nav-link:hover .fab {
     color: #4ea1d3;
 }
+
 .dark-mode .navbar input::placeholder {
     color: #aaa;
     opacity: 1;
 }
+
 .dark-mode h1,
 .dark-mode h2,
 .dark-mode h3,
@@ -113,10 +132,12 @@
 .dark-mode textarea {
     color: #f1f1f1;
 }
+
 .dark-mode a {
     color: #4ea1d3 !important;
     text-decoration: none;
 }
+
 .contraste-alto {
     filter: contrast(180%) brightness(1.3);
     background-color: #000 !important;
@@ -126,40 +147,50 @@
     transition: filter 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     font-family: Arial, Helvetica, sans-serif !important;
 }
+
 .navbar.fade-in {
     animation: fadeInDown 0.8s ease forwards;
 }
+
 @keyframes fadeInDown {
     from {
         top: -100px;
         opacity: 0;
     }
+
     to {
         top: 0;
         opacity: 1;
     }
 }
+
 html {
     font-size: 100%;
 }
+
 .btn-sm {
     padding: 0.25rem 0.5rem;
     font-size: 0.85rem;
 }
+
 .nav-item .btn-outline-dark,
 .nav-item .btn-outline-warning {
     border-radius: 0.375rem;
     padding: 0.3rem 0.5rem;
 }
+
 .dark-mode #faq h2 {
     color: #003366 !important;
 }
+
 .dark-mode #faq h2 strong {
     color: #0039b4 !important;
 }
+
 .dark-mode #faq h2 span {
     color: #003366 !important;
 }
+
 .dark-mode #faq .faq-question,
 .dark-mode #faq .faq-question:hover,
 .dark-mode #faq .faq-question:focus {
@@ -169,14 +200,17 @@ html {
     text-decoration: none;
     outline: none;
 }
+
 .dark-mode #faq a {
     color: #0039b4 !important;
     text-decoration: none;
 }
+
 .dark-mode #faq a:hover,
 .dark-mode #faq a:focus {
     color: #0056a3 !important;
 }
+
 #whats .btn {
     max-width: 180px;
     white-space: nowrap;

@@ -1014,59 +1014,59 @@
         </div>
     </div>
 
-<!-- Overlay escuro -->
-<div id="whatsappOverlay" class="whatsapp-overlay hidden" aria-hidden="true"></div>
+    <!-- Overlay escuro -->
+    <div id="whatsappOverlay" class="whatsapp-overlay hidden" aria-hidden="true"></div>
 
-<!-- Card de captura -->
-<div id="whatsappCard" class="card whatsapp-card hidden" role="dialog" aria-modal="true" aria-labelledby="whatsappCardTitle">
-    <div class="card-body">
-        <button id="closeCard" class="close-btn" aria-label="Fechar formulário de cadastro">&times;</button>
-        
-        <!-- Container do logo - removido style inline -->
-        <div class="logo-container">
-            <img src="./src/assets/img/logos/wg.png" alt="Logo WG" class="logo-img">
+    <!-- Card de captura -->
+    <div id="whatsappCard" class="card whatsapp-card hidden" role="dialog" aria-modal="true"
+        aria-labelledby="whatsappCardTitle">
+        <div class="card-body">
+            <button id="closeCard" class="close-btn" aria-label="Fechar formulário de cadastro">&times;</button>
+
+            <!-- Container do logo - removido style inline -->
+            <div class="logo-container">
+                <img src="./src/assets/img/logos/wg.png" alt="Logo WG" class="logo-img">
+            </div>
+
+            <form id="captureForm" novalidate>
+                <div class="form-group">
+                    <label for="userName" class="form-label">Nome completo</label>
+                    <input type="text" class="form-control" id="userName" name="userName" required aria-required="true"
+                        autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="userPhone" class="form-label">Telefone</label>
+                    <input type="tel" class="form-control" id="userPhone" name="userPhone" required aria-required="true"
+                        autocomplete="tel">
+                </div>
+
+                <div class="form-group">
+                    <label for="userEmail" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="userEmail" name="userEmail" required
+                        aria-required="true" autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="userCPF" class="form-label">CPF</label>
+                    <input type="text" class="form-control" id="userCPF" name="userCPF" required aria-required="true"
+                        inputmode="numeric" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00">
+                </div>
+
+                <div class="form-group">
+                    <label for="userPlan" class="form-label">Selecione seu plano</label>
+                    <select class="form-select" id="userPlan" name="userPlan" required aria-required="true">
+                        <option value="" selected disabled>Selecione um plano</option>
+                        <option value="Plano Bronze - R$ 40,00/mês">Plano Bronze - R$ 40,00/mês</option>
+                        <option value="Plano Prata - R$ 60,00/mês">Plano Prata - R$ 60,00/mês</option>
+                        <option value="Plano Ouro - R$ 900,00/mês">Plano Ouro - R$ 900,00/mês</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-success">Enviar por WhatsApp</button>
+            </form>
         </div>
-                
-        <form id="captureForm" novalidate>
-            <div class="form-group">
-                <label for="userName" class="form-label">Nome completo</label>
-                <input type="text" class="form-control" id="userName" name="userName" required 
-                       aria-required="true" autocomplete="name">
-            </div>
-            
-            <div class="form-group">
-                <label for="userPhone" class="form-label">Telefone</label>
-                <input type="tel" class="form-control" id="userPhone" name="userPhone" required
-                       aria-required="true" autocomplete="tel">
-            </div>
-            
-            <div class="form-group">
-                <label for="userEmail" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="userEmail" name="userEmail" required
-                       aria-required="true" autocomplete="email">
-            </div>
-            
-            <div class="form-group">
-                <label for="userCPF" class="form-label">CPF</label>
-                <input type="text" class="form-control" id="userCPF" name="userCPF" required
-                       aria-required="true" inputmode="numeric" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
-                       placeholder="000.000.000-00">
-            </div>
-            
-            <div class="form-group">
-                <label for="userPlan" class="form-label">Selecione seu plano</label>
-                <select class="form-select" id="userPlan" name="userPlan" required aria-required="true">
-                    <option value="" selected disabled>Selecione um plano</option>
-                    <option value="Plano Bronze - R$ 40,00/mês">Plano Bronze - R$ 40,00/mês</option>
-                    <option value="Plano Prata - R$ 60,00/mês">Plano Prata - R$ 60,00/mês</option>
-                    <option value="Plano Ouro - R$ 900,00/mês">Plano Ouro - R$ 900,00/mês</option>
-                </select>
-            </div>
-            
-            <button type="submit" class="btn btn-success">Enviar por WhatsApp</button>
-        </form>
     </div>
-</div>
 
     <!-- Scripts -->
     <script src="./src/assets/js/components/navbar.js"></script>
