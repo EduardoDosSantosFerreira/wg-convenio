@@ -199,17 +199,6 @@ body {
   background: var(--primary);
 }
 
-.whatsapp-icon {
-  position: fixed;
-  bottom: 1.25rem;
-  left: 1.25rem;
-  cursor: pointer;
-}
-
-.whatsapp-icon i {
-  color: #25d366;
-}
-
 .faq-item {
   margin-bottom: 0.9375rem;
   border-bottom: 0.0625rem solid #ccc;
