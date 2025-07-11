@@ -42,6 +42,8 @@
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="./src/assets/img/logos/logo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./src/assets/img/logos/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
     <!-- Social Profiles -->
     <link rel="me" href="https://www.facebook.com/wgconvenio/">
@@ -74,14 +76,62 @@
 <body>
 
     <!-- Hero Section -->
-    <header class="hero d-flex align-items-center text-white text-center" id="hero">
-        <div class="container">
-            <h1 class="display-4">Cuidando de você e da sua família</h1>
-            <h2 class="lead">Planos funerários acessíveis com respeito e dignidade</h2>
-            <a href="https://wa.me/5511981050511?text=Olá,%20gostaria%20de%20falar%20com%20a%20equipe%20WG."
-                style="color: white !important;" class="btn btn-primary mt-3" target="_blank">Fale conosco</a>
+    <header class="hero d-flex align-items-center text-white text-center position-relative" id="hero">
+        <!-- Overlay e background -->
+        <div class="hero-background"></div>
+
+        <div class="container position-relative z-index-1">
+            <!-- Badge de destaque -->
+            <div class="hero-badge mb-4 animate__animated animate__fadeInDown">
+                <span class="badge bg-primary bg-opacity-20 text-white fw-semibold px-3 py-2 rounded-pill">
+                    <i class="fas fa-shield-alt me-2"></i> Proteção familiar garantida
+                </span>
+            </div>
+
+            <!-- Títulos -->
+            <h1 class="display-3 fw-bold mb-3 animate__animated animate__fadeIn">
+                <span class="text-highlight">Cuidando</span> de você e da sua família
+            </h1>
+
+            <h2 class="hero-subtitle lead mb-4 animate__animated animate__fadeIn animate__delay-1s">
+                Planos funerários acessíveis com respeito, dignidade e atendimento humanizado
+            </h2>
+
+            <!-- Botões CTA -->
+            <div
+                class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-4 animate__animated animate__fadeInUp animate__delay-1s">
+                <a href="https://wa.me/5511981050511?text=Olá,%20gostaria%20de%20falar%20com%20a%20equipe%20WG."
+                    class="btn btn-primary btn-lg px-4 py-3 fw-semibold pulse-on-hover">
+                    <i class="fab fa-whatsapp me-2"></i> Fale conosco
+                </a>
+                <a href="./src/pages/simulação.html" class="btn btn-outline-light btn-lg px-4 py-3 fw-semibold"
+                    target="_self">
+                    <i class="fas fa-search me-2"></i> Meu plano ideal
+                </a>
+            </div>
+
+            <!-- Selos de confiança -->
+            <div
+                class="trust-badges mt-5 pt-2 d-flex flex-wrap justify-content-center gap-3 animate__animated animate__fadeIn animate__delay-1-5s">
+                <div class="d-flex align-items-center text-white-50">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    <small>Atendimento 24 horas</small>
+                </div>
+                <div class="d-flex align-items-center text-white-50">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    <small>+5.000 famílias protegidas</small>
+                </div>
+                <div class="d-flex align-items-center text-white-50">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    <small>15 anos de experiência</small>
+                </div>
+            </div>
         </div>
     </header>
+
+    <!-- Adicione no seu head -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
     <!-- Main -->
     <main class="py-5">
