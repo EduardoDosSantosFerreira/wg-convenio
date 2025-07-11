@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Metas Essenciais -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WG Convênios Funerários | Simulador de Planos</title>
+    <meta name="description"
+        content="Simulador de planos funerários da WG Convênios. Descubra qual plano é mais adequado para suas necessidades e garanta tranquilidade para sua família.">
+    <meta name="keywords"
+        content="simulador planos funerários, assistência funeral, WG Convênios, convênio funerário, plano bronze, plano ouro, plano prata, cobertura funeral, Alto Tietê, São Paulo">
+    <meta name="author" content="WG Convênios Funerários">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/logos/wg.png">
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --bronze-color: #cd7f32;
+            --silver-color: #c0c0c0;
+            --gold-color: #ffd700;
+            --light-bg: #f8f9fa;
+            --dark-bg: #343a40;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .simulator-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .question-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .question-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .question-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .option-btn {
+            display: block;
+            width: 100%;
+            padding: 0.8rem 1rem;
+            margin-bottom: 0.8rem;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            background: white;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .option-btn:hover {
+            border-color: var(--secondary-color);
+            background-color: rgba(52, 152, 219, 0.05);
+        }
+
+        .option-btn.selected {
+            border-color: var(--secondary-color);
+            background-color: rgba(52, 152, 219, 0.1);
+            font-weight: 500;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .result-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            display: none;
+        }
+
+        .bronze-result {
+            border: 3px solid var(--bronze-color);
+            background-color: rgba(205, 127, 50, 0.05);
+        }
+
+        .silver-result {
+            border: 3px solid var(--silver-color);
+            background-color: rgba(192, 192, 192, 0.05);
+        }
+
+        .gold-result {
+            border: 3px solid var(--gold-color);
+            background-color: rgba(255, 215, 0, 0.05);
+        }
+
+        .plan-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .bronze-icon {
+            color: var(--bronze-color);
+        }
+
+        .silver-icon {
+            color: var(--silver-color);
+        }
+
+        .gold-icon {
+            color: var(--gold-color);
+        }
+
+        .result-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .result-description {
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-container {
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--secondary-color);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .question-counter {
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .feature-list {
+            text-align: left;
+            margin-top: 1.5rem;
+        }
+
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            color: #28a745;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .btn-custom {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #1a252f;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .btn-outline-custom {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline-custom:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            font-weight: 500;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            color: white;
+        }
+
+        .plan-comparison {
+            margin-top: 3rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .comparison-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .highlight-bronze {
+            background-color: rgba(205, 127, 50, 0.1) !important;
+            font-weight: 500;
+        }
+
+        .highlight-silver {
+            background-color: rgba(192, 192, 192, 0.1) !important;
+            font-weight: 500;
+        }
+
+        .highlight-gold {
+            background-color: rgba(255, 215, 0, 0.1) !important;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .simulator-container {
+                padding: 1.5rem;
+            }
+            
+            .hero-section {
+                padding: 2.5rem 0;
+            }
+            
+            .question-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="hero-title">Simulador de Planos Funerários</h1>
+            <p class="hero-subtitle">Responda algumas perguntas simples e descubra qual plano da WG Convênios melhor atende às necessidades da sua família</p>
+        </div>
+    </section>
+
+    <!-- Simulator Container -->
+    <div class="container simulator-container">
+        <!-- Progress Bar -->
+        <div class="question-counter">Pergunta <span id="current-question">1</span> de <span id="total-questions">5</span></div>
+        <div class="progress-container">
+            <div class="progress-bar" id="quiz-progress" style="width: 20%;"></div>
+        </div>
+
+        <!-- Questions Container -->
+        <div id="questions-container">
+            <!-- Question 1 -->
+            <div class="question-card" id="question-1">
+                <h3 class="question-title">Em qual região você e sua família residem?</h3>
+                <button class="option-btn" data-value="bronze">Alto Tietê (6 cidades)</button>
+                <button class="option-btn" data-value="silver">Grande São Paulo (12 cidades)</button>
+                <button class="option-btn" data-value="gold">Diversas cidades de São Paulo (53 cidades)</button>
+                <button class="option-btn" data-value="gold">Preciso de cobertura em várias regiões do estado</button>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-card" id="question-2" style="display: none;">
+                <h3 class="question-title">Quantos familiares você gostaria de incluir no plano?</h3>
+                <button class="option-btn" data-value="bronze">Apenas para mim</button>
+                <button class="option-btn" data-value="bronze">Eu e meu cônjuge</button>
+                <button class="option-btn" data-value="silver">Eu, cônjuge e pais/sogros</button>
+                <button class="option-btn" data-value="gold">Família extensa (incluindo filhos e outros dependentes)</button>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question-card" id="question-3" style="display: none;">
+                <h3 class="question-title">Qual o nível de suporte e assistência você considera importante?</h3>
+                <button class="option-btn" data-value="bronze">Básico - atendimento padrão</button>
+                <button class="option-btn" data-value="silver">Intermediário - com algum suporte adicional</button>
+                <button class="option-btn" data-value="gold">Completo - suporte 24h e atendimento preferencial</button>
+                <button class="option-btn" data-value="gold">Premium - todos os benefícios incluindo transporte e assessoria completa</button>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question-card" id="question-4" style="display: none;">
+                <h3 class="question-title">Com que frequência você ou sua família viajam para outras cidades?</h3>
+                <button class="option-btn" data-value="bronze">Raramente saímos da nossa região</button>
+                <button class="option-btn" data-value="silver">Ocasionalmente para cidades próximas</button>
+                <button class="option-btn" data-value="gold">Frequentemente para diversas regiões</button>
+                <button class="option-btn" data-value="gold">Temos familiares em várias cidades do estado</button>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question-card" id="question-5" style="display: none;">
+                <h3 class="question-title">Qual a importância de benefícios adicionais como transporte familiar, flores e assessoria documental?</h3>
+                <button class="option-btn" data-value="bronze">Não são prioridade para mim</button>
+                <button class="option-btn" data-value="silver">Gostaria de alguns benefícios adicionais</button>
+                <button class="option-btn" data-value="gold">Considero muito importantes para um atendimento completo</button>
+                <button class="option-btn" data-value="gold">Essenciais - quero todos os benefícios disponíveis</button>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button class="btn btn-outline-custom" id="prev-btn" disabled>Anterior</button>
+            <button class="btn btn-custom" id="next-btn">Próxima</button>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results-section" style="display: none;">
+            <!-- Bronze Result -->
+            <div class="result-card bronze-result" id="bronze-result">
+                <i class="bi bi-award-fill plan-icon bronze-icon"></i>
+                <h3 class="result-title">Plano Bronze é o ideal para você!</h3>
+                <p class="result-description">Com base nas suas respostas, o Plano Bronze atende perfeitamente às suas necessidades com cobertura em 6 cidades do Alto Tietê e todos os serviços essenciais.</p>
+                
+                <div class="feature-list">
+                    <h5>Principais benefícios:</h5>
+                    <ul>
+                        <li>Atendimento em 6 cidades do Alto Tietê</li>
+                        <li>Cobertura para titular e familiares diretos</li>
+                        <li>Serviços funerários completos</li>
+                        <li>Mortalha padrão e câmara ardente</li>
+                        <li>Suporte básico 24h</li>
+                    </ul>
+                </div>
+                
+                <div class="mt-4">
+                    <a href="https://wa.me/5511981050511?text=Quero%20contratar%20o%20plano%20Bronze" class="btn whatsapp-btn me-2" target="_blank">
+                        <i class="bi bi-whatsapp"></i> Contratar via WhatsApp
+                    </a>
+                    <button class="btn btn-outline-custom" id="compare-btn">Comparar com outros planos</button>
+                </div>
+            </div>
+
+            <!-- Silver Result -->
+            <div class="result-card silver-result" id="silver-result">
+                <i class="bi bi-award-fill plan-icon silver-icon"></i>
+                <h3 class="result-title">Plano Prata é o ideal para você!</h3>
+                <p class="result-description">Com base nas suas respostas, o Plano Prata oferece a combinação perfeita de cobertura ampliada (12 cidades) e benefícios adicionais que atendem às suas necessidades.</p>
+                
+                <div class="feature-list">
+                    <h5>Principais benefícios:</h5>
+                    <ul>
+                        <li>Cobertura em 12 cidades do Alto Tietê e Grande SP</li>
+                        <li>Todos os benefícios do Plano Bronze</li>
+                        <li>Carro funerário para acompanhamento familiar</li>
+                        <li>Atendimento com mais conforto e cuidado</li>
+                        <li>Assessoria documental completa</li>
+                    </ul>
+                </div>
+                
+                <div class="mt-4">
+                    <a href="https://wa.me/5511981050511?text=Quero%20contratar%20o%20plano%20Prata" class="btn whatsapp-btn me-2" target="_blank">
+                        <i class="bi bi-whatsapp"></i> Contratar via WhatsApp
+                    </a>
+                    <button class="btn btn-outline-custom" id="compare-btn">Comparar com outros planos</button>
+                </div>
+            </div>
+
+            <!-- Gold Result -->
+            <div class="result-card gold-result" id="gold-result">
+                <i class="bi bi-award-fill plan-icon gold-icon"></i>
+                <h3 class="result-title">Plano Ouro é o ideal para você!</h3>
+                <p class="result-description">Com base nas suas respostas, o Plano Ouro oferece a cobertura mais completa (53 cidades) com todos os benefícios premium para garantir tranquilidade total para você e sua família.</p>
+                
+                <div class="feature-list">
+                    <h5>Principais benefícios:</h5>
+                    <ul>
+                        <li>Maior cobertura - 53 cidades de São Paulo</li>
+                        <li>Todos os benefícios dos planos Bronze e Prata</li>
+                        <li>Suporte premium 24h - humano e digital</li>
+                        <li>Transporte intermunicipal para familiares</li>
+                        <li>Atendimento preferencial VIP</li>
+                        <li>Garantia documental premium</li>
+                    </ul>
+                </div>
+                
+                <div class="mt-4">
+                    <a href="https://wa.me/5511981050511?text=Quero%20contratar%20o%20plano%20Ouro" class="btn whatsapp-btn me-2" target="_blank">
+                        <i class="bi bi-whatsapp"></i> Contratar via WhatsApp
+                    </a>
+                    <button class="btn btn-outline-custom" id="compare-btn">Comparar com outros planos</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="plan-comparison" id="comparison-table" style="display: none;">
+            <h4 class="text-center mb-4">Comparativo entre os Planos</h4>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Benefício</th>
+                        <th>Bronze</th>
+                        <th>Prata</th>
+                        <th>Ouro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cidades atendidas</td>
+                        <td class="highlight-bronze">6</td>
+                        <td class="highlight-silver">12</td>
+                        <td class="highlight-gold">53</td>
+                    </tr>
+                    <tr>
+                        <td>Carro funerário</td>
+                        <td class="highlight-bronze">Sim</td>
+                        <td class="highlight-silver">Sim + acompanhamento</td>
+                        <td class="highlight-gold">Sim + acompanhamento</td>
+                    </tr>
+                    <tr>
+                        <td>Suporte</td>
+                        <td class="highlight-bronze">Básico 24h</td>
+                        <td class="highlight-silver">Estendido</td>
+                        <td class="highlight-gold">Premium 24h</td>
+                    </tr>
+                    <tr>
+                        <td>Transporte familiar</td>
+                        <td class="highlight-bronze">Não</td>
+                        <td class="highlight-silver">Municipal</td>
+                        <td class="highlight-gold">Intermunicipal</td>
+                    </tr>
+                    <tr>
+                        <td>Atendimento</td>
+                        <td class="highlight-bronze">Padrão</td>
+                        <td class="highlight-silver">Conforto</td>
+                        <td class="highlight-gold">VIP Preferencial</td>
+                    </tr>
+                    <tr>
+                        <td>Assessoria documental</td>
+                        <td class="highlight-bronze">Básica</td>
+                        <td class="highlight-silver">Completa</td>
+                        <td class="highlight-gold">Premium</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-center mt-4">
+                <button class="btn btn-custom" id="back-to-results">Voltar para o resultado</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>WG Convênios Funerários</h5>
+                    <p>Tranquilidade e segurança para você e sua família nos momentos mais delicados.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contato</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-telephone"></i> (11) 98105-0511</li>
+                        <li><i class="bi bi-envelope"></i> contato@wgconvenio.com.br</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Redes Sociais</h5>
+                    <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-instagram"></i></a>
+                    <a href="https://wa.me/5511981050511" class="text-white"><i class="bi bi-whatsapp"></i></a>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">© 2023 WG Convênios Funerários. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Variáveis do simulador
+            const totalQuestions = 5;
+            let currentQuestion = 1;
+            let userAnswers = [];
+            let bronzeScore = 0;
+            let silverScore = 0;
+            let goldScore = 0;
+            
+            // Elementos da interface
+            const questionsContainer = document.getElementById('questions-container');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const currentQuestionEl = document.getElementById('current-question');
+            const progressBar = document.getElementById('quiz-progress');
+            const resultsSection = document.getElementById('results-section');
+            const bronzeResult = document.getElementById('bronze-result');
+            const silverResult = document.getElementById('silver-result');
+            const goldResult = document.getElementById('gold-result');
+            const comparisonTable = document.getElementById('comparison-table');
+            const compareBtns = document.querySelectorAll('#compare-btn');
+            const backToResultsBtn = document.getElementById('back-to-results');
+            
+            // Atualiza a exibição da pergunta atual
+            function updateQuestionDisplay() {
+                // Esconde todas as perguntas
+                document.querySelectorAll('.question-card').forEach(card => {
+                    card.style.display = 'none';
+                });
+                
+                // Mostra apenas a pergunta atual
+                document.getElementById(`question-${currentQuestion}`).style.display = 'block';
+                
+                // Atualiza o contador
+                currentQuestionEl.textContent = currentQuestion;
+                
+                // Atualiza a barra de progresso
+                progressBar.style.width = `${(currentQuestion / totalQuestions) * 100}%`;
+                
+                // Atualiza os botões de navegação
+                prevBtn.disabled = currentQuestion === 1;
+                nextBtn.textContent = currentQuestion === totalQuestions ? 'Ver Resultado' : 'Próxima';
+            }
+            
+            // Avança para a próxima pergunta
+            function nextQuestion() {
+                // Verifica se uma opção foi selecionada
+                const currentCard = document.getElementById(`question-${currentQuestion}`);
+                const selectedOption = currentCard.querySelector('.option-btn.selected');
+                
+                if (!selectedOption && currentQuestion <= totalQuestions) {
+                    alert('Por favor, selecione uma opção antes de continuar.');
+                    return;
+                }
+                
+                // Armazena a resposta do usuário
+                if (selectedOption) {
+                    userAnswers.push({
+                        question: currentQuestion,
+                        value: selectedOption.dataset.value
+                    });
+                    
+                    // Atualiza os scores com base na resposta
+                    switch(selectedOption.dataset.value) {
+                        case 'bronze':
+                            bronzeScore += 1;
+                            break;
+                        case 'silver':
+                            silverScore += 1;
+                            break;
+                        case 'gold':
+                            goldScore += 1;
+                            break;
+                    }
+                }
+                
+                // Verifica se é a última pergunta
+                if (currentQuestion === totalQuestions) {
+                    showResults();
+                    return;
+                }
+                
+                // Avança para a próxima pergunta
+                currentQuestion++;
+                updateQuestionDisplay();
+            }
+            
+            // Volta para a pergunta anterior
+            function prevQuestion() {
+                if (currentQuestion > 1) {
+                    // Remove a última resposta do array
+                    if (userAnswers.length > 0 && userAnswers[userAnswers.length - 1].question === currentQuestion - 1) {
+                        const lastAnswer = userAnswers.pop();
+                        
+                        // Ajusta os scores
+                        switch(lastAnswer.value) {
+                            case 'bronze':
+                                bronzeScore -= 1;
+                                break;
+                            case 'silver':
+                                silverScore -= 1;
+                                break;
+                            case 'gold':
+                                goldScore -= 1;
+                                break;
+                        }
+                    }
+                    
+                    currentQuestion--;
+                    updateQuestionDisplay();
+                    
+                    // Restaura a seleção anterior se existir
+                    const previousAnswer = userAnswers.find(answer => answer.question === currentQuestion);
+                    if (previousAnswer) {
+                        const currentCard = document.getElementById(`question-${currentQuestion}`);
+                        const options = currentCard.querySelectorAll('.option-btn');
+                        
+                        options.forEach(option => {
+                            option.classList.remove('selected');
+                            if (option.dataset.value === previousAnswer.value) {
+                                option.classList.add('selected');
+                            }
+                        });
+                    }
+                }
+            }
+            
+            // Mostra os resultados finais
+            function showResults() {
+                questionsContainer.style.display = 'none';
+                prevBtn.style.display = 'none';
+                nextBtn.style.display = 'none';
+                resultsSection.style.display = 'block';
+                
+                // Determina o plano recomendado com base nos scores
+                let recommendedPlan = 'bronze';
+                
+                if (silverScore > bronzeScore && silverScore >= goldScore) {
+                    recommendedPlan = 'silver';
+                } else if (goldScore > silverScore && goldScore > bronzeScore) {
+                    recommendedPlan = 'gold';
+                }
+                
+                // Mostra o resultado correspondente
+                document.getElementById(`${recommendedPlan}-result`).style.display = 'block';
+            }
+            
+            // Mostra a tabela de comparação
+            function showComparison() {
+                resultsSection.style.display = 'none';
+                comparisonTable.style.display = 'block';
+            }
+            
+            // Volta para os resultados
+            function backToResults() {
+                comparisonTable.style.display = 'none';
+                resultsSection.style.display = 'block';
+            }
+            
+            // Event Listeners
+            nextBtn.addEventListener('click', nextQuestion);
+            prevBtn.addEventListener('click', prevQuestion);
+            
+            // Seleção de opções
+            document.querySelectorAll('.option-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove a seleção de outras opções na mesma pergunta
+                    this.parentElement.querySelectorAll('.option-btn').forEach(option => {
+                        option.classList.remove('selected');
+                    });
+                    
+                    // Seleciona a opção clicada
+                    this.classList.add('selected');
+                });
+            });
+            
+            // Botões de comparação
+            compareBtns.forEach(btn => {
+                btn.addEventListener('click', showComparison);
+            });
+            
+            backToResultsBtn.addEventListener('click', backToResults);
+            
+            // Inicializa o simulador
+            updateQuestionDisplay();
+        });
+    </script>
+</body>
+
+</html>
