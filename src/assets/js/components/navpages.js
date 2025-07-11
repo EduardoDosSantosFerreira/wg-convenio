@@ -7,8 +7,13 @@ function adicionarLoginAoDOM() {
   <div class="container">
     
     <!-- Logo da Empresa -->
-    <a class="navbar-brand d-flex align-items-center" href="../../index.html">
-      <img src="../assets/img/logos/logo.png" alt="Logotipo WG Convênios" width="100" height="auto" class="me-2">
+    <a class="navbar-brand d-flex align-items-center" href="../../index.html" style="padding: 0;">
+      <img 
+        src="../assets/img/logos/logo.png" 
+        alt="Logotipo WG Convênios" 
+        style="width: 100px; height: auto; max-width: 80vw;"
+        class="me-2 logo-navbar-img"
+      >
     </a>
 
     <!-- Botão de navegação responsiva -->
