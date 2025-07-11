@@ -395,7 +395,19 @@ body {
 }
 
 .space {
-  height: 6.25rem;
+  height: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .space {
+    height: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .space {
+    height: 5rem;
+  }
 }
 
 .benefits-container {

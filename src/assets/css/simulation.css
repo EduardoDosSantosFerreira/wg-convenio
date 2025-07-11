@@ -233,7 +233,8 @@ body {
     margin-top: 1.5rem;
 }
 
-.comparison-table th, .comparison-table td {
+.comparison-table th,
+.comparison-table td {
     padding: 0.8rem;
     text-align: left;
     border-bottom: 1px solid #dee2e6;
@@ -267,11 +268,11 @@ body {
     .simulator-container {
         padding: 1.5rem;
     }
-    
+
     .hero-section {
         padding: 2.5rem 0;
     }
-    
+
     .question-card {
         padding: 1.5rem;
     }
