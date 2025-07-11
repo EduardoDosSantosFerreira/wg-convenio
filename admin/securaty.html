@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Painel administrativo seguro para gestão da WG Convênios">
+    <title>Painel Administrativo | WG Convênios</title>
+
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="../assets/css/utils/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/utils/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root {
+            --azul-profundo: #003366;
+            --azul-profundo-hover: #002244;
+            --branco: #fff;
+            --cinza-borda: #dde3ea;
+            --cinza-texto: #6c757d;
+            --sombra-card: 0 2px 12px rgba(0, 0, 0, 0.07);
+        }
+
+        body {
+            background: var(--branco);
+            font-family: 'Poppins', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .admin-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .admin-card {
+            width: 100%;
+            max-width: 420px;
+            background: var(--branco);
+            border-radius: 10px;
+            box-shadow: var(--sombra-card);
+            padding: 2rem;
+        }
+
+        .admin-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .admin-header i {
+            font-size: 2.5rem;
+            color: var(--azul-profundo);
+            margin-bottom: 1rem;
+        }
+
+        .admin-header h2 {
+            font-weight: 700;
+            color: var(--azul-profundo);
+            margin: 0;
+        }
+
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control {
+            padding: 0.7rem 1rem;
+            border-radius: 7px;
+            border: 1px solid var(--cinza-borda);
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            border-color: var(--azul-profundo);
+            outline: none;
+        }
+
+        .btn {
+            padding: 0.7rem 1.2rem;
+            border-radius: 7px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: none;
+            transition: background 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--azul-profundo);
+            color: var(--branco);
+        }
+
+        .btn-primary:hover {
+            background: var(--azul-profundo-hover);
+        }
+
+        .password-toggle {
+            position: relative;
+        }
+
+        .password-toggle .toggle-icon {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--cinza-texto);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: var(--cinza-texto);
+        }
+
+        @media (max-width: 576px) {
+            .admin-card {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin-container">
+        <div class="admin-card">
+            <div class="admin-header">
+                <i class="fas fa-user-shield" aria-hidden="true"></i>
+                <h2>Painel do Administrador</h2>
+            </div>
+
+            <form id="loginForm" novalidate>
+                <div class="mb-3">
+                    <label for="adminEmail" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="adminEmail" placeholder="admin@wgconvenios.com.br"
+                        required aria-describedby="emailHelp">
+                </div>
+                <br>
+                <div class="mb-3 password-toggle">
+                    <label for="adminPassword" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="adminPassword" placeholder="Digite sua senha"
+                        required minlength="8">
+
+                </div>
+                <br>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-sign-in-alt" aria-hidden="true"></i> Entrar
+                    </button>
+                </div>
+            </form>
+</body>
+
+</html>

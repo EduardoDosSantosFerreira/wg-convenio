@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const allItems = planCard.querySelectorAll(".plan-body ul li");
 
             modalTitle.textContent = planTitle;
-            modalList.innerHTML = ""; 
+            modalList.innerHTML = "";
 
             allItems.forEach(li => {
                 const clone = li.cloneNode(true);
