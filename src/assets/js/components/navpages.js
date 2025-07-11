@@ -70,9 +70,6 @@ function adicionarLoginAoDOM() {
               role="menu"
               style="min-width: 220px;">
             <li role="none">
-              <h6 class="dropdown-header text-muted">Preferências de Acesso</h6>
-            </li>
-            <li role="none">
               <button class="dropdown-item d-flex align-items-center gap-2"
                       onclick="ajustarFonte(-1)"
                       aria-label="Diminuir fonte"

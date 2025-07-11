@@ -14,7 +14,7 @@ function adicionarLoginAoDOM() {
         class="me-2 logo-navbar-img"
       >
     </a>
-    
+
     <!-- Botão de navegação responsiva -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
@@ -55,7 +55,6 @@ function adicionarLoginAoDOM() {
             <i class="fas fa-universal-access fs-5"></i>
           </button>
           <ul class="dropdown-menu dropdown-menu-end shadow rounded p-2" aria-labelledby="acessibilidadeBtn" id="acessibilidadeMenu" style="min-width: 220px;">
-            <li><h6 class="dropdown-header text-muted">Preferências de Acesso</h6></li>
             <li>
               <button class="dropdown-item d-flex align-items-center gap-2" onclick="ajustarFonte(-1)" aria-label="Diminuir fonte">
                 <i class="fas fa-search-minus"></i> Diminuir Fonte
