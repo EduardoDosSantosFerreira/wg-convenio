@@ -109,9 +109,9 @@
 }
 
 .logo-img {
-  height: 100px;
+  height: 180px;
   width: auto;
-  max-height: 80px;
+  max-height: 140px;
   object-fit: contain;
 }
 
