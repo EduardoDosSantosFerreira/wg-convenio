@@ -12,7 +12,7 @@ body {
     background-color: var(--background-color);
     font-family: 'Poppins', sans-serif;
     color: var(--text-color);
-    padding-top: 130px;
+    padding-bottom: 100123px;
 }
 
 @media (max-width: 600px) {

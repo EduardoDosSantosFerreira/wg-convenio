@@ -46,7 +46,6 @@
 body {
     background-color: var(--background-color);
     color: var(--text-color);
-    padding-top: 130px;
 }
 
 @media (max-width: 600px) {
