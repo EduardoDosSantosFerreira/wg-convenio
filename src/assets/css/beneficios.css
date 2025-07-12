@@ -178,7 +178,7 @@ hr {
     --black: #000000;
     --white: #ffffff;
     --gold: #ffd700;
-  }
+}
 
 .back-to-top {
     position: fixed;
@@ -199,43 +199,43 @@ hr {
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     z-index: 999;
-  }
-  
-  .back-to-top.visible {
+}
+
+.back-to-top.visible {
     opacity: 1;
     visibility: visible;
-  }
-  
-  .back-to-top:hover {
+}
+
+.back-to-top:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-  }
-  
-  .arrow-icon {
+}
+
+.arrow-icon {
     width: 20px;
     height: 20px;
     fill: var(--gold);
     transition: transform 0.3s ease;
-  }
-  
-  .back-to-top:hover .arrow-icon {
+}
+
+.back-to-top:hover .arrow-icon {
     transform: translateY(-2px);
-  }
-  
-  @keyframes pulse {
+}
+
+@keyframes pulse {
     0% {
-      transform: scale(1);
+        transform: scale(1);
     }
-  
+
     50% {
-      transform: scale(1.1);
+        transform: scale(1.1);
     }
-  
+
     100% {
-      transform: scale(1);
+        transform: scale(1);
     }
-  }
-  
-  .back-to-top.visible:hover {
+}
+
+.back-to-top.visible:hover {
     animation: pulse 1.5s infinite;
-  }
+}
