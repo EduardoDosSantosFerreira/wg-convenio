@@ -10,6 +10,7 @@
 
 body {
     background-color: var(--background-color);
+    font-family: 'Poppins', sans-serif;
     color: var(--text-color);
     padding-top: 130px;
 }
@@ -170,3 +171,71 @@ hr {
 .whatsapp-icon i {
     color: #25d366;
 }
+
+:root {
+    --deep-blue: #0056b3;
+    --deep-blue-2: #002a55;
+    --black: #000000;
+    --white: #ffffff;
+    --gold: #ffd700;
+  }
+
+.back-to-top {
+    position: fixed;
+    bottom: 150px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--deep-blue) 0%, var(--deep-blue-2) 100%);
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+  }
+  
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .back-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  }
+  
+  .arrow-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--gold);
+    transition: transform 0.3s ease;
+  }
+  
+  .back-to-top:hover .arrow-icon {
+    transform: translateY(-2px);
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.1);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .back-to-top.visible:hover {
+    animation: pulse 1.5s infinite;
+  }
