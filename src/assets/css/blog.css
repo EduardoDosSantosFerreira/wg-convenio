@@ -1,0 +1,62 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+.blog-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 32px 24px;
+}
+.blog-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #002f6c;
+    margin-bottom: 12px;
+}
+.blog-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+}
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.post-card {
+    background: #f4f8fb;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s;
+}
+.post-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+}
+.post-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #003366;
+    margin-bottom: 8px;
+}
+.post-meta {
+    font-size: 0.95rem;
+    color: #888;
+    margin-bottom: 16px;
+}
+.post-content {
+    color: #333;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+.no-posts {
+    text-align: center;
+    color: #aaa;
+    font-size: 1.1rem;
+    margin-top: 40px;
+}
