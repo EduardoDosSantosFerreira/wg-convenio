@@ -43,6 +43,8 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
+    padding-top: 30px;
+
 }
 
 .contact-container {
