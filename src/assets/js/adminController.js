@@ -1,3 +1,5 @@
+// adminController.js - Versão Corrigida com Campo de Título
+
 import {
   auth, db,
   collection, addDoc, getDocs, deleteDoc, doc, updateDoc, query, orderBy, serverTimestamp,
@@ -8,6 +10,7 @@ const postForm = document.getElementById('postForm');
 const imageFileInput = document.getElementById('imageFile');
 const imagemInput = document.getElementById('imagem');
 const previewImage = document.getElementById('previewImage');
+const tituloInput = document.getElementById('titulo');
 const textoInput = document.getElementById('texto');
 const postIdInput = document.getElementById('postId');
 const postList = document.getElementById('postList');
@@ -71,11 +74,12 @@ async function uploadToCloudinary(file) {
 async function handleFormSubmit(e) {
   e.preventDefault();
 
+  const titulo = tituloInput.value.trim();
   const texto = textoInput.value.trim();
   const postId = postIdInput.value;
 
-  if (!texto) {
-    showToast('Preencha a legenda!', 'warning');
+  if (!titulo || !texto) {
+    showToast('Preencha o título e a legenda!', 'warning');
     return;
   }
 
@@ -95,6 +99,7 @@ async function handleFormSubmit(e) {
 
     const postData = {
       imagem: imageUrl,
+      titulo,
       texto,
       atualizadoEm: serverTimestamp()
     };
@@ -147,6 +152,7 @@ function createPostElement(doc) {
     <div class="post" data-id="${post.id}">
       <img src="${post.imagem}" alt="Imagem" onerror="this.src='https://via.placeholder.com/120?text=Erro+na+imagem'" />
       <div class="post-details">
+        <h5><strong>${post.titulo || 'Sem Título'}</strong></h5>
         <p>${post.texto}</p>
         <small class="text-muted">
           ${formatDate(post.criadoEm)}
@@ -179,6 +185,7 @@ async function editPost(postId) {
   if (postSnap.exists()) {
     const post = postSnap.data();
     imagemInput.value = post.imagem;
+    tituloInput.value = post.titulo || '';
     textoInput.value = post.texto;
     postIdInput.value = postId;
     previewImage.src = post.imagem;

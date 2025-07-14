@@ -1,0 +1,246 @@
+/* admin.css - Estilo Moderno e Sofisticado */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Estilos Gerais */
+body {
+  background-color: #f4f6f9;
+  color: #212529;
+  font-family: 'Inter', sans-serif;
+  padding-bottom: 4rem;
+}
+
+/* Cabeçalhos */
+h1, h2, h3, h4 {
+  color: #0a2463;
+  font-weight: 600;
+}
+
+h1, h2 {
+  border-bottom: 2px solid #0a2463;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Botões */
+.btn {
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  background-color: #d64045;
+  border-color: #d64045;
+}
+
+.btn-danger:hover {
+  background-color: #c23a3f;
+}
+
+.btn-success {
+  background-color: #3a7d44;
+  border-color: #3a7d44;
+}
+
+.btn-success:hover {
+  background-color: #2e6336;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #545b62;
+}
+
+/* Formulário */
+#postForm {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #dee2e6;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #0a2463;
+}
+
+.form-control, .form-select {
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+  border-color: #0a2463;
+  box-shadow: 0 0 0 0.25rem rgba(10, 36, 99, 0.15);
+}
+
+/* Imagem de Preview */
+#previewImage {
+  max-height: 200px;
+  display: none;
+  margin-top: 1rem;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+}
+
+/* Seções */
+.form-section,
+.posts-section {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  margin-bottom: 2rem;
+}
+
+/* Postagens */
+#postList {
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  background-color: #ffffff;
+  padding: 1.5rem;
+}
+
+/* Post individual */
+.post {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #dee2e6;
+  margin-bottom: 1.5rem;
+  background-color: #fafafa;
+  transition: box-shadow 0.3s ease;
+}
+
+.post:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.post img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  border: 1px solid #dee2e6;
+  transition: transform 0.3s ease;
+}
+
+.post img:hover {
+  transform: scale(1.05);
+}
+
+.post-details {
+  flex: 1;
+}
+
+.post-details h4 {
+  font-weight: 600;
+  color: #0a2463;
+  margin-bottom: 0.5rem;
+}
+
+.post-details p {
+  margin: 0.25rem 0 0.75rem;
+  white-space: pre-line;
+  line-height: 1.6;
+}
+
+.post-details small {
+  color: #6c757d;
+}
+
+.post-details button {
+  margin-right: 0.5rem;
+}
+
+/* Ações */
+.post-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+/* Estado vazio */
+#postList:empty::before {
+  content: "Nenhuma postagem cadastrada.";
+  display: block;
+  text-align: center;
+  padding: 2.5rem;
+  font-size: 1.1rem;
+  color: #6c757d;
+  background-color: #f1f3f5;
+  border-radius: 12px;
+}
+
+/* Toasts */
+.toast {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0.75rem 1.25rem rgba(0, 0, 0, 0.15);
+}
+
+.toast-header {
+  background-color: #0a2463;
+  color: white;
+  border: none;
+}
+
+.toast-body {
+  background-color: white;
+  color: #212529;
+}
+
+/* Spinner */
+.loading {
+  display: none;
+}
+
+/* Botão logout animado */
+.btn-logout {
+  transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .post {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .post img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .post-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  #postForm, #postList {
+    padding: 1rem;
+  }
+}
