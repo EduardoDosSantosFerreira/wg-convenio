@@ -48,9 +48,12 @@ function adicionarLoginAoDOM() {
                 <p class="mb-0">Desenvolvido por <a href="https://github.com/eduardodossantosferreira" target="_blank">Eduardo dos Santos Ferreira</a></p>
             </div>
 
-            <div class="col-md-6 text-md-end social-icons">
+            <div class="col-md-6 text-md-end social-icons d-flex justify-content-md-end align-items-center gap-3">
                 <a href="https://www.facebook.com/wgconvenio/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/wgconvenio/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="../../../../admin/securaty.html" aria-label="Login do administrador">
+                    <i class="fas fa-user-circle text-light" style="font-size: 1.8rem;"></i>
+                </a>
             </div>
         </div>
 
@@ -75,7 +78,7 @@ function adicionarLoginAoDOM() {
         </div>
     </div>
 </footer>
-      `;
+    `;
 
     document.body.appendChild(div);
 }
