@@ -2,66 +2,100 @@
 <html lang="pt-br" data-bs-theme="light">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Painel administrativo seguro para gestão da WG Convênios">
-    <title>Painel Administrativo | WG Convênios</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Painel administrativo seguro para gestão da WG Convênios">
+  <title>Login Painel Administrativo | WG Convênios</title>
 
-    <!-- Preload de recursos críticos -->
-    <link rel="preload" href="../assets/css/utils/bootstrap.min.css" as="style">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Preload -->
+  <link rel="preload" href="../assets/css/utils/bootstrap.min.css" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/utils/bootstrap.min.css">
-    <link rel="stylesheet" href="../src/assets/css/securaty.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/utils/bootstrap.min.css">
+  <link rel="stylesheet" href="../src/assets/css/securaty.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+  <main class="admin-container" role="main">
+    <section class="admin-card" aria-labelledby="admin-panel-heading">
+      <header class="admin-header">
+        <div class="admin-icon" aria-hidden="true">
+          <i class="fas fa-user-shield"></i>
+        </div>
+        <h1 id="admin-panel-heading" class="admin-title">Painel do Administrador</h1>
+      </header>
 
-    <main class="admin-container" role="main">
-        <section class="admin-card" aria-labelledby="admin-panel-heading">
-            <header class="admin-header">
-                <div class="admin-icon" aria-hidden="true">
-                    <i class="fas fa-user-shield"></i>
-                </div>
-                <h1 id="admin-panel-heading" class="admin-title">Painel do Administrador</h1>
-            </header>
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="adminEmail" class="form-label">E-mail</label>
+          <input type="email" class="form-control" id="adminEmail" placeholder="admin@wgconvenios.com.br" required>
+          <small class="form-text">Utilize seu e-mail institucional</small>
+        </div>
 
-            <form id="loginForm" novalidate aria-label="Formulário de login do administrador">
-                <div class="form-group">
-                    <label for="adminEmail" class="form-label">E-mail</label>
-                    <input type="email" class="form-control" id="adminEmail" 
-                           placeholder="admin@wgconvenios.com.br" required
-                           aria-required="true" aria-describedby="emailHelp">
-                    <small id="emailHelp" class="form-text">Utilize seu e-mail institucional</small>
-                </div>
+        <div class="form-group password-toggle">
+          <label for="adminPassword" class="form-label">Senha</label>
+          <div class="password-input-wrapper">
+            <input type="password" class="form-control" id="adminPassword" placeholder="Digite sua senha" required minlength="8">
+            <button type="button" class="toggle-password" aria-label="Mostrar senha">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+        </div>
 
-                <div class="form-group password-toggle">
-                    <label for="adminPassword" class="form-label">Senha</label>
-                    <div class="password-input-wrapper">
-                        <input type="password" class="form-control" id="adminPassword" 
-                               placeholder="Digite sua senha" required minlength="8"
-                               aria-required="true">
-                        <button type="button" class="toggle-password" aria-label="Mostrar senha">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                    </div>
-                </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-block">
+            <i class="fas fa-sign-in-alt"></i> Entrar
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
 
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary btn-block">
-                        <i class="fas fa-sign-in-alt" aria-hidden="true"></i> Entrar
-                    </button>
-                </div>
-            </form>
-        </section>
-    </main>
+  <!-- Firebase + Login Script -->
+  <script type="module">
+    import { auth } from './firebase/firebase.config.js';
+    import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
+    const loginForm = document.getElementById("loginForm");
+
+    loginForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("adminEmail").value.trim();
+      const password = document.getElementById("adminPassword").value;
+
+      const allowedAdminEmail = "admin@wgconvenios.com.br";
+
+      if (email !== allowedAdminEmail) {
+        alert("Acesso negado: apenas administradores autorizados podem entrar.");
+        return;
+      }
+
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        window.location.href = "admin.html";
+      } catch (error) {
+        alert("Erro ao fazer login: " + error.message);
+      }
+    });
+
+    // Alternar exibição da senha
+    const togglePassword = document.querySelector(".toggle-password");
+    const passwordInput = document.getElementById("adminPassword");
+
+    togglePassword.addEventListener("click", () => {
+      const isPassword = passwordInput.type === "password";
+      passwordInput.type = isPassword ? "text" : "password";
+      togglePassword.querySelector("i").classList.toggle("fa-eye");
+      togglePassword.querySelector("i").classList.toggle("fa-eye-slash");
+    });
+  </script>
 </body>
 
 </html>
