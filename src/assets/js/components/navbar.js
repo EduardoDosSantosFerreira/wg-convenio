@@ -30,7 +30,7 @@ function adicionarLoginAoDOM() {
         <li class="nav-item"><a class="nav-link" href="src/pages/beneficios.html">Benefícios</a></li>
         <li class="nav-item"><a class="nav-link" href="src/pages/clinicas.html">Clínicas Credenciadas</a></li>
         <li class="nav-item"><a class="nav-link" href="src/pages/contato.html">Contato</a></li>
-
+        
         <!-- Portal do Cliente: dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="portalClienteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -39,6 +39,7 @@ function adicionarLoginAoDOM() {
           <ul class="dropdown-menu" aria-labelledby="portalClienteDropdown">
             <li><a class="dropdown-item" href="src/pages/portal.html"><i class="fas fa-user me-2"></i>Área do Cliente</a></li>
             <li><a class="dropdown-item" href="src/pages/portal-familia.html"><i class="fas fa-users me-2"></i>Portal Família</a></li>
+            <li><a class="dropdown-item" href="./admin/blog.html"><i class="fas fa-blog me-2"></i>Blog</a></li>
           </ul>
         </li>
 

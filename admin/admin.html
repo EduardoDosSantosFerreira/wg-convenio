@@ -6,17 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Painel administrativo para gerenciamento de postagens do blog WG Convênios">
   <title>Painel Admin - Postagens | WG Convênios</title>
-  
+
   <!-- Preload de recursos críticos -->
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="../src/assets/css/admin.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../src/assets/css/admin.css">
   </noscript>
-  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <!-- Favicon (adicione seus próprios arquivos) -->
   <link rel="icon" href="../src/assets/img/favicon.ico" sizes="any">
   <link rel="icon" href="../src/assets/img/favicon.svg" type="image/svg+xml">
@@ -29,21 +32,20 @@
     <div class="container-fluid">
       <a href="#" class="navbar-brand d-flex align-items-center">
         <img src="../src/assets/img/logos/logo.png" width="100" height="auto" alt="WG Convênios" loading="lazy">
-        <span class="ms-2">WG CONVÊNIOS</span>
       </a>
-      
+
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar" aria-label="Alternar navegação" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
+
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
           <img src="../src/assets/img/logos/logo.png" width="100" height="auto" alt="WG Convênios" loading="lazy">
           <h2 class="offcanvas-title h5" id="offcanvasNavbarLabel">WG Convênios</h2>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar menu"></button>
         </div>
-        
+
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
@@ -57,8 +59,8 @@
               </a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false" aria-haspopup="true">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                aria-haspopup="true">
                 <i class="bi bi-collection me-1"></i>Outras Páginas
               </a>
               <ul class="dropdown-menu">
@@ -70,10 +72,12 @@
                 <li><a class="dropdown-item" href="../src/pages/portal-familia.html">Portal Família</a></li>
                 <li><a class="dropdown-item" href="../src/pages/portal.html">Portal</a></li>
                 <li><a class="dropdown-item" href="../src/pages/simulação.html">Simulação</a></li>
-                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
                 <li><a class="dropdown-item text-danger" href="../admin/securaty.html">
-                  <i class="bi bi-box-arrow-right me-1"></i>Sair
-                </a></li>
+                    <i class="bi bi-box-arrow-right me-1"></i>Sair
+                  </a></li>
               </ul>
             </li>
           </ul>
@@ -95,116 +99,129 @@
   </header>
 
   <!-- Conteúdo Principal -->
-  <main>
-    <!-- Seção do Formulário -->
-    <section class="form-section mb-5" aria-labelledby="formSectionHeading">
-      <h2 id="formSectionHeading" class="visually-hidden">Formulário de Postagem</h2>
-      
-      <form id="postForm" class="mb-4" novalidate>
-        <input type="hidden" id="postId" />
 
-        <div class="row g-3">
-          <div class="col-md-6 mb-3">
-            <div class="card h-100">
-              <div class="card-body">
-                <h3 class="h5 card-title text-secondary mb-4">
-                  <i class="bi bi-image me-2" aria-hidden="true"></i>Upload de Imagem
-                </h3>
+  <!-- Seção do Formulário de Postagem -->
+  <h2 id="formSectionHeading" class="visually-hidden">Formulário de Postagem</h2>
 
-                <div class="mb-3">
-                  <label for="imageFile" class="form-label">Selecione uma imagem</label>
-                  <input type="file" id="imageFile" class="form-control" accept="image/*" 
-                    aria-describedby="imageHelp" />
-                  <div id="imageHelp" class="form-text">Formatos suportados: JPG, PNG, GIF (Máx. 5MB)</div>
-                </div>
+  <form id="postForm" class="mb-4" novalidate>
+    <input type="hidden" id="postId" aria-hidden="true">
 
-                <div class="mb-3">
-                  <label for="imagem" class="form-label">URL da Imagem (alternativo)</label>
-                  <input type="url" id="imagem" class="form-control" placeholder="https://exemplo.com/imagem.jpg" 
-                    pattern="https://.*" />
-                </div>
+    <div class="row g-3">
+      <!-- Card de Upload de Imagem -->
+      <div class="col-md-6 mb-3">
+        <div class="card h-100">
+          <div class="card-body">
+            <header class="mb-4">
+              <h3 class="h5 card-title text-secondary">
+                <i class="bi bi-image me-2" aria-hidden="true"></i>
+                <span>Upload de Imagem</span>
+              </h3>
+            </header>
 
-                <div class="text-center mt-3">
-                  <img id="previewImage" src="#" alt="Preview da imagem selecionada" 
-                    class="img-thumbnail d-none" style="max-height: 200px;" />
-                </div>
-              </div>
+            <div class="mb-3">
+              <label for="imageFile" class="form-label">Selecione uma imagem</label>
+              <input type="file" id="imageFile" class="form-control" accept="image/jpeg, image/png, image/gif"
+                aria-describedby="imageHelp" aria-required="false" />
+              <div id="imageHelp" class="form-text">Formatos suportados: JPG, PNG, GIF (Máx. 5MB)</div>
             </div>
-          </div>
 
-          <div class="col-md-6">
-            <div class="card h-100">
-              <div class="card-body">
-                <h3 class="h5 card-title text-secondary mb-4">
-                  <i class="bi bi-card-text me-2" aria-hidden="true"></i>Detalhes da Postagem
-                </h3>
-
-                <div class="mb-3">
-                  <label for="titulo" class="form-label">Título <span class="text-danger">*</span></label>
-                  <input type="text" id="titulo" class="form-control" placeholder="Digite o título da postagem"
-                    required maxlength="100" />
-                  <div class="invalid-feedback">Por favor, insira um título para a postagem.</div>
-                </div>
-
-                <div class="mb-4">
-                  <label for="texto" class="form-label">Legenda <span class="text-danger">*</span></label>
-                  <textarea id="texto" class="form-control" rows="5" required maxlength="500"
-                    placeholder="Digite a legenda da postagem"></textarea>
-                  <div class="invalid-feedback">Por favor, insira uma legenda para a postagem.</div>
-                  <div class="form-text text-end"><span id="charCount">0</span>/500 caracteres</div>
-                </div>
-
-                <div class="d-flex gap-2 mt-4">
-                  <button type="submit" class="btn btn-success flex-grow-1" id="submitBtn">
-                    <span class="spinner-border spinner-border-sm loading d-none" role="status" aria-hidden="true"></span>
-                    <span class="btn-text">Salvar Postagem</span>
-                  </button>
-                  <button type="button" class="btn btn-outline-secondary" id="cancelEdit"
-                    style="display:none;">Cancelar</button>
-                </div>
-              </div>
+            <div class="mb-4">
+              <label for="imagem" class="form-label">URL da Imagem (alternativo)</label>
+              <input type="url" id="imagem" class="form-control" placeholder="https://exemplo.com/imagem.jpg"
+                pattern="https://.*" aria-describedby="urlHelp" />
+              <div id="urlHelp" class="form-text">Forneça uma URL válida começando com https://</div>
             </div>
+
+            <div class="text-center mt-3">
+              <img id="previewImage" src="" alt="Preview da imagem selecionada" class="img-thumbnail d-none"
+                style="max-height: 200px;" role="img" />
+            </div>
+
           </div>
         </div>
-      </form>
-    </section>
+      </div>
 
-    <!-- Seção de Postagens -->
-    <section class="posts-section" aria-labelledby="postsSectionHeading">
-      <h2 id="postsSectionHeading" class="h4 mb-4">
+      <!-- Card de Detalhes da Postagem -->
+      <div class="col-md-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <header class="mb-4">
+              <h3 class="h5 card-title text-secondary">
+                <i class="bi bi-card-text me-2" aria-hidden="true"></i>
+                <span>Detalhes da Postagem</span>
+              </h3>
+            </header>
+
+            <div class="mb-3">
+              <label for="titulo" class="form-label">
+                Título <span class="text-danger" aria-hidden="true">*</span>
+                <span class="visually-hidden">(obrigatório)</span>
+              </label>
+              <input type="text" id="titulo" class="form-control" placeholder="Digite o título da postagem" required
+                maxlength="100" aria-describedby="titleHelp" />
+              <div id="titleHelp" class="invalid-feedback">Por favor, insira um título para a postagem.</div>
+            </div>
+
+            <div class="mb-4">
+              <label for="texto" class="form-label">
+                Legenda <span class="text-danger" aria-hidden="true">*</span>
+                <span class="visually-hidden">(obrigatório)</span>
+              </label>
+              <textarea id="texto" class="form-control" rows="5" required maxlength="5000"
+                placeholder="Digite a legenda da postagem" aria-describedby="captionHelp"></textarea>
+              <div id="captionHelp" class="invalid-feedback">Por favor, insira uma legenda para a postagem.</div>
+              <div class="form-text text-end">
+                <span id="charCount" aria-live="polite">0</span>/5000 caracteres
+              </div>
+            </div>
+
+            <footer class="d-flex gap-2 mt-4">
+              <button type="submit" class="btn btn-success flex-grow-1" id="submitBtn" aria-label="Salvar postagem">
+                <span class="spinner-border spinner-border-sm loading d-none" role="status" aria-hidden="true"></span>
+                <span class="btn-text">Salvar Postagem</span>
+              </button>
+              <button type="button" class="btn btn-outline-secondary" id="cancelEdit" style="display:none;"
+                aria-label="Cancelar edição">
+                Cancelar
+              </button>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- Seção de Postagens -->
+  <section class="posts-section" aria-labelledby="postsSectionHeading">
+    <div class="section-header">
+      <h2 id="postsSectionHeading" class="section-title">
         <i class="bi bi-list-check me-2" aria-hidden="true"></i>Postagens Cadastradas
       </h2>
-      
-      <div id="postList" class="table-responsive">
-        <div class="text-center py-5 bg-light rounded placeholder-glow" id="loadingPosts">
+    </div>
+
+    <div id="postList" class="post-list-container">
+      <!-- Estado de Carregamento -->
+      <div class="loading-state" id="loadingPosts">
+        <div class="spinner-container">
           <div class="spinner-border text-primary" role="status">
             <span class="visually-hidden">Carregando...</span>
           </div>
-          <p class="mt-3 text-muted">Carregando postagens...</p>
-        </div>
-        
-        <table class="table table-hover align-middle d-none" id="postsTable">
-          <caption>Lista de postagens cadastradas no sistema</caption>
-          <thead class="table-light">
-            <tr>
-              <th scope="col" style="width: 100px">Imagem</th>
-              <th scope="col">Título</th>
-              <th scope="col" style="width: 150px">Data</th>
-              <th scope="col" style="width: 120px">Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- As postagens serão inseridas aqui via JavaScript -->
-          </tbody>
-        </table>
-        
-        <div class="text-center py-5 bg-light rounded d-none" id="emptyPosts">
-          <i class="bi bi-info-circle me-2" aria-hidden="true"></i>
-          <span>Nenhuma postagem cadastrada ainda</span>
+          <p class="loading-text">Carregando postagens...</p>
         </div>
       </div>
-    </section>
-  </main>
+
+      <!-- Container das Postagens -->
+      <div class="posts-grid" id="postsContainer">
+        <!-- As postagens serão inseridas aqui via JavaScript -->
+      </div>
+
+      <!-- Estado Vazio -->
+      <div class="empty-state d-none" id="emptyPosts">
+        <i class="bi bi-info-circle empty-icon" aria-hidden="true"></i>
+        <span class="empty-text">Nenhuma postagem cadastrada ainda</span>
+      </div>
+    </div>
+  </section>
 
   <!-- Toast de Notificação -->
   <div class="toast-container position-fixed bottom-0 end-0 p-3">
@@ -225,27 +242,27 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-  
+
   <!-- Adicione defer aos seus scripts -->
   <script type="module" src="../admin/firebase/firebase.config.js" defer></script>
   <script type="module" src="../src/assets/js/adminController.js" defer></script>
-  
+
   <!-- Script inline para melhorar a experiência antes do carregamento completo -->
   <script>
     // Exibir ano atual no footer
     document.getElementById('currentYear').textContent = new Date().getFullYear();
-    
+
     // Melhorar acessibilidade do dropdown
     document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-      toggle.addEventListener('click', function() {
+      toggle.addEventListener('click', function () {
         const expanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', !expanded);
       });
     });
-    
+
     // Contador de caracteres para a textarea
     const texto = document.getElementById('texto');
     if (texto) {
@@ -255,5 +272,8 @@
       });
     }
   </script>
+
+
 </body>
+
 </html>

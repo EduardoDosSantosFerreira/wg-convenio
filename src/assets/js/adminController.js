@@ -1,5 +1,3 @@
-// adminController.js - Versão Corrigida com Campo de Título
-
 import {
   auth, db,
   collection, addDoc, getDocs, deleteDoc, doc, updateDoc, query, orderBy, serverTimestamp,
@@ -24,6 +22,10 @@ let currentImageFile = null;
 
 const cloudName = "dgptuckf6";
 const unsignedUploadPreset = "Eduardo";
+
+// Defina o limite de caracteres para exibir o "Leia mais"
+const LIMITE_CARACTERES = 200; // ajuste conforme necessário
+const URL_BLOG = "./blog.html"; // ajuste para o endereço real do blog
 
 init();
 
@@ -146,6 +148,21 @@ async function loadPosts() {
   }
 }
 
+// Função para truncar texto e adicionar "Leia mais" se necessário
+function formatarTextoComLeiaMais(texto, postId) {
+  if (!texto) return '';
+  if (texto.length <= LIMITE_CARACTERES) {
+    return `<span class="post-text">${texto}</span>`;
+  } else {
+    // Trunca o texto e adiciona "..." e botão de leia mais
+    const textoCortado = texto.slice(0, LIMITE_CARACTERES).trim();
+    return `
+      <span class="post-text">${textoCortado}...</span>
+      <button class="btn btn-link btn-leia-mais" data-id="${postId}" style="padding:0; font-size:0.95em;">Leia mais</button>
+    `;
+  }
+}
+
 function createPostElement(doc) {
   const post = { id: doc.id, ...doc.data() };
   return `
@@ -153,7 +170,9 @@ function createPostElement(doc) {
       <img src="${post.imagem}" alt="Imagem" onerror="this.src='https://via.placeholder.com/120?text=Erro+na+imagem'" />
       <div class="post-details">
         <h5><strong>${post.titulo || 'Sem Título'}</strong></h5>
-        <p>${post.texto}</p>
+        <p>
+          ${formatarTextoComLeiaMais(post.texto, post.id)}
+        </p>
         <small class="text-muted">
           ${formatDate(post.criadoEm)}
           ${post.atualizadoEm ? ' (atualizado)' : ''}
@@ -174,6 +193,14 @@ function setupPostActions() {
   document.querySelectorAll('.btn-delete').forEach(btn => {
     btn.addEventListener('click', () => deletePost(btn.closest('.post').dataset.id));
   });
+
+  // Adiciona evento para os botões "Leia mais"
+  document.querySelectorAll('.btn-leia-mais').forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Redireciona para o blog (pode passar o id do post como parâmetro se desejar)
+      window.location.href = URL_BLOG;
+    });
+  });
 }
 
 import { getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
@@ -189,7 +216,8 @@ async function editPost(postId) {
     textoInput.value = post.texto;
     postIdInput.value = postId;
     previewImage.src = post.imagem;
-    previewImage.style.display = "block";
+    previewImage.classList.remove('d-none');
+    previewImage.classList.add('d-block');
     cancelEditBtn.style.display = "inline-block";
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -216,7 +244,8 @@ function handleImageUpload(e) {
   const reader = new FileReader();
   reader.onload = (event) => {
     previewImage.src = event.target.result;
-    previewImage.style.display = 'block';
+    previewImage.classList.remove('d-none');
+    previewImage.classList.add('d-block');
   };
   reader.readAsDataURL(file);
 
@@ -224,10 +253,27 @@ function handleImageUpload(e) {
 }
 
 function handleUrlInput(e) {
-  if (e.target.value) {
+  const url = e.target.value.trim();
+
+  // Se tem URL, limpa o upload
+  if (url) {
     imageFileInput.value = '';
     currentImageFile = null;
-    previewImage.style.display = 'none';
+
+    const isValidImageUrl = /^https:\/\/.*\.(jpg|jpeg|png|gif)$/i.test(url);
+
+    if (isValidImageUrl) {
+      previewImage.src = url;
+      previewImage.classList.remove('d-none');
+      previewImage.classList.add('d-block');
+    } else {
+      previewImage.src = '';
+      previewImage.classList.add('d-none');
+    }
+  } else {
+    // Se a URL estiver vazia
+    previewImage.src = '';
+    previewImage.classList.add('d-none');
   }
 }
 
@@ -240,7 +286,8 @@ function resetForm() {
   postForm.reset();
   postIdInput.value = "";
   cancelEditBtn.style.display = "none";
-  previewImage.style.display = "none";
+  previewImage.src = '';
+  previewImage.classList.add('d-none');
   currentImageFile = null;
 }
 

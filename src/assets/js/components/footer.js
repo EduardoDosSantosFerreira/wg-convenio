@@ -16,25 +16,34 @@ function adicionarLoginAoDOM() {
                 </p>
             </div>
 
-            <!-- Links Rápidos -->
-            <div class="col-md-4">
-                <h5>Links Rápidos</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="pages/politica.html">Política de Privacidade</a></li>
-                </ul>
-            </div>
+            <!-- Espaço vazio para centralizar o contato na extrema direita -->
+            <div class="col-md-4 d-none d-md-block"></div>
 
-            <!-- Contato -->
-            <div class="col-md-4">
-                <h5>Contato</h5>
-                <ul class="list-unstyled">
-                    <li><i class="fas fa-envelope"></i> wgconvenio@uol.com.br</li>
-                    <li><i class="fas fa-phone"></i> +55 11 98105-0511</li>
-                    <li><i class="fas fa-map-marker-alt"></i> R. Uberlândia, 220 - Vila Virginia, Itaquaquecetuba/SP</li>
-                    <li><i class="fas fa-id-card"></i> CNPJ: 58.980.426/0001-39</li>
+            <!-- Contato alinhado à esquerda dos ícones -->
+            <div class="col-md-4 d-flex flex-column align-items-start">
+                <ul class="list-unstyled" style="font-size: 1.1rem;">
+                    <li class="mb-2 d-flex align-items-center gap-2">
+                        <h5 class="fw-bold mb-0" style="font-size: 1.6rem;">Contato</h5>
+                    </li>
+                    <li class="mb-2 d-flex align-items-center gap-2">
+                        <i class="fas fa-envelope me-2"></i>
+                        <span>wgconvenio@uol.com.br</span>
+                    </li>
+                    <li class="mb-2 d-flex align-items-center gap-2">
+                        <i class="fas fa-phone me-2"></i>
+                        <span>+55 11 98105-0511</span>
+                    </li>
+                    <li class="mb-2 d-flex align-items-center gap-2">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        <span>
+                            R. Uberlândia, 220 - Vila Virginia,<br>
+                            Itaquaquecetuba/SP
+                        </span>
+                    </li>
+                    <li class="mb-2 d-flex align-items-center gap-2">
+                        <i class="fas fa-id-card me-2"></i>
+                        <span>CNPJ: 58.980.426/0001-39</span>
+                    </li>
                 </ul>
             </div>
         </div>
