@@ -54,7 +54,7 @@ function adicionarLoginAoDOM() {
                 <a href="../../../../admin/securaty.html" aria-label="Login do administrador">
                     <i class="fas fa-user-circle text-light" style="font-size: 1.8rem;"></i>
                 </a>
-                                <a href="../../../../../wg-convenio/admin/securaty.html" aria-label="Login do administrador">
+                    <a href="../../../../../wg-convenio/admin/securaty.html" aria-label="Login do administrador">
                     <i class="fas fa-user-circle text-light" style="font-size: 1.8rem;"></i>
                 </a>
             </div>
