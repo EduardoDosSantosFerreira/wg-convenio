@@ -12,7 +12,7 @@ body {
     font-size: 1rem;
     background: var(--light);
     color: #000;
-    margin-top: 120px;
+    margin-top: 100px;
 }
 
 /* Integração do estilo inline do blog.html */

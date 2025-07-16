@@ -115,13 +115,397 @@
     </div>
   </nav>
 
-  <!-- Cabeçalho -->
-  <header class="bg-light py-4 border-bottom shadow-sm">
-    <div class="container text-center">
-      <h1 class="blog-title mb-2">Blog WG</h1>
-      <p class="blog-subtitle lead mb-0">Fique por dentro das nossas novidades</p>
+  <!-- Cabeçalho Ultra Premium Blog WG -->
+  <header class="position-relative overflow-hidden" style="min-height: 100vh;">
+    <!-- Fundo decorativo com animação sutil -->
+    <div class="position-absolute w-100 h-100 bg-light" style="z-index: -3;"></div>
+
+    <!-- Efeito de partículas luminosas animadas -->
+    <div class="position-absolute w-100 h-100 particles-container" style="z-index: -2;"></div>
+
+    <!-- Gradientes animados -->
+    <div class="position-absolute top-0 end-0 w-50 h-100 gradient-animation" style="z-index: -1;"></div>
+    <div class="position-absolute bottom-0 start-0 w-50 h-100 gradient-animation-2" style="z-index: -1;"></div>
+
+    <div class="container d-flex align-items-center py-6 position-relative" style="min-height: 100vh;">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 text-center">
+
+          <!-- Logo/Título com efeito especial -->
+          <div class="mb-4">
+            <h1 class="blog-title display-3 fw-bold mb-3">
+              <span class="text-dark" style="font-size: 2.5em;">BLOG</span>
+              <span class="wg-animated-gradient" style="font-size: 2.8em;">WG</span>
+            </h1>
+
+            <div class="divider-custom">
+              <div class="divider-custom-line bg-primary opacity-75"></div>
+              <div class="divider-custom-icon">
+                <i class="fas fa-gem text-info"></i>
+              </div>
+              <div class="divider-custom-line bg-primary opacity-75"></div>
+            </div>
+          </div>
+
+          <!-- Subtítulo com animação -->
+          <p class="blog-subtitle display-6 mb-4 fw-light text-dark">
+            Onde a <span class="excellence-text">excelência</span> se transforma em conteúdo
+          </p>
+
+          <!-- CTA e Estatísticas -->
+          <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+            <a href="#posts" class="btn btn-primary btn-lg px-4 rounded-pill shadow hover-effect">
+              <i class="fas fa-book-open me-2"></i>Explorar Artigos
+            </a>
+            <a href="#newsletter" class="btn btn-outline-dark btn-lg px-4 rounded-pill hover-effect">
+              <i class="fas fa-paper-plane me-2"></i>Assinar Newsletter
+            </a>
+          </div>
+
+          <!-- Elementos decorativos flutuantes -->
+          <div class="floating-elements">
+            <div class="floating-element element-1"></div>
+            <div class="floating-element element-2"></div>
+            <div class="floating-element element-3"></div>
+          </div>
+
+          <!-- Estatísticas com efeito de contagem -->
+          <div class="mt-5 pt-3">
+            <div class="d-flex justify-content-center gap-5">
+              <div class="text-center stat-item">
+                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-label">Leitores Diários</div>
+              </div>
+              <div class="text-center stat-item">
+                <div class="stat-number" data-target="1000">0</div>
+                <div class="stat-label">Artigos Premium</div>
+              </div>
+              <div class="text-center stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Atualizações</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
+
+  <!-- CSS Adicional -->
+  <style>
+    /* Efeitos base */
+    .hover-effect {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform: translateY(0);
+    }
+
+    .hover-effect:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(8, 60, 140, 0.4) !important;
+      /* azul mais escuro */
+    }
+
+    /* Divisor personalizado */
+    .divider-custom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .divider-custom-line {
+      width: 100%;
+      max-width: 10rem;
+      height: 0.4rem;
+      border-radius: 1rem;
+      background: linear-gradient(90deg, transparent, #083c8c, transparent);
+      /* azul mais escuro */
+    }
+
+    .divider-custom-icon {
+      padding: 0 1.5rem;
+      font-size: 2.5rem;
+      animation: pulse 2s infinite;
+    }
+
+    /* Animação do texto WG */
+    .wg-animated-gradient {
+      background: linear-gradient(135deg,
+          #083c8c 0%,
+          /* azul mais escuro */
+          #0060a8 25%,
+          /* azul intermediário mais escuro */
+          #0090cc 50%,
+          /* azul claro mais escuro */
+          #0060a8 75%,
+          /* azul intermediário mais escuro */
+          #083c8c 100%
+          /* azul mais escuro */
+        );
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-shadow: 0 2px 20px rgba(8, 60, 140, 0.6);
+      /* azul mais escuro */
+      animation: gradientShift 6s ease infinite;
+      position: relative;
+      display: inline-block;
+      padding: 0 10px;
+    }
+
+    .wg-animated-gradient::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 10%;
+      width: 80%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #0090cc, transparent);
+      /* azul claro mais escuro */
+      border-radius: 100%;
+      filter: blur(2px);
+      animation: linePulse 3s ease infinite;
+    }
+
+    /* Texto de excelência */
+    .excellence-text {
+      font-weight: 700;
+      background: linear-gradient(45deg, #ffd700, #ffcc00, #ffd700);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+      animation: shine 3s ease infinite;
+    }
+
+    /* Elementos flutuantes decorativos */
+    .floating-elements {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .floating-element {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(40px);
+      opacity: 0.3;
+    }
+
+    .element-1 {
+      width: 200px;
+      height: 200px;
+      background: #083c8c;
+      /* azul mais escuro */
+      top: 20%;
+      left: 10%;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .element-2 {
+      width: 300px;
+      height: 300px;
+      background: #0060a8;
+      /* azul intermediário mais escuro */
+      bottom: 20%;
+      right: 10%;
+      animation: float 10s ease-in-out infinite reverse;
+    }
+
+    .element-3 {
+      width: 150px;
+      height: 150px;
+      background: #0090cc;
+      /* azul claro mais escuro */
+      top: 50%;
+      left: 50%;
+      animation: float 12s ease-in-out infinite;
+    }
+
+    /* Estatísticas */
+    .stat-item {
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #343a40;
+      text-shadow: 0 2px 15px rgba(8, 60, 140, 0.7);
+      /* azul mais escuro */
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.8);
+      letter-spacing: 1px;
+    }
+
+    /* Animações */
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%
+      }
+
+      50% {
+        background-position: 100% 50%
+      }
+
+      100% {
+        background-position: 0% 50%
+      }
+    }
+
+    @keyframes linePulse {
+
+      0%,
+      100% {
+        opacity: 0.5;
+        transform: scaleX(0.8);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+      }
+    }
+
+    @keyframes shine {
+      0% {
+        background-position: 0% 50%
+      }
+
+      100% {
+        background-position: 200% 50%
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) translateX(0);
+      }
+
+      50% {
+        transform: translateY(-50px) translateX(20px);
+      }
+    }
+
+    /* Responsividade */
+    @media (max-width: 992px) {
+      .blog-title {
+        font-size: 3.5rem !important;
+      }
+
+      .blog-subtitle {
+        font-size: 1.8rem !important;
+      }
+
+      .stat-number {
+        font-size: 2rem !important;
+      }
+
+      .stat-label {
+        font-size: 1rem !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .blog-title {
+        font-size: 2.5rem !important;
+      }
+
+      .blog-subtitle {
+        font-size: 1.4rem !important;
+      }
+
+      .divider-custom-line {
+        max-width: 5rem;
+      }
+
+      .divider-custom-icon {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+
+  <!-- JavaScript para efeitos interativos -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Animação de contagem para estatísticas
+      const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+      const duration = 2000; // 2 segundos
+
+      statNumbers.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target'));
+        const increment = target / (duration / 16);
+        let current = 0;
+
+        const updateNumber = () => {
+          current += increment;
+          if (current < target) {
+            stat.textContent = Math.floor(current);
+            requestAnimationFrame(updateNumber);
+          } else {
+            stat.textContent = target;
+          }
+        };
+
+        // Inicia a animação quando o elemento estiver visível
+        const observer = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting) {
+            updateNumber();
+            observer.unobserve(stat);
+          }
+        });
+
+        observer.observe(stat);
+      });
+
+      // Cria partículas dinâmicas
+      const particlesContainer = document.querySelector('.particles-container');
+      const particleCount = 50;
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.style.position = 'absolute';
+        particle.style.width = `${Math.random() * 5 + 1}px`;
+        particle.style.height = particle.style.width;
+        particle.style.backgroundColor = `rgba(0, 180, 255, ${Math.random() * 0.5 + 0.1})`;
+        particle.style.borderRadius = '50%';
+        particle.style.top = `${Math.random() * 100}%`;
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.animation = `float ${Math.random() * 10 + 5}s linear infinite`;
+        particle.style.animationDelay = `${Math.random() * 5}s`;
+        particlesContainer.appendChild(particle);
+      }
+    });
+  </script>
 
   <!-- Conteúdo do Feed -->
   <main class="blog-container">
