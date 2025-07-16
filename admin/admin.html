@@ -29,34 +29,40 @@
 </head>
 
 <body class="container py-4">
+
   <!-- Navegação -->
-  <nav class="navbar bg-body-tertiary fixed-top" aria-label="Navegação principal">
-    <div class="container-fluid">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <img src="../src/assets/img/logos/logo.png" width="100" height="auto" alt="WG Convênios" loading="lazy">
+  <nav class="navbar bg-body-tertiary fixed-top shadow-sm" aria-label="Barra de navegação principal">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <!-- Logo -->
+      <a href="#" class="navbar-brand d-flex align-items-center gap-2">
+        <img src="../src/assets/img/logos/logo.png" width="100" alt="WG Convênios" loading="lazy">
+        <span class="visually-hidden">Início</span>
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-        aria-controls="offcanvasNavbar" aria-label="Alternar navegação" aria-expanded="false">
+      <!-- Botão do menu mobile -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Abrir menu lateral">
         <span class="navbar-toggler-icon"></span>
       </button>
 
+      <!-- Offcanvas -->
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <img src="../src/assets/img/logos/logo.png" width="100" height="auto" alt="WG Convênios" loading="lazy">
-          <h2 class="offcanvas-title h5" id="offcanvasNavbarLabel"></h2>
+        <div class="offcanvas-header border-bottom">
+          <img src="../src/assets/img/logos/logo.png" width="100" alt="WG Convênios" loading="lazy">
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar menu"></button>
         </div>
 
         <div class="offcanvas-body d-flex flex-column">
           <ul class="navbar-nav flex-grow-1">
+
             <!-- Item Home -->
             <li class="nav-item mb-2">
-              <a class="nav-link active d-flex align-items-center py-3 px-4 rounded-3" aria-current="page"
-                href="../index.html">
+              <a class="nav-link active d-flex align-items-center py-3 px-4 rounded-3" href="../index.html"
+                aria-current="page">
                 <i class="bi bi-house-door-fill me-3 fs-5"></i>
                 <span class="fw-medium">Painel Administrador</span>
-                <span class="ms-auto badge bg-primary bg-opacity-10 text-primary">Atual</span>
+                <span class="ms-auto badge rounded-pill bg-primary bg-opacity-10 text-primary small">Atual</span>
               </a>
             </li>
 
@@ -71,230 +77,1018 @@
             <!-- Dropdown Outras Páginas -->
             <li class="nav-item dropdown mb-2">
               <a class="nav-link dropdown-toggle d-flex align-items-center py-3 px-4 rounded-3" href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-collection me-3 fs-5"></i>
                 <span class="fw-medium">Outras Páginas</span>
                 <i class="bi bi-chevron-down ms-auto small"></i>
               </a>
+              <ul class="dropdown-menu p-2 shadow-sm border-0 rounded-3">
+                <li>
+                  <h6 class="dropdown-header small text-muted">Navegação</h6>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
 
-              <ul class="dropdown-menu p-2 border-0 shadow-sm">
-                <li>
-                  <h6 class="dropdown-header text-uppercase small fw-bold text-muted mb-2">Navegação</h6>
+                <li><a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
+                    href="../src/pages/beneficios.html"><i class="bi bi-heart-pulse me-2 text-danger"></i>
+                    Benefícios</a></li>
+                <li><a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
+                    href="../src/pages/clinicas.html"><i class="bi bi-building me-2 text-primary"></i> Clínicas</a></li>
+                <li><a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
+                    href="../src/pages/contato.html"><i class="bi bi-envelope me-2 text-info"></i> Contato</a></li>
+                <li><a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
+                    href="../src/pages/formulario.html"><i class="bi bi-file-text me-2 text-warning"></i> Formulário</a>
                 </li>
-                <li>
-                  <hr class="dropdown-divider my-1">
+                <li><a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
+                    href="../src/pages/planos.html"><i class="bi bi-wallet2 me-2 text-success"></i> Planos</a></li>
+                <li><a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
+                    href="../src/pages/portal-familia.html"><i class="bi bi-people me-2 text-secondary"></i> Portal
+                    Família</a></li>
+                <li><a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
+                    href="../src/pages/portal.html"><i class="bi bi-person-circle me-2 text-primary"></i> Portal</a>
                 </li>
-
-                <li>
-                  <a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
-                    href="../src/pages/beneficios.html">
-                    <i class="bi bi-heart-pulse me-2 text-danger"></i>
-                    Benefícios
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
-                    href="../src/pages/clinicas.html">
-                    <i class="bi bi-building me-2 text-primary"></i>
-                    Clínicas
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
-                    href="../src/pages/contato.html">
-                    <i class="bi bi-envelope me-2 text-info"></i>
-                    Contato
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
-                    href="../src/pages/formulario.html">
-                    <i class="bi bi-file-text me-2 text-warning"></i>
-                    Formulário
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
-                    href="../src/pages/planos.html">
-                    <i class="bi bi-wallet2 me-2 text-success"></i>
-                    Planos
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
-                    href="../src/pages/portal-familia.html">
-                    <i class="bi bi-people me-2 text-secondary"></i>
-                    Portal Família
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
-                    href="../src/pages/portal.html">
-                    <i class="bi bi-person-circle me-2 text-primary"></i>
-                    Portal
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
-                    href="../src/pages/simulação.html">
-                    <i class="bi bi-calculator me-2 text-info"></i>
-                    Simulação
-                  </a>
+                <li><a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
+                    href="../src/pages/simulação.html"><i class="bi bi-calculator me-2 text-info"></i> Simulação</a>
                 </li>
               </ul>
             </li>
           </ul>
 
-          <!-- Item Sair -->
-          <div class="mt-auto p-3 border-top">
-            <a class="btn btn-outline-danger d-flex align-items-center w-100 py-2 px-4 rounded-3"
+          <!-- Botão Sair -->
+          <div class="mt-auto pt-3 border-top">
+            <a class="btn btn-outline-danger d-flex align-items-center justify-content-center w-100 py-2 px-4 rounded-3"
               href="../admin/securaty.html">
               <i class="bi bi-box-arrow-right me-2"></i>
               <span class="fw-medium">Sair</span>
             </a>
           </div>
         </div>
-
       </div>
     </div>
   </nav>
 
-  <!-- Cabeçalho -->
-  <header class="mb-5 mt-5 pt-4">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-      <h1 class="display-6 text-primary">
-        <i class="bi bi-newspaper me-2" aria-hidden="true"></i>Painel de Postagens
-      </h1>
-      <button class="btn btn-danger btn-logout" id="logoutBtn">
-        <i class="bi bi-box-arrow-right me-1" aria-hidden="true"></i> Sair
-      </button>
+  <!-- Cabeçalho Administrativo Premium -->
+  <header class="admin-header" role="banner">
+    <div class="container-fluid px-4">
+      <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
+
+        <!-- Título com gradiente e sombra -->
+        <div class="d-flex align-items-center mb-2 mb-md-0">
+          <div class="header-icon-container me-3">
+            <i class="bi bi-newspaper"></i>
+          </div>
+          <div>
+            <h1 class="display-5 fw-bold mb-0 text-gradient">
+              Painel Editorial Administrativo
+            </h1>
+            <p class="text-muted small mb-0">Gerenciamento de Conteúdo</p>
+          </div>
+        </div>
+
+        <!-- Botão de ação com efeito hover sofisticado -->
+        <div class="d-flex align-items-center">
+          <button class="btn-logout" id="logoutBtn" aria-label="Sair do painel">
+            <span class="btn-logout-text">Encerrar Sessão</span>
+            <span class="btn-logout-icon">
+              <i class="bi bi-box-arrow-right"></i>
+            </span>
+          </button>
+        </div>
+
+      </div>
     </div>
   </header>
+
+  <style>
+    /* Estilos personalizados para o header */
+    .admin-header {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      margin-bottom: 2.5rem;
+      padding: 1rem 0;
+    }
+
+    .header-icon-container {
+      background: linear-gradient(to right, #4e73df, #224abe);
+      color: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(78, 115, 223, 0.3);
+    }
+
+    .header-icon-container i {
+      font-size: 1.5rem;
+    }
+
+    .text-gradient {
+      background: linear-gradient(to right, #2c3e50, #4e73df);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .btn-logout {
+      display: flex;
+      align-items: center;
+      padding: 0.65rem 1.25rem;
+      font-weight: 600;
+      color: #e74a3b;
+      background-color: transparent;
+      border: 1px solid rgba(231, 74, 59, 0.3);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-logout:hover {
+      color: white;
+      background-color: #e74a3b;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(231, 74, 59, 0.2);
+    }
+
+    .btn-logout-text {
+      margin-right: 0.75rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-logout:hover .btn-logout-text {
+      transform: translateX(-2px);
+    }
+
+    .btn-logout-icon {
+      transition: all 0.3s ease;
+    }
+
+    .btn-logout:hover .btn-logout-icon {
+      transform: translateX(3px);
+    }
+  </style>
 
   <!-- Conteúdo Principal -->
 
   <!-- Seção do Formulário de Postagem -->
   <h2 id="formSectionHeading" class="visually-hidden">Formulário de Postagem</h2>
 
-  <form id="postForm" class="mb-4" novalidate>
+  <form id="postForm" class="admin-form" novalidate>
     <input type="hidden" id="postId" aria-hidden="true">
 
-    <div class="row g-3">
-      <!-- Card de Upload de Imagem -->
-      <div class="col-md-6 mb-3">
-        <div class="card h-100">
+    <div class="row g-4">
+      <!-- Card de Upload de Imagem Estilizado -->
+      <div class="col-md-6">
+        <div class="form-card">
+          <div class="card-header">
+            <div class="card-icon-container bg-gradient-image">
+              <i class="bi bi-image"></i>
+            </div>
+            <h3 class="card-title">Mídia da Postagem</h3>
+            <p class="card-subtitle">Adicione imagens impactantes</p>
+          </div>
+
           <div class="card-body">
-            <header class="mb-4">
-              <h3 class="h5 card-title text-secondary">
-                <i class="bi bi-image me-2" aria-hidden="true"></i>
-                <span>Upload de Imagem</span>
-              </h3>
-            </header>
-
-            <div class="mb-3">
-              <label for="imageFile" class="form-label">Selecione uma imagem</label>
-              <input type="file" id="imageFile" class="form-control" accept="image/jpeg, image/png, image/gif"
-                aria-describedby="imageHelp" aria-required="false" />
-              <div id="imageHelp" class="form-text">Formatos suportados: JPG, PNG, GIF (Máx. 5MB)</div>
+            <div class="form-group">
+              <label for="imageFile" class="form-label">
+                <span class="label-text">Upload de Imagem</span>
+                <span class="label-required" aria-hidden="true">*</span>
+              </label>
+              <div class="file-input-container">
+                <input type="file" id="imageFile" class="form-control" accept="image/jpeg, image/png, image/gif"
+                  aria-describedby="imageHelp" aria-required="true" />
+                <div class="file-input-label">
+                  <i class="bi bi-cloud-arrow-up"></i>
+                  <span>Arraste ou clique para enviar</span>
+                </div>
+              </div>
+              <div id="imageHelp" class="form-hint">Formatos suportados: JPG, PNG, GIF (Máx. 5MB)</div>
             </div>
 
-            <div class="mb-4">
-              <label for="imagem" class="form-label">URL da Imagem (alternativo)</label>
-              <input type="url" id="imagem" class="form-control" placeholder="https://exemplo.com/imagem.jpg"
-                pattern="https://.*" aria-describedby="urlHelp" />
-              <div id="urlHelp" class="form-text">Forneça uma URL válida começando com https://</div>
+            <div class="divider-with-text">
+              <span>OU</span>
             </div>
 
-            <div class="text-center mt-3">
-              <img id="previewImage" src="" alt="Preview da imagem selecionada" class="img-thumbnail d-none"
-                style="max-height: 200px;" role="img" />
+            <div class="form-group">
+              <label for="imagem" class="form-label">URL Externa da Imagem</label>
+              <div class="input-with-icon">
+                <i class="bi bi-link-45deg"></i>
+                <input type="url" id="imagem" class="form-control" placeholder="https://exemplo.com/imagem.jpg"
+                  pattern="https://.*" aria-describedby="urlHelp" />
+              </div>
+              <div id="urlHelp" class="form-hint">Forneça uma URL válida começando com https://</div>
             </div>
 
+            <div class="image-preview-container">
+              <img id="previewImage" src="" alt="Preview da imagem selecionada" class="preview-image" role="img" />
+              <div class="preview-placeholder">
+                <i class="bi bi-image"></i>
+                <span>Pré-visualização aparecerá aqui</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Card de Detalhes da Postagem -->
+      <!-- Card de Detalhes da Postagem Estilizado -->
       <div class="col-md-6">
-        <div class="card h-100">
-          <div class="card-body">
-            <header class="mb-4">
-              <h3 class="h5 card-title text-secondary">
-                <i class="bi bi-card-text me-2" aria-hidden="true"></i>
-                <span>Detalhes da Postagem</span>
-              </h3>
-            </header>
+        <div class="form-card">
+          <div class="card-header">
+            <div class="card-icon-container bg-gradient-text">
+              <i class="bi bi-card-text"></i>
+            </div>
+            <h3 class="card-title">Conteúdo da Postagem</h3>
+            <p class="card-subtitle">Informações principais</p>
+          </div>
 
-            <div class="mb-3">
+          <div class="card-body">
+            <div class="form-group">
               <label for="titulo" class="form-label">
-                Título <span class="text-danger" aria-hidden="true">*</span>
-                <span class="visually-hidden">(obrigatório)</span>
+                <span class="label-text">Título da Postagem</span>
+                <span class="label-required" aria-hidden="true">*</span>
               </label>
-              <input type="text" id="titulo" class="form-control" placeholder="Digite o título da postagem" required
-                maxlength="100" aria-describedby="titleHelp" />
-              <div id="titleHelp" class="invalid-feedback">Por favor, insira um título para a postagem.</div>
+              <div class="input-with-icon">
+                <i class="bi bi-type-h1"></i>
+                <input type="text" id="titulo" class="form-control" placeholder="Digite um título impactante" required
+                  maxlength="100" aria-describedby="titleHelp" />
+              </div>
+              <div id="titleHelp" class="invalid-feedback">Título é obrigatório (máx. 100 caracteres)</div>
             </div>
 
-            <div class="mb-4">
+            <div class="form-group">
               <label for="texto" class="form-label">
-                Legenda <span class="text-danger" aria-hidden="true">*</span>
-                <span class="visually-hidden">(obrigatório)</span>
+                <span class="label-text">Conteúdo Detalhado</span>
+                <span class="label-required" aria-hidden="true">*</span>
               </label>
-              <textarea id="texto" class="form-control" rows="5" required maxlength="5000"
-                placeholder="Digite a legenda da postagem" aria-describedby="captionHelp"></textarea>
-              <div id="captionHelp" class="invalid-feedback">Por favor, insira uma legenda para a postagem.</div>
-              <div class="form-text text-end">
-                <span id="charCount" aria-live="polite">0</span>/5000 caracteres
+              <div class="textarea-container">
+                <textarea id="texto" class="form-control" rows="7" required maxlength="5000"
+                  placeholder="Escreva seu conteúdo aqui..." aria-describedby="captionHelp"></textarea>
+                <div class="textarea-footer">
+                  <div id="captionHelp" class="invalid-feedback">Conteúdo é obrigatório</div>
+                  <div class="char-counter">
+                    <span id="charCount" aria-live="polite">0</span>/5000 caracteres
+                  </div>
+                </div>
               </div>
             </div>
 
-            <footer class="d-flex gap-2 mt-4">
-              <button type="submit" class="btn btn-success flex-grow-1" id="submitBtn" aria-label="Salvar postagem">
-                <span class="spinner-border spinner-border-sm loading d-none" role="status" aria-hidden="true"></span>
-                <span class="btn-text">Salvar Postagem</span>
-              </button>
-              <button type="button" class="btn btn-outline-secondary" id="cancelEdit" style="display:none;"
+            <div class="form-actions">
+              <button type="button" class="btn-cancel" id="cancelEdit" style="display:none;"
                 aria-label="Cancelar edição">
-                Cancelar
+                <span>Descartar Alterações</span>
               </button>
-            </footer>
+              <button type="submit" class="btn-submit" id="submitBtn" aria-label="Salvar postagem">
+                <span class="spinner-border spinner-border-sm loading d-none" role="status" aria-hidden="true"></span>
+                <span class="btn-text">Publicar Postagem</span>
+                <i class="bi bi-send-check"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </form>
 
-  <!-- Seção de Postagens -->
-  <section class="posts-section" aria-labelledby="postsSectionHeading">
-    <div class="section-header">
-      <h2 id="postsSectionHeading" class="section-title">
-        <i class="bi bi-list-check me-2" aria-hidden="true"></i>Postagens Cadastradas
-      </h2>
+  <style>
+    /* Estilos personalizados para o formulário */
+    .admin-form {
+      --primary-color: #4e73df;
+      --success-color: #1cc88a;
+      --danger-color: #e74a3b;
+      --warning-color: #f6c23e;
+      --dark-color: #5a5c69;
+      --light-color: #f8f9fc;
+    }
+
+    .form-card {
+      background: white;
+      border-radius: 0.75rem;
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+
+    .form-card:hover {
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .card-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    .card-icon-container {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .bg-gradient-image {
+      background: linear-gradient(to right, #f6d365, #fda085);
+    }
+
+    .bg-gradient-text {
+      background: linear-gradient(to right, #4e73df, #224abe);
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--dark-color);
+      margin-bottom: 0.25rem;
+    }
+
+    .card-subtitle {
+      font-size: 0.875rem;
+      color: #858796;
+      margin-bottom: 0;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--dark-color);
+    }
+
+    .label-text {
+      margin-right: 0.25rem;
+    }
+
+    .label-required {
+      color: var(--danger-color);
+      font-size: 1.1em;
+    }
+
+    .form-control {
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid #d1d3e2;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 0.25rem rgba(78, 115, 223, 0.25);
+    }
+
+    .input-with-icon {
+      position: relative;
+    }
+
+    .input-with-icon i {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #b7b9cc;
+    }
+
+    .input-with-icon .form-control {
+      padding-left: 2.5rem;
+    }
+
+    .file-input-container {
+      position: relative;
+      border: 2px dashed #d1d3e2;
+      border-radius: 0.5rem;
+      padding: 2rem 1rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      background-color: var(--light-color);
+    }
+
+    .file-input-container:hover {
+      border-color: var(--primary-color);
+      background-color: rgba(78, 115, 223, 0.05);
+    }
+
+    .file-input-container input[type="file"] {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .file-input-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #858796;
+    }
+
+    .file-input-label i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    .divider-with-text {
+      display: flex;
+      align-items: center;
+      margin: 1.5rem 0;
+      color: #858796;
+      font-size: 0.875rem;
+    }
+
+    .divider-with-text::before,
+    .divider-with-text::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #d1d3e2;
+    }
+
+    .divider-with-text::before {
+      margin-right: 1rem;
+    }
+
+    .divider-with-text::after {
+      margin-left: 1rem;
+    }
+
+    .image-preview-container {
+      margin-top: auto;
+      border-radius: 0.5rem;
+      background-color: var(--light-color);
+      border: 1px solid #d1d3e2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .preview-image {
+      max-width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+      display: none;
+    }
+
+    .preview-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #b7b9cc;
+      padding: 2rem;
+    }
+
+    .preview-placeholder i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .textarea-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .textarea-container textarea {
+      flex-grow: 1;
+      min-height: 150px;
+      resize: none;
+    }
+
+    .textarea-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+    }
+
+    .char-counter {
+      font-size: 0.875rem;
+      color: #858796;
+    }
+
+    .form-hint {
+      font-size: 0.8125rem;
+      color: #858796;
+      margin-top: 0.25rem;
+    }
+
+    .invalid-feedback {
+      color: var(--danger-color);
+      font-size: 0.8125rem;
+      margin-top: 0.25rem;
+      display: none;
+    }
+
+    .form-control:invalid {
+      border-color: var(--danger-color);
+    }
+
+    .form-control:invalid~.invalid-feedback {
+      display: block;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      margin-top: auto;
+      padding-top: 1.5rem;
+    }
+
+    .btn-submit {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(to right, var(--primary-color), #224abe);
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(78, 115, 223, 0.3);
+    }
+
+    .btn-cancel {
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      color: var(--dark-color);
+      border: 1px solid #d1d3e2;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-cancel:hover {
+      background-color: #f8f9fc;
+      border-color: #b7b9cc;
+    }
+  </style>
+
+  <!-- Seção de Postagens Premium -->
+  <section class="posts-dashboard" aria-labelledby="postsSectionHeading">
+    <div class="dashboard-header">
+      <div class="header-content">
+        <div class="title-container">
+          <div class="icon-wrapper">
+            <i class="bi bi-list-check"></i>
+          </div>
+          <div>
+            <h2 id="postsSectionHeading" class="section-title">Gerenciamento de Postagens</h2>
+            <p class="section-subtitle">Visualize e gerencie todas as publicações</p>
+          </div>
+        </div>
+        <div class="stats-container">
+          <div class="stat-card">
+            <i class="bi bi-collection"></i>
+            <div>
+              <span class="stat-value" id="totalPosts">0</span>
+              <span class="stat-label">Postagens</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div id="postList" class="post-list-container">
-      <!-- Estado de Carregamento -->
-      <div class="loading-state" id="loadingPosts">
-        <div class="spinner-container">
-          <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Carregando...</span>
+    <div class="dashboard-content">
+      <div class="posts-controls">
+        <div class="search-filter">
+          <div class="search-box">
+            <i class="bi bi-search"></i>
+            <input type="text" id="postsSearch" placeholder="Buscar postagens..." aria-label="Buscar postagens">
           </div>
-          <p class="loading-text">Carregando postagens...</p>
+          <div class="filter-dropdown">
+            <select id="postsFilter" class="form-select" aria-label="Filtrar postagens">
+              <option value="all">Todas</option>
+              <option value="recent">Recentes</option>
+              <option value="oldest">Mais antigas</option>
+            </select>
+          </div>
         </div>
       </div>
 
-      <!-- Container das Postagens -->
-      <div class="posts-grid" id="postsContainer">
-        <!-- As postagens serão inseridas aqui via JavaScript -->
-      </div>
+      <div id="postList" class="posts-list-container">
+        <!-- Estado de Carregamento -->
+        <div class="loading-state" id="loadingPosts">
+          <div class="loading-content">
+            <div class="spinner-grow text-primary" role="status">
+              <span class="visually-hidden">Carregando...</span>
+            </div>
+            <div class="loading-text">
+              <p>Carregando suas postagens</p>
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <!-- Estado Vazio -->
-      <div class="empty-state d-none" id="emptyPosts">
-        <i class="bi bi-info-circle empty-icon" aria-hidden="true"></i>
-        <span class="empty-text">Nenhuma postagem cadastrada ainda</span>
+        <!-- Container das Postagens -->
+        <div class="posts-grid" id="postsContainer">
+          <!-- As postagens serão inseridas aqui via JavaScript -->
+        </div>
+
+        <!-- Estado Vazio -->
+        <div class="empty-state d-none" id="emptyPosts">
+          <div class="empty-content">
+            <i class="bi bi-newspaper empty-icon"></i>
+            <h3 class="empty-title">Nenhuma postagem encontrada</h3>
+            <p class="empty-text">Quando você criar postagens, elas aparecerão aqui</p>
+            <button class="btn btn-primary" id="createFirstPost">
+              <i class="bi bi-plus-lg"></i> Criar primeira postagem
+            </button>
+          </div>
+        </div>
+
+        <!-- Paginação -->
+        <div class="posts-pagination d-none" id="postsPagination">
+          <nav aria-label="Navegação de postagens">
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                  <i class="bi bi-chevron-left"></i>
+                </a>
+              </li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">
+                  <i class="bi bi-chevron-right"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </div>
   </section>
+
+  <style>
+    /* Estilos para a seção de postagens */
+    .posts-dashboard {
+      background-color: #f8fafc;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .dashboard-header {
+      background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+      color: white;
+      padding: 1.5rem;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .title-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .icon-wrapper {
+      background-color: rgba(255, 255, 255, 0.2);
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: white;
+    }
+
+    .section-subtitle {
+      font-size: 0.875rem;
+      opacity: 0.9;
+      margin-bottom: 0;
+    }
+
+    .stats-container {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      min-width: 140px;
+    }
+
+    .stat-card i {
+      font-size: 1.25rem;
+      opacity: 0.8;
+    }
+
+    .stat-value {
+      font-size: 1.25rem;
+      font-weight: 600;
+      display: block;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      opacity: 0.8;
+      display: block;
+    }
+
+    .dashboard-content {
+      padding: 1.5rem;
+    }
+
+    .posts-controls {
+      margin-bottom: 1.5rem;
+    }
+
+    .search-filter {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 250px;
+      position: relative;
+    }
+
+    .search-box i {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #adb5bd;
+    }
+
+    .search-box input {
+      padding-left: 2.5rem;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      height: 42px;
+      width: 100%;
+    }
+
+    .filter-dropdown {
+      min-width: 180px;
+    }
+
+    .filter-dropdown select {
+      border-radius: 8px;
+      height: 42px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .posts-list-container {
+      background-color: white;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      min-height: 400px;
+      position: relative;
+    }
+
+    .loading-state {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      z-index: 10;
+    }
+
+    .loading-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .spinner-grow {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .loading-text p {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .progress {
+      height: 6px;
+      border-radius: 3px;
+      width: 100%;
+    }
+
+    .empty-state {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      z-index: 5;
+    }
+
+    .empty-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .empty-icon {
+      font-size: 3rem;
+      color: #adb5bd;
+    }
+
+    .empty-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: #2d3748;
+    }
+
+    .empty-text {
+      color: #718096;
+      margin-bottom: 1rem;
+    }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 1.5rem;
+    }
+
+    .post-card {
+      background-color: white;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    .post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .post-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .post-body {
+      padding: 1.25rem;
+    }
+
+    .post-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #2d3748;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .post-excerpt {
+      color: #4a5568;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .post-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: #718096;
+      margin-bottom: 1rem;
+    }
+
+    .post-actions {
+      display: flex;
+      gap: 0.5rem;
+      border-top: 1px solid #edf2f7;
+      padding-top: 1rem;
+    }
+
+    .post-actions .btn {
+      flex: 1;
+      font-size: 0.8125rem;
+      padding: 0.375rem 0.75rem;
+    }
+
+    .posts-pagination {
+      padding: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .pagination {
+      gap: 0.5rem;
+    }
+
+    .page-item .page-link {
+      border-radius: 6px;
+      min-width: 36px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+      color: #4a5568;
+    }
+
+    .page-item.active .page-link {
+      background-color: #4e73df;
+      border-color: #4e73df;
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .stats-container {
+        width: 100%;
+      }
+
+      .stat-card {
+        flex: 1;
+      }
+
+      .posts-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 
   <!-- Toast de Notificação -->
   <div class="toast-container position-fixed bottom-0 end-0 p-3">
