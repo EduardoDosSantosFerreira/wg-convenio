@@ -248,7 +248,6 @@
       color: transparent;
       font-weight: 900;
       letter-spacing: 3px;
-      text-shadow: 0 2px 20px rgba(8, 60, 140, 0.6);
       /* azul mais escuro */
       animation: gradientShift 6s ease infinite;
       position: relative;
@@ -305,7 +304,7 @@
       background: #083c8c;
       /* azul mais escuro */
       top: 20%;
-      left: 10%;
+      left: 100%;
       animation: float 8s ease-in-out infinite;
     }
 
@@ -329,6 +328,16 @@
       animation: float 12s ease-in-out infinite;
     }
 
+    /* Esconde os elementos flutuantes em telas pequenas (responsivo) */
+    @media (max-width: 768px) {
+
+      .element-1,
+      .element-2,
+      .element-3 {
+        display: none !important;
+      }
+    }
+
     /* Estatísticas */
     .stat-item {
       position: relative;
@@ -339,7 +348,6 @@
       font-size: 3rem;
       font-weight: 800;
       color: #343a40;
-      text-shadow: 0 2px 15px rgba(8, 60, 140, 0.7);
       /* azul mais escuro */
       margin-bottom: 0.5rem;
     }
