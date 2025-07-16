@@ -15,7 +15,6 @@ body {
     margin-top: 100px;
 }
 
-/* Integração do estilo inline do blog.html */
 .post {
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -27,13 +26,10 @@ body {
 .post img {
     width: 100%;
     height: 300px;
-    /* Altura padronizada */
     object-fit: cover;
-    /* Mantém proporção cortando excesso */
     border-radius: 8px;
     margin-bottom: 1rem;
     display: block;
-    /* Evita espaços indesejados abaixo da imagem */
 }
 
 .post-date {

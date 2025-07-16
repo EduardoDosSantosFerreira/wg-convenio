@@ -44,46 +44,117 @@
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
           <img src="../src/assets/img/logos/logo.png" width="100" height="auto" alt="WG Convênios" loading="lazy">
-          <h2 class="offcanvas-title h5" id="offcanvasNavbarLabel">WG Convênios</h2>
+          <h2 class="offcanvas-title h5" id="offcanvasNavbarLabel"></h2>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar menu"></button>
         </div>
 
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../index.html">
-                <i class="bi bi-house-door me-1"></i>Home
+        <div class="offcanvas-body d-flex flex-column">
+          <ul class="navbar-nav flex-grow-1">
+            <!-- Item Home -->
+            <li class="nav-item mb-2">
+              <a class="nav-link active d-flex align-items-center py-3 px-4 rounded-3" aria-current="page"
+                href="../index.html">
+                <i class="bi bi-house-door-fill me-3 fs-5"></i>
+                <span class="fw-medium">Painel Administrador</span>
+                <span class="ms-auto badge bg-primary bg-opacity-10 text-primary">Atual</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./blog.html">
-                <i class="bi bi-newspaper me-1"></i>Blog
+
+            <!-- Item Blog -->
+            <li class="nav-item mb-2">
+              <a class="nav-link d-flex align-items-center py-3 px-4 rounded-3" href="./blog.html">
+                <i class="bi bi-newspaper me-3 fs-5"></i>
+                <span class="fw-medium">Blog</span>
               </a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                aria-haspopup="true">
-                <i class="bi bi-collection me-1"></i>Outras Páginas
+
+            <!-- Dropdown Outras Páginas -->
+            <li class="nav-item dropdown mb-2">
+              <a class="nav-link dropdown-toggle d-flex align-items-center py-3 px-4 rounded-3" href="#" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                <i class="bi bi-collection me-3 fs-5"></i>
+                <span class="fw-medium">Outras Páginas</span>
+                <i class="bi bi-chevron-down ms-auto small"></i>
               </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="../src/pages/beneficios.html">Benefícios</a></li>
-                <li><a class="dropdown-item" href="../src/pages/clinicas.html">Clínicas</a></li>
-                <li><a class="dropdown-item" href="../src/pages/contato.html">Contato</a></li>
-                <li><a class="dropdown-item" href="../src/pages/formulario.html">Formulário</a></li>
-                <li><a class="dropdown-item" href="../src/pages/planos.html">Planos</a></li>
-                <li><a class="dropdown-item" href="../src/pages/portal-familia.html">Portal Família</a></li>
-                <li><a class="dropdown-item" href="../src/pages/portal.html">Portal</a></li>
-                <li><a class="dropdown-item" href="../src/pages/simulação.html">Simulação</a></li>
+
+              <ul class="dropdown-menu p-2 border-0 shadow-sm">
                 <li>
-                  <hr class="dropdown-divider">
+                  <h6 class="dropdown-header text-uppercase small fw-bold text-muted mb-2">Navegação</h6>
                 </li>
-                <li><a class="dropdown-item text-danger" href="../admin/securaty.html">
-                    <i class="bi bi-box-arrow-right me-1"></i>Sair
-                  </a></li>
+                <li>
+                  <hr class="dropdown-divider my-1">
+                </li>
+
+                <li>
+                  <a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
+                    href="../src/pages/beneficios.html">
+                    <i class="bi bi-heart-pulse me-2 text-danger"></i>
+                    Benefícios
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
+                    href="../src/pages/clinicas.html">
+                    <i class="bi bi-building me-2 text-primary"></i>
+                    Clínicas
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
+                    href="../src/pages/contato.html">
+                    <i class="bi bi-envelope me-2 text-info"></i>
+                    Contato
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
+                    href="../src/pages/formulario.html">
+                    <i class="bi bi-file-text me-2 text-warning"></i>
+                    Formulário
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
+                    href="../src/pages/planos.html">
+                    <i class="bi bi-wallet2 me-2 text-success"></i>
+                    Planos
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
+                    href="../src/pages/portal-familia.html">
+                    <i class="bi bi-people me-2 text-secondary"></i>
+                    Portal Família
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
+                    href="../src/pages/portal.html">
+                    <i class="bi bi-person-circle me-2 text-primary"></i>
+                    Portal
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item d-flex align-items-center py-2 px-3 rounded-2"
+                    href="../src/pages/simulação.html">
+                    <i class="bi bi-calculator me-2 text-info"></i>
+                    Simulação
+                  </a>
+                </li>
               </ul>
             </li>
           </ul>
+
+          <!-- Item Sair -->
+          <div class="mt-auto p-3 border-top">
+            <a class="btn btn-outline-danger d-flex align-items-center w-100 py-2 px-4 rounded-3"
+              href="../admin/securaty.html">
+              <i class="bi bi-box-arrow-right me-2"></i>
+              <span class="fw-medium">Sair</span>
+            </a>
+          </div>
         </div>
+
       </div>
     </div>
   </nav>

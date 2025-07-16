@@ -155,10 +155,10 @@
           <!-- CTA e Estatísticas -->
           <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
             <a href="#posts" class="btn btn-primary btn-lg px-4 rounded-pill shadow hover-effect">
-              <i class="fas fa-book-open me-2"></i>Explorar Artigos
+              <i class="fas fa-book-open me-2"></i>Explorar Posts
             </a>
             <a href="#newsletter" class="btn btn-outline-dark btn-lg px-4 rounded-pill hover-effect">
-              <i class="fas fa-paper-plane me-2"></i>Assinar Newsletter
+              <i class="fas fa-paper-plane me-2"></i>Veja as Noticias
             </a>
           </div>
 
@@ -173,11 +173,11 @@
           <div class="mt-5 pt-3">
             <div class="d-flex justify-content-center gap-5">
               <div class="text-center stat-item">
-                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-number stat-number-plus" data-target="500">0</div>
                 <div class="stat-label">Leitores Diários</div>
               </div>
               <div class="text-center stat-item">
-                <div class="stat-number" data-target="1000">0</div>
+                <div class="stat-number stat-number-plus" data-target="1000">0</div>
                 <div class="stat-label">Artigos Premium</div>
               </div>
               <div class="text-center stat-item">
@@ -186,6 +186,7 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -350,6 +351,14 @@
       color: #343a40;
       /* azul mais escuro */
       margin-bottom: 0.5rem;
+    }
+
+    .stat-number-plus::after {
+      content: "+";
+      margin-left: 4px;
+      font-weight: bold;
+      color: #083c8c;
+      /* azul mais escuro */
     }
 
     .stat-label {
