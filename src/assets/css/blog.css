@@ -25,9 +25,15 @@ body {
 }
 
 .post img {
-    max-width: 100%;
+    width: 100%;
+    height: 300px;
+    /* Altura padronizada */
+    object-fit: cover;
+    /* Mantém proporção cortando excesso */
     border-radius: 8px;
     margin-bottom: 1rem;
+    display: block;
+    /* Evita espaços indesejados abaixo da imagem */
 }
 
 .post-date {

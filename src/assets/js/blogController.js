@@ -10,10 +10,8 @@ import {
 const feed = document.getElementById('feed');
 const loadingPosts = document.getElementById('loadingPosts');
 
-// Defina o limite de caracteres para exibir o "Leia mais"
-const LIMITE_CARACTERES = 350; // ajuste conforme necessário
+const LIMITE_CARACTERES = 350;
 
-// Cria o modal de visualização de imagem (só uma vez)
 criarModalImagem();
 
 loadPosts();
@@ -34,7 +32,6 @@ function loadPosts() {
 
     feed.innerHTML = snapshot.docs.map(doc => createPostElement(doc)).join('');
 
-    // Adiciona eventos aos botões "Leia mais"
     document.querySelectorAll('.btn-leia-mais').forEach(btn => {
       btn.addEventListener('click', function () {
         const postId = this.getAttribute('data-id');
@@ -45,7 +42,6 @@ function loadPosts() {
       });
     });
 
-    // Adiciona eventos de clique nas imagens para abrir o modal
     document.querySelectorAll('.card-img-top[data-img-full]').forEach(img => {
       img.addEventListener('click', function () {
         abrirModalImagem(this.getAttribute('data-img-full'));
