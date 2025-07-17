@@ -1,203 +1,162 @@
+/* ========== VARIÁVEIS ========= */
 :root {
     --primary-color: #002147;
-    --secondary-color: #f8f9fa;
     --accent-color: #0d6efd;
-    --text-color: #333;
-    --light-text: #f8f9fa;
-    --dark-bg: #212529;
-    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --light-color: #f8f9fa;
+    --text-dark: #333;
+    --text-muted: #6c757d;
+    --bg-light: #f5f7fa;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
 }
 
+/* ========== BASE ========= */
 body {
-    background-color: var(--background-color);
     font-family: 'Poppins', sans-serif;
-    color: var(--text-color);
-    padding-top: 30px;
+    background-color: #fff;
+    color: var(--text-dark);
+    scroll-behavior: smooth;
 }
 
-@media (max-width: 600px) {
-    body {
-        padding-top: 0px;
-    }
+section {
+    padding: 3rem 0;
 }
 
+/* ========== HEADER ========= */
 .benefits-header {
     background: linear-gradient(135deg, var(--primary-color), #004a8f);
     color: #fff;
     padding: 4rem 1rem;
-    margin-bottom: 2rem;
     text-align: center;
 }
 
 .benefits-header h1 {
-    font-size: 2.75rem;
     font-weight: 800;
-    margin-bottom: 1rem;
-    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
-    display: inline-block;
-}
-
-.benefits-header h1 i {
-    color: var(--secondary-color);
+    font-size: 2.75rem;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .benefits-header p {
     font-size: 1.25rem;
-    opacity: 0.95;
     max-width: 700px;
     margin: 0 auto;
+    opacity: 0.95;
 }
 
-
+/* ========== CARDS ========= */
 .card {
+    transition: var(--transition);
     border: none;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow);
+    background: #fff;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
 .card-body {
-    padding: 1.5rem;
+    padding: 2rem;
 }
 
 .card-title {
     font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
     color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.card-title i {
-    font-size: 1.5rem;
-    color: var(--accent-color);
+    font-weight: 600;
 }
 
 .card-text {
-    color: #555;
+    color: var(--text-muted);
     font-size: 0.95rem;
 }
 
-section {
-    margin-bottom: 3rem;
-}
-
-section h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 2rem;
-    position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-bottom: 0.5rem;
-}
-
-section h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
+/* ========== ÍCONES E ELEMENTOS VISUAIS ========= */
+.bg-icon {
     background-color: var(--accent-color);
+    padding: 1rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
 }
 
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    header p {
-        font-size: 1rem;
-    }
-
-    section h2 {
-        font-size: 1.5rem;
-    }
-
-    .card-title {
-        font-size: 1.1rem;
-    }
+.hover-lift:hover {
+    transform: translateY(-8px);
 }
 
-main {
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+/* ========== BOTÕES ========= */
+.btn-primary,
+.btn-outline-primary {
+    transition: var(--transition);
+    font-weight: 500;
+    border-radius: 50px;
 }
 
-hr {
-    border-color: rgba(255, 255, 255, 0.1);
+.btn-primary:hover,
+.btn-outline-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
-.card {
-    position: relative;
-    overflow: hidden;
+/* ========== SEÇÕES ========= */
+section h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
-.card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(13, 110, 253, 0.1) 0%, rgba(0, 33, 71, 0.05) 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+section p.lead {
+    font-size: 1.15rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.card:hover::after {
-    opacity: 1;
+/* ========== CTA ========= */
+.cta-section {
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    color: #fff;
+    border-radius: 0.5rem;
 }
 
-.whatsapp-icon {
-    position: fixed;
-    bottom: 1.25rem;
-    left: 1.25rem;
-    cursor: pointer;
-    z-index: 999;
+.cta-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
 }
 
-.whatsapp-icon i {
-    color: #25d366;
+.cta-section p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
 }
 
-:root {
-    --deep-blue: #0056b3;
-    --deep-blue-2: #002a55;
-    --black: #000000;
-    --white: #ffffff;
-    --gold: #ffd700;
+.cta-btn-anim {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.cta-btn-anim:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(255, 255, 255, 0.3);
+}
+
+/* ========== BACK TO TOP ========= */
 .back-to-top {
     position: fixed;
-    bottom: 150px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    background: var(--primary-color);
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--deep-blue) 0%, var(--deep-blue-2) 100%);
-    border: 2px solid var(--gold);
-    color: var(--gold);
-    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--light-color);
+    border: none;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
     z-index: 999;
 }
 
@@ -208,34 +167,42 @@ hr {
 
 .back-to-top:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-.arrow-icon {
-    width: 20px;
-    height: 20px;
-    fill: var(--gold);
+/* ========== WHATSAPP ========= */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    cursor: pointer;
+    z-index: 999;
     transition: transform 0.3s ease;
 }
 
-.back-to-top:hover .arrow-icon {
-    transform: translateY(-2px);
+.whatsapp-icon:hover {
+    transform: scale(1.1);
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+.whatsapp-icon i {
+    color: #25d366;
 }
 
-.back-to-top.visible:hover {
-    animation: pulse 1.5s infinite;
+/* ========== RESPONSIVO ========= */
+@media (max-width: 768px) {
+    .benefits-header h1 {
+        font-size: 2rem;
+    }
+
+    section h2 {
+        font-size: 1.75rem;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .btn {
+        padding: 0.75rem 1.25rem;
+    }
 }
