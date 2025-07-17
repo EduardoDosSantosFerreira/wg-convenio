@@ -308,10 +308,6 @@ footer {
     color: #fff;
 }
 
-.bronze .plan-header {
-    background: linear-gradient(135deg, var(--bronze), var(--bronze-dark));
-}
-
 .prata .plan-header {
     background: linear-gradient(135deg, var(--prata), var(--prata-dark));
 }
