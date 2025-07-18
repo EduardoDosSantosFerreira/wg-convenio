@@ -206,3 +206,45 @@ section p.lead {
         padding: 0.75rem 1.25rem;
     }
 }
+
+/* Estilos personalizados */
+.py-6 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.benefits-header {
+    position: relative;
+    background: linear-gradient(135deg, rgba(247, 249, 252, 0.9) 0%, rgba(240, 243, 248, 0.9) 100%);
+}
+
+.benefit-decoration-circle {
+    animation: float 6s ease-in-out infinite;
+}
+
+.benefit-decoration-circle:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.divider path {
+    stroke-dashoffset: 0;
+    animation: dash 3s linear infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: -16;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}

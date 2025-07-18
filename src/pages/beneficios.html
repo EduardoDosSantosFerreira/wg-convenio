@@ -30,11 +30,56 @@
 </head>
 
 <body>
-    <!-- Cabeçalho -->
-    <header class="benefits-header">
-        <div class="container text-center">
-            <h1><i class="fas fa-gift me-2"></i> Nossos Benefícios</h1>
-            <p>Descubra todas as vantagens e serviços exclusivos incluídos nos nossos planos de assistência.</p>
+
+    <!-- Cabeçalho de Benefícios -->
+    <header class="benefits-header py-5 py-lg-6 bg-primary bg-opacity-10 position-relative overflow-hidden">
+        <!-- Elementos decorativos -->
+        <div class="position-absolute top-0 start-0 w-100 h-100">
+            <div class="benefit-decoration-circle position-absolute"
+                style="width: 200px; height: 200px; background: rgba(0, 123, 255, 0.1); border-radius: 50%; top: -50px; right: -50px;">
+            </div>
+            <div class="benefit-decoration-circle position-absolute"
+                style="width: 300px; height: 300px; background: rgba(0, 123, 255, 0.05); border-radius: 50%; bottom: -100px; left: -100px;">
+            </div>
+        </div>
+
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-8 text-center" data-aos="fade-up">
+                    <!-- Badge -->
+                    <span
+                        class="badge bg-primary bg-opacity-25 text-primary mb-3 px-4 py-2 rounded-pill d-inline-flex align-items-center">
+                        <i class="fas fa-star me-2"></i> Vantagens Exclusivas
+                    </span>
+
+                    <!-- Título principal -->
+                    <h1 class="display-4 fw-bold mb-3">
+                        <span class="text-primary">Benefícios</span> que fazem a diferença
+                    </h1>
+
+                    <!-- Subtítulo -->
+                    <p class="lead text-muted mb-4">
+                        Cada plano foi cuidadosamente elaborado para oferecer tranquilidade e apoio completo quando você
+                        mais precisa.
+                    </p>
+
+                    <!-- Divisor estilizado -->
+                    <div class="divider mx-auto my-4">
+                        <svg width="100" height="8" viewBox="0 0 100 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 4H100" stroke="var(--bs-primary)" stroke-width="2" stroke-linecap="round"
+                                stroke-dasharray="10 6" />
+                        </svg>
+                    </div>
+
+                    <!-- Destaque -->
+                    <div class="d-inline-block bg-light p-3 rounded-3 shadow-sm">
+                        <p class="mb-0 text-dark fw-medium">
+                            <i class="fas fa-check-circle text-success me-2"></i> Todos os benefícios sem taxas
+                            escondidas
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
