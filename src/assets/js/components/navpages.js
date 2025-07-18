@@ -41,6 +41,7 @@ function adicionarLoginAoDOM() {
           <ul class="dropdown-menu" aria-labelledby="portalClienteDropdown" id="menuPortalCliente" role="menu">
             <li role="none"><a class="dropdown-item" href="../pages/portal.html" role="menuitem"><i class="fas fa-user me-2" aria-hidden="true"></i>Área do Cliente</a></li>
             <li role="none"><a class="dropdown-item" href="../pages/portal-familia.html" role="menuitem"><i class="fas fa-users me-2" aria-hidden="true"></i>Portal Família</a></li>
+            <li><a class="dropdown-item" href="../../admin/blog.html"><i class="fas fa-blog me-2"></i>Blog</a></li>
           </ul>
         </li>
 
