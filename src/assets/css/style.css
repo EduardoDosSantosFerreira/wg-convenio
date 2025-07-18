@@ -738,3 +738,30 @@ body {
 .social-icons a:hover {
   color: #0d6efd;
 }
+
+.testimonial-card {
+  transition: transform 0.3s ease;
+  border-radius: 10px !important;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.testimonial-img img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rating {
+  font-size: 1.2rem;
+}
+
+.card-text {
+  position: relative;
+  padding: 0 10px;
+}
