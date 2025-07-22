@@ -91,3 +91,5 @@ function enviarWhatsapp() {
 
     window.open(url, '_blank');
 }
+
+
