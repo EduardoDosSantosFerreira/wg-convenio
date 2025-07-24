@@ -6,7 +6,7 @@ A WG Convênios Funerários é uma empresa com mais de 30 anos de experiência n
 
 ## 🏢 Sobre a Empresa
 
-Fundada em 15 de março de 1990, a WG Convênios Funerários, oficialmente registrada como W G Organização Social de Luto e Representações Ltda (CNPJ 58.980.426/0001-39), tem como missão oferecer soluções acessíveis e humanizadas para momentos delicados. A empresa investe continuamente em logística, tecnologia e capacitação para garantir serviços de excelência. Seu compromisso com a comunidade é evidenciado pelo atendimento personalizado e pela busca constante por melhorias.([Econodata][2])
+Fundada em 15 de março de 1990, a WG Convênios Funerários, oficialmente registrada como W G Organização Social de Luto e Representações Ltda (CNPJ 58.980.426/0001-39), tem como missão oferecer soluções acessíveis e humanizadas para momentos delicados. A empresa investe continuamente em logística, tecnologia e capacitação para garantir serviços de excelência. Seu compromisso com a comunidade é evidenciado pelo atendimento  e pela busca constante por melhorias.([Econodata][2])
 
 ---
 
@@ -42,13 +42,6 @@ A WG Convênios Funerários oferece três planos com cobertura funerária comple
 * **Cobertura**: 53 cidades de São Paulo
 * **Beneficiários**: Mesmos do Plano Bronze
 * **Serviços**: Idênticos ao Plano Bronze([wgconvenio.com.br][1])
-
----
-
-## 💼 Benefícios Adicionais
-
-* **Empréstimo de Equipamentos**: Disponibilização de cadeiras de rodas, andadores, cadeiras de banho, muletas, camas hospitalares, bengalas e outros para convalescentes.
-* **Parcerias Comerciais**: Descontos em comércios, redes farmacêuticas, clínicas odontológicas, médicas, fisioterapêuticas, estéticas, laboratórios, serviços de guincho, estabelecimentos de ensino e outros.([wgconvenio.com.br][3])
 
 ---
 
