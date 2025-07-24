@@ -59,8 +59,6 @@ A WG Convênios Funerários oferece três planos com cobertura funerária comple
 * **Experiência**: Mais de 30 anos de atuação no mercado funerário.
 * **Cobertura Ampla**: Atendimento em diversas cidades da Grande São Paulo e Interior.
 * **Atendimento Humanizado**: Equipe capacitada para oferecer suporte em momentos delicados.
-* **Benefícios Exclusivos**: Parcerias que proporcionam descontos e facilidades para os associados.([wgconvenio.com.br][1])
-
 ---
 
 A WG Convênios Funerários se destaca por sua tradição, confiabilidade e compromisso com a comunidade, oferecendo soluções acessíveis e de qualidade para momentos difíceis.([wgconvenio.com.br][1])
