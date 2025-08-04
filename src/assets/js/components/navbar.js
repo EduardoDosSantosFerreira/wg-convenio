@@ -71,11 +71,6 @@ function adicionarLoginAoDOM() {
              <i class='bx bx-moon'></i> <span id="modoEscuroTexto">Modo Escuro</span>
             </button>
             </li>
-            <li>
-              <button class="dropdown-item d-flex align-items-center gap-2" onclick="toggleContraste()" aria-label="Alternar alto contraste">
-                <i class="fas fa-adjust"></i> Alto Contraste
-              </button>
-            </li>
           </ul>
         </li>
       </ul>
