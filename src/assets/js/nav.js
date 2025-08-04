@@ -58,11 +58,6 @@ function toggleDarkMode(button = null) {
   atualizarTextoModoEscuro(isDark);
 }
 
-function toggleContraste() {
-  document.body.classList.toggle("contraste-alto");
-  localStorage.setItem("contrasteAlto", document.body.classList.contains("contraste-alto"));
-}
-
 function atualizarTextoModoEscuro(isDark) {
   const textoBtn = document.querySelector('#modoEscuroTexto');
   if (textoBtn) {
@@ -77,10 +72,8 @@ function aplicarPreferencias() {
   }
 
   const modoEscuro = localStorage.getItem("modoEscuro") === "true";
-  const contrasteAlto = localStorage.getItem("contrasteAlto") === "true";
 
   if (modoEscuro) document.body.classList.add("dark-mode");
-  if (contrasteAlto) document.body.classList.add("contraste-alto");
 
   atualizarTextoModoEscuro(modoEscuro);
 }
