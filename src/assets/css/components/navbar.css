@@ -71,6 +71,7 @@
     border-color: #4ea1d3 !important;
     color: #4ea1d3 !important;
     transition: border-color 0.3s ease, color 0.3s ease;
+    background-color: white;
 }
 
 .dark-mode .navbar-toggler:hover,
@@ -134,7 +135,12 @@
 }
 
 .dark-mode a {
-    color: #4ea1d3 !important;
+    color: #000000 !important;
+    text-decoration: none;
+}
+
+.dark-mode .navbar a {
+    color: #ffffff !important;
     text-decoration: none;
 }
 

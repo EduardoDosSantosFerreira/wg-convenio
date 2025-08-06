@@ -386,3 +386,23 @@ body {
     font-size: 1.8rem;
   }
 }
+.dark-mode a {
+  color: #000000 !important;
+  text-decoration: none;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode p{
+    color: #000000;
+}
+.dark-mode footer a,
+.dark-mode footer span,
+.dark-mode footer p {
+  color: #ffffff !important;
+  text-decoration: none;
+}

@@ -17,7 +17,7 @@ A WG Convênios Funerários oferece três planos com cobertura funerária comple
 ### 🥉 Plano Bronze
 
 * **Cobertura**: 6 cidades do Alto Tietê
-* **Beneficiários**: Titular, cônjuge, pais, sogros, filhos até 40 anos e 2 dependentes consanguíneos (limitados até 70 anos)
+* **Beneficiários**: Titular, cônjuge, pais, sogros, filhos até 40 anos.
 * **Serviços Inclusos**:
 
   * Urna mortuária padrão

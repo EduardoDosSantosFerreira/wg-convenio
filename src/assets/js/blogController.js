@@ -69,7 +69,7 @@ function createPostElement(doc) {
     const textoCortado = texto.slice(0, LIMITE_CARACTERES).trim();
     textoHtml = `
       ${textoCortado}...
-      <button class="btn btn-link btn-leia-mais p-0" data-id="${postId}" data-texto="${encodeHtml(texto)}" style="font-size:0.98em;">Leia mais</button>
+      <button class="btn btn-link btn-leia-mais p-0" data-id="${postId}" data-texto="${encodeHtml(texto)}" style="font-size:0.98em; color: #415ce1 !important;">Leia mais</button>
     `;
   } else {
     textoHtml = encodeHtml(texto);

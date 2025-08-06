@@ -9,8 +9,8 @@
         content="Conheça os planos funerários da WG Convênios. Assistência completa, cobertura em diversas cidades e benefícios exclusivos para sua família.">
 
     <!-- Favicon para diferentes dispositivos -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/logos/logo.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/logos/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/logos/logo.png" alt="Logo WG Convênios Funerários">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/logos/logo.png" alt="Logo WG Convênios Funerários para dispositivos Apple">
 
     <!-- Google Fonts: Poppins para tipografia moderna e legível -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -39,13 +39,16 @@
 <body>
     <header class="hero-header">
         <div class="hero-background">
-            <div class="particles"></div>
-            <div class="gradient-overlay"></div>
+            <div class="particles" aria-hidden="true"></div>
+            <div class="gradient-overlay" aria-hidden="true"></div>
         </div>
 
         <div class="hero-content">
             <div class="hero-badge animate__animated animate__fadeInDown">
-                <span><i class="fas fa-shield-alt"></i> Segurança Familiar</span>
+                <span>
+                    <i class="fas fa-shield-alt" aria-hidden="true" title="Ícone de escudo representando segurança"></i>
+                    Segurança Familiar
+                </span>
             </div>
 
             <h1 class="animate__animated animate__fadeInUp animate__delay-1s">
@@ -57,21 +60,21 @@
             </p>
 
             <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-2s">
-                <a href="#contato" class="btn-secondary magnetic">
+                <a href="#contato" class="btn-secondary magnetic" aria-label="Fale Conosco">
                     <span class="btn-content">
-                        <i class="fas fa-comments btn-icon"></i>
+                        <i class="fas fa-comments btn-icon" aria-hidden="true" title="Ícone de balão de conversa"></i>
                         <span class="btn-text">Fale Conosco</span>
                     </span>
-                    <span class="btn-hover-effect"></span>
+                    <span class="btn-hover-effect" aria-hidden="true"></span>
                 </a>
             </div>
         </div>
 
-        <a href="#plans">
+        <a href="#plans" aria-label="Rolar para os planos">
             <div class="scroll-indicator animate__animated animate__bounce animate__infinite">
-                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-chevron-down" aria-hidden="true" title="Seta para baixo indicando rolar para os planos"></i>
+            </div>
         </a>
-        </div>
     </header>
 
     <!-- Inclua a biblioteca Animate.css -->
@@ -99,48 +102,67 @@
             });
         });
 
+        // Função para abrir o modal de cidades do plano correspondente
+        function abrirModalCidades(plano) {
+            if (plano === 'bronze') {
+                var modal = new bootstrap.Modal(document.getElementById('modalBronze'));
+                modal.show();
+            } else if (plano === 'prata') {
+                var modal = new bootstrap.Modal(document.getElementById('modalPrata'));
+                modal.show();
+            } else if (plano === 'ouro') {
+                var modal = new bootstrap.Modal(document.getElementById('modalOuro'));
+                modal.show();
+            }
+        }
     </script>
+
 
     <div class="space"></div>
 
-    <div class="container">
+    <div class="container-fluid">
         <div id="plans" class="plans">
 
             <!-- Plano Bronze -->
             <div class="plan-card bronze">
                 <div class="plan-header">
-                    <h2><i class="ri-medal-line"></i> Plano Bronze</h2>
+                    <h2 style="display: flex; justify-content: center; align-items: center; text-align: center; width: 100%;">
+                        <i class="ri-medal-line" style="margin-right: 8px;" aria-hidden="true" title="Ícone de medalha de bronze"></i> Plano Bronze
+                    </h2>
                     <div class="price-badge bg-white text-dark rounded-pill px-3 py-2 mt-3 d-inline-block"
                         style="font-size: 1.1rem;">
                         <span style="color: #000000 !important" class="fw-bold">A partir de</span>
                         <span class="h4 fw-bold" style="margin: 0 4px; color: #000000 !important">R$ 40,00</span>/mês
                     </div>
-                    <p class="mt-2 mb-0"><i class="ri-map-pin-line"></i> Cobertura: <strong>6 cidades do Alto
-                            Tietê</strong></p>
+                    <p class="mt-2 mb-0">
+                        <i class="ri-map-pin-line" aria-hidden="true" title="Ícone de localização"></i>
+                        Cobertura: <strong>6 cidades do Alto Tietê</strong>
+                    </p>
                 </div>
                 <div class="plan-body" id="plan-body">
                     <ul>
-                        <li><i class="ri-group-line"></i> Cobertura familiar: titular, cônjuge, pai, mãe, sogro, sogra,
-                            filhos até 40 anos e 2 dependentes (até 70 anos)</li>
-                        <li><i class="ri-box-3-line"></i> Urna mortuária padrão</li>
-                        <li><i class="ri-building-line"></i> Câmara ardente completa</li>
-                        <li><i class="ri-truck-line"></i> Carro fúnebre para remoção e cortejo</li>
-                        <li><i class="ri-file-line"></i> Registro da certidão de óbito</li>
-                        <li><i class="ri-cup-line"></i> Kit de café (2kg de açúcar + ½kg de café)</li>
-                        <li><i class="ri-sparkling-2-line"></i> Véu bordado</li>
-                        <li><i class="ri-building-line"></i>Aluguel de sala de velório (padrão municipal)</li>
-                        <li><i class="ri-plant-line"></i> Enfeite floral na urna (manto de cetim e crisântemos)</li>
-                        <li><i class="ri-plant-line"></i>Coroa de flores naturais com faixa</li>
-                        <li><i class="ri-fire-line"></i> Velas votivas</li>
+                        <li><i class="ri-group-line" aria-hidden="true" title="Ícone de grupo de pessoas"></i> Cobertura familiar: titular, cônjuge, pai, mãe, sogro, sogra, filhos até 40 anos</li>
+                        <li><i class="ri-box-3-line" aria-hidden="true" title="Ícone de urna mortuária"></i> Urna mortuária padrão</li>
+                        <li><i class="ri-building-line" aria-hidden="true" title="Ícone de prédio representando câmara ardente"></i> Câmara ardente completa</li>
+                        <li><i class="ri-truck-line" aria-hidden="true" title="Ícone de caminhão fúnebre"></i> Carro fúnebre para remoção e cortejo</li>
+                        <li><i class="ri-file-line" aria-hidden="true" title="Ícone de documento"></i> Registro da certidão de óbito</li>
+                        <li><i class="ri-cup-line" aria-hidden="true" title="Ícone de xícara de café"></i> Kit de café (2kg de açúcar + ½kg de café)</li>
+                        <li><i class="ri-sparkling-2-line" aria-hidden="true" title="Ícone de véu bordado"></i> Véu bordado</li>
+                        <li><i class="ri-building-line" aria-hidden="true" title="Ícone de prédio representando sala de velório"></i>Aluguel de sala de velório (padrão municipal)</li>
+                        <li><i class="ri-plant-line" aria-hidden="true" title="Ícone de flor"></i> Enfeite floral na urna (manto de cetim e crisântemos)</li>
+                        <li><i class="ri-plant-line" aria-hidden="true" title="Ícone de flor"></i>Coroa de flores naturais com faixa</li>
+                        <li><i class="ri-fire-line" aria-hidden="true" title="Ícone de vela"></i> Velas votivas</li>
                     </ul>
                 </div>
-                <div class="plan-footer" style="display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://wa.me/5511981050511?text=Quero%20contratar%20o%20plano%20Bronze" target="_blank"
-                        class="btn btn-success" style="font-weight:600; letter-spacing:1px;">
-                        <i class="ri-whatsapp-line"></i> Contratar
-                    </a>
-                    <button class="details-btn btn btn-outline-secondary" style="font-weight:600; letter-spacing:1px;">
-                        <i class="ri-information-line"></i> Ver detalhes
+                <div class="plan-footer" style="display: flex; gap: 10px; flex-wrap: nowrap;">
+                    <button class="btn btn-outline-secondary" style="font-weight:600; letter-spacing:1px; background-color: #cd7f32; color: #fff; border-color: #cd7f32;"
+                        onmouseover="this.style.backgroundColor='#b87333';this.style.color='#fff';"
+                        onmouseout="this.style.backgroundColor='#cd7f32';this.style.color='#fff';"
+                        onclick="abrirModalCidades('bronze')" aria-label="Ver cidades do Plano Bronze">
+                        <i class="ri-map-pin-line" aria-hidden="true" title="Ícone de localização"></i> Ver cidades
+                    </button>
+                    <button class="details-btn btn btn-outline-secondary" style="font-weight:600; letter-spacing:1px;" aria-label="Ver detalhes do Plano Bronze">
+                        <i class="ri-information-line" aria-hidden="true" title="Ícone de informação"></i> Ver detalhes
                     </button>
                 </div>
             </div>
@@ -148,7 +170,9 @@
             <!-- Plano Prata -->
             <div class="plan-card prata destaque">
                 <div class="plan-header">
-                    <h2><i class="ri-medal-2-line"></i> Plano Prata</h2>
+                    <h2 style="display: flex; justify-content: center; align-items: center; text-align: center; width: 100%;">
+                        <i class="ri-medal-2-line" style="margin-right: 8px;" aria-hidden="true" title="Ícone de medalha de prata"></i> Plano Prata
+                    </h2>
                     <div class="price-badge bg-white text-dark rounded-pill px-3 py-2 mt-3 d-inline-block"
                         style="font-size: 1.1rem;">
                         <span style="color: #000000 !important" class="fw-bold">A partir de</span>
@@ -159,34 +183,37 @@
                 </div>
                 <div class="plan-body">
                     <ul>
-                        <li><i class="ri-group-line"></i> Cobertura familiar: titular, cônjuge, pai, mãe, sogro, sogra,
-                            filhos até 40 anos e 2 dependentes (até 70 anos)</li>
-                        <li><i class="ri-box-3-line"></i> Urna mortuária padrão</li>
-                        <li><i class="ri-building-line"></i> Câmara ardente completa</li>
-                        <li><i class="ri-truck-line"></i> Carro fúnebre para remoção e cortejo</li>
-                        <li><i class="ri-file-line"></i> Registro da certidão de óbito</li>
-                        <li><i class="ri-cup-line"></i> Kit de café (2kg de açúcar + ½kg de café)</li>
-                        <li><i class="ri-sparkling-2-line"></i> Véu bordado</li>
-                        <li><i class="ri-building-line"></i>Aluguel de sala de velório (padrão municipal)</li>
-                        <li><i class="ri-plant-line"></i> Enfeite floral na urna (manto de cetim e crisântemos)</li>
-                        <li><i class="ri-plant-line"></i>Coroa de flores naturais com faixa</li>
-                        <li><i class="ri-fire-line"></i> Velas votivas</li>
+                        <li><i class="ri-group-line" aria-hidden="true" title="Ícone de grupo de pessoas"></i> Cobertura familiar: titular, cônjuge, pai, mãe, sogro, sogra, filhos até 40 anos</li>
+                        <li><i class="ri-box-3-line" aria-hidden="true" title="Ícone de urna mortuária"></i> Urna mortuária padrão</li>
+                        <li><i class="ri-building-line" aria-hidden="true" title="Ícone de prédio representando câmara ardente"></i> Câmara ardente completa</li>
+                        <li><i class="ri-truck-line" aria-hidden="true" title="Ícone de caminhão fúnebre"></i> Carro fúnebre para remoção e cortejo</li>
+                        <li><i class="ri-file-line" aria-hidden="true" title="Ícone de documento"></i> Registro da certidão de óbito</li>
+                        <li><i class="ri-cup-line" aria-hidden="true" title="Ícone de xícara de café"></i> Kit de café (2kg de açúcar + ½kg de café)</li>
+                        <li><i class="ri-sparkling-2-line" aria-hidden="true" title="Ícone de véu bordado"></i> Véu bordado</li>
+                        <li><i class="ri-building-line" aria-hidden="true" title="Ícone de prédio representando sala de velório"></i>Aluguel de sala de velório (padrão municipal)</li>
+                        <li><i class="ri-plant-line" aria-hidden="true" title="Ícone de flor"></i> Enfeite floral na urna (manto de cetim e crisântemos)</li>
+                        <li><i class="ri-plant-line" aria-hidden="true" title="Ícone de flor"></i>Coroa de flores naturais com faixa</li>
+                        <li><i class="ri-fire-line" aria-hidden="true" title="Ícone de vela"></i> Velas votivas</li>
                     </ul>
                 </div>
-                <div class="plan-footer" style="display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://wa.me/5511981050511?text=Quero%20contratar%20o%20plano%20Prata" target="_blank"
-                        class="btn btn-success" style="font-weight:600; letter-spacing:1px;">
-                        <i class="ri-whatsapp-line"></i> Contratar
-                    </a>
-                    <button class="details-btn btn btn-outline-secondary" style="font-weight:600; letter-spacing:1px;">
-                        <i class="ri-information-line"></i> Ver detalhes
+                <div class="plan-footer" style="display: flex; gap: 10px; flex-wrap: nowrap;">
+                    <button class="btn btn-outline-secondary" style="font-weight:600; letter-spacing:1px; background-color: #b0b0b0; color: #fff; border-color: #b0b0b0;"
+                        onmouseover="this.style.backgroundColor='#8c8c8c';this.style.color='#fff';"
+                        onmouseout="this.style.backgroundColor='#b0b0b0';this.style.color='#fff';"
+                        onclick="abrirModalCidades('prata')" aria-label="Ver cidades do Plano Prata">
+                        <i class="ri-map-pin-line" aria-hidden="true" title="Ícone de localização"></i> Ver cidades
+                    </button>
+                    <button class="details-btn btn btn-outline-secondary" style="font-weight:600; letter-spacing:1px;" aria-label="Ver detalhes do Plano Prata">
+                        <i class="ri-information-line" aria-hidden="true" title="Ícone de informação"></i> Ver detalhes
                     </button>
                 </div>
             </div>
             <!-- Plano Ouro -->
             <div class="plan-card ouro destaque">
                 <div class="plan-header">
-                    <h2><i class="ri-vip-crown-2-fill"></i> Plano Ouro</h2>
+                    <h2 style="display: flex; justify-content: center; align-items: center; text-align: center; width: 100%;">
+                        <i class="ri-vip-crown-2-fill" style="margin-right: 8px;" aria-hidden="true" title="Ícone de coroa dourada"></i> Plano Ouro
+                    </h2>
                     <div class="price-badge bg-white text-dark rounded-pill px-3 py-2 mt-3 d-inline-block"
                         style="font-size: 1.1rem;">
                         <span style="color: #000000 !important" class="fw-bold">A partir de</span>
@@ -197,107 +224,45 @@
                 </div>
                 <div class="plan-body">
                     <ul>
-                        <li><i class="ri-group-line"></i> Cobertura familiar: titular, cônjuge, pai, mãe, sogro, sogra,
-                            filhos até 40 anos e 2 dependentes (até 70 anos)</li>
-                        <li><i class="ri-box-3-line"></i> Urna mortuária padrão</li>
-                        <li><i class="ri-building-line"></i> Câmara ardente completa</li>
-                        <li><i class="ri-truck-line"></i> Carro fúnebre para remoção e cortejo</li>
-                        <li><i class="ri-file-line"></i> Registro da certidão de óbito</li>
-                        <li><i class="ri-cup-line"></i> Kit de café (2kg de açúcar + ½kg de café)</li>
-                        <li><i class="ri-sparkling-2-line"></i> Véu bordado</li>
-                        <li><i class="ri-building-line"></i>Aluguel de sala de velório (padrão municipal)</li>
-                        <li><i class="ri-plant-line"></i> Enfeite floral na urna (manto de cetim e crisântemos)</li>
-                        <li><i class="ri-plant-line"></i>Coroa de flores naturais com faixa</li>
-                        <li><i class="ri-fire-line"></i> Velas votivas</li>
+                        <li><i class="ri-group-line" aria-hidden="true" title="Ícone de grupo de pessoas"></i> Cobertura familiar: titular, cônjuge, pai, mãe, sogro, sogra, filhos até 40 anos</li>
+                        <li><i class="ri-box-3-line" aria-hidden="true" title="Ícone de urna mortuária"></i> Urna mortuária padrão</li>
+                        <li><i class="ri-building-line" aria-hidden="true" title="Ícone de prédio representando câmara ardente"></i> Câmara ardente completa</li>
+                        <li><i class="ri-truck-line" aria-hidden="true" title="Ícone de caminhão fúnebre"></i> Carro fúnebre para remoção e cortejo</li>
+                        <li><i class="ri-file-line" aria-hidden="true" title="Ícone de documento"></i> Registro da certidão de óbito</li>
+                        <li><i class="ri-cup-line" aria-hidden="true" title="Ícone de xícara de café"></i> Kit de café (2kg de açúcar + ½kg de café)</li>
+                        <li><i class="ri-sparkling-2-line" aria-hidden="true" title="Ícone de véu bordado"></i> Véu bordado</li>
+                        <li><i class="ri-building-line" aria-hidden="true" title="Ícone de prédio representando sala de velório"></i>Aluguel de sala de velório (padrão municipal)</li>
+                        <li><i class="ri-plant-line" aria-hidden="true" title="Ícone de flor"></i> Enfeite floral na urna (manto de cetim e crisântemos)</li>
+                        <li><i class="ri-plant-line" aria-hidden="true" title="Ícone de flor"></i>Coroa de flores naturais com faixa</li>
+                        <li><i class="ri-fire-line" aria-hidden="true" title="Ícone de vela"></i> Velas votivas</li>
                     </ul>
                 </div>
-                <div class="plan-footer" style="display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://wa.me/5511981050511?text=Quero%20contratar%20o%20plano%20Ouro" target="_blank"
-                        class="btn btn-success" style="font-weight:600; letter-spacing:1px;">
-                        <i class="ri-whatsapp-line"></i> Contratar
-                    </a>
-                    <button class="details-btn btn btn-outline-secondary" style="font-weight:600; letter-spacing:1px;">
-                        <i class="ri-information-line"></i> Ver detalhes
+                <div class="plan-footer" style="display: flex; gap: 10px; flex-wrap: nowrap;">
+                    <button class="btn btn-outline-secondary" style="font-weight:600; letter-spacing:1px; background-color: #ffd700; color: #000; border-color: #ffd700;"
+                        onmouseover="this.style.backgroundColor='#e6c200';this.style.color='#000';"
+                        onmouseout="this.style.backgroundColor='#ffd700';this.style.color='#000';"
+                        onclick="abrirModalCidades('ouro')" aria-label="Ver cidades do Plano Ouro">
+                        <i class="ri-map-pin-line" aria-hidden="true" title="Ícone de localização"></i> Ver cidades
+                    </button>
+                    <button class="details-btn btn btn-outline-secondary" style="font-weight:600; letter-spacing:1px;" aria-label="Ver detalhes do Plano Ouro">
+                        <i class="ri-information-line" aria-hidden="true" title="Ícone de informação"></i> Ver detalhes
                     </button>
                 </div>
             </div>
         </div>
+
         <!-- Modal de detalhes -->
-        <div class="modal-overlay" id="planModal">
+        <div class="modal-overlay" id="planModal" aria-modal="true" role="dialog" aria-label="Detalhes do Plano">
             <div class="modal-content">
-                <button class="modal-close-btn" id="modalCloseBtn">
-                    <i class="ri-close-line"></i>
+                <button class="modal-close-btn" id="modalCloseBtn" aria-label="Fechar detalhes do plano">
+                    <i class="ri-close-line" aria-hidden="true" title="Ícone de fechar"></i>
                 </button>
                 <h3 id="modalTitle">Título do Plano</h3>
                 <ul id="modalList">
                     <!-- Lista completa será inserida aqui via JS -->
                 </ul>
                 <div class="text-center mt-4">
-                    <button class="btn btn-secondary" id="modalBottomCloseBtn">FECHAR</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Cobertura -->
-        <div class="coverage">
-            <div class="coverage-header text-center mb-5">
-                <h2 style="color: #000000 !important" class="display-5 fw-bold">
-                    <i class="ri-map-pin-line me-2"></i> Cobertura de Cidades
-                </h2>
-                <p style="color: #000000 !important;" impor class="text-muted">Confira as cidades atendidas em cada
-                    plano</p>
-            </div>
-            <div class="row g-4">
-
-                <!-- Plano Bronze -->
-                <div class="col-md-4">
-                    <div class="coverage-card bronze">
-                        <div class="coverage-card-header">
-                            <h3 style="color: #000000 !important;" class="h4 mb-4">
-                                <i class="ri-medal-line me-2"></i> Plano Bronze
-                            </h3>
-                        </div>
-                        <div class="coverage-card-body text-center">
-                            <button style="color: #000000 !important;" type="button" class="btn btn-outline-primary"
-                                data-bs-toggle="modal" data-bs-target="#modalBronze">
-                                Ver cidades atendidas
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Plano Prata -->
-                <div class="col-md-4">
-                    <div class="coverage-card prata">
-                        <div class="coverage-card-header">
-                            <h3 style="color: #000000 !important;" class="h4 mb-4">
-                                <i class="ri-medal-line me-2"></i> Plano Prata
-                            </h3>
-                        </div>
-                        <div class="coverage-card-body text-center">
-                            <button style="color: #000000 !important;" type="button" class="btn btn-outline-primary"
-                                data-bs-toggle="modal" data-bs-target="#modalPrata">
-                                Ver cidades atendidas
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Plano Ouro -->
-                <div class="col-md-4">
-                    <div class="coverage-card ouro">
-                        <div class="coverage-card-header">
-                            <h3 style="color: #000000 !important;" class="h4 mb-4">
-                                <i class="ri-medal-line me-2"></i> Plano Ouro
-                            </h3>
-                        </div>
-                        <div class="coverage-card-body text-center">
-                            <button style="color: #000000 !important;" type="button" class="btn btn-outline-primary"
-                                data-bs-toggle="modal" data-bs-target="#modalOuro">
-                                Ver cidades atendidas
-                            </button>
-                        </div>
-                    </div>
+                    <button class="btn btn-secondary" id="modalBottomCloseBtn" aria-label="Fechar detalhes do plano">FECHAR</button>
                 </div>
             </div>
         </div>
@@ -313,12 +278,12 @@
                     </div>
                     <div class="modal-body">
                         <ul class="list-unstyled">
-                            <li><i class="ri-check-line text-success me-2"></i>Itaquaquecetuba</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Mogi das Cruzes</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Poá</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Suzano</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Ferraz de Vasconcelos</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Arujá</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Itaquaquecetuba</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Mogi das Cruzes</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Poá</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Suzano</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Ferraz de Vasconcelos</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Arujá</li>
                         </ul>
                     </div>
                 </div>
@@ -336,69 +301,69 @@
                     </div>
                     <div class="modal-body">
                         <ul class="list-unstyled">
-                            <li><i class="ri-check-line text-success me-2"></i>São Paulo (capital)</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Poá</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Itaquaquecetuba</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Mogi das Cruzes</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Suzano</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Ferraz de Vasconcelos</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>São Paulo (capital)</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Poá</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Itaquaquecetuba</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Mogi das Cruzes</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Suzano</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Ferraz de Vasconcelos</li>
 
-                            <li><i class="ri-check-line text-success me-2"></i>Arujá</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Santa Isabel</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Osasco</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Carapicuíba</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Barueri</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Jandira</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Arujá</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Santa Isabel</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Osasco</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Carapicuíba</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Barueri</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Jandira</li>
 
-                            <li><i class="ri-check-line text-success me-2"></i>Santana de Parnaíba</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Pirapora do Bom Jesus</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Itapevi</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Vargem Grande Paulista</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Santana de Parnaíba</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Pirapora do Bom Jesus</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Itapevi</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Vargem Grande Paulista</li>
 
-                            <li><i class="ri-check-line text-success me-2"></i>Cotia</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Taboão da Serra</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Embu das Artes</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Cotia</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Taboão da Serra</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Embu das Artes</li>
 
-                            <li><i class="ri-check-line text-success me-2"></i>Itapecerica da Serra</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Juquitiba</li>
-                            <li><i class="ri-check-line text-success me-2"></i>São Lourenço da Serra</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Itapecerica da Serra</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Juquitiba</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>São Lourenço da Serra</li>
 
-                            <li><i class="ri-check-line text-success me-2"></i>Embu-Guaçu</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Guarulhos</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Mairiporã</li>
-                            <li><i class="ri-check-line text-success me-2"></i>São Bernardo do Campo</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Embu-Guaçu</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Guarulhos</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Mairiporã</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>São Bernardo do Campo</li>
 
-                            <li><i class="ri-check-line text-success me-2"></i>Caieiras</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Cajamar</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Franco da Rocha</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Caieiras</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Cajamar</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Franco da Rocha</li>
 
-                            <li><i class="ri-check-line text-success me-2"></i>Francisco Morato</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Santo André</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Rio Grande da Serra</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Mauá</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Francisco Morato</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Santo André</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Rio Grande da Serra</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Mauá</li>
 
-                            <li><i class="ri-check-line text-success me-2"></i>Salesópolis</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Biritiba Mirim</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Guaranema</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Riberão Pires</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Salesópolis</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Biritiba Mirim</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Guaranema</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Riberão Pires</li>
 
-                            <li><i class="ri-check-line text-success me-2"></i>Diadema</li>
-                            <li><i class="ri-check-line text-success me-2"></i>São Caetano do Sul</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Cutubão</li>
-                            <li><i class="ri-check-line text-success me-2"></i>São Vicente</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Santos</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Guarujá</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Praia Grande</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Caraguatatuba</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Diadema</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>São Caetano do Sul</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Cutubão</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>São Vicente</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Santos</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Guarujá</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Praia Grande</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Caraguatatuba</li>
 
-                            <li><i class="ri-check-line text-success me-2"></i>São Sebastião</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Campinas</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Jundiái</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Vinhedo</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Salto</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Itu</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Indaiatuba</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Jacareí</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>São Sebastião</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Campinas</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Jundiái</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Vinhedo</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Salto</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Itu</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Indaiatuba</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Jacareí</li>
                         </ul>
                     </div>
                 </div>
@@ -416,19 +381,19 @@
                     </div>
                     <div class="modal-body">
                         <ul class="list-unstyled">
-                            <li><i class="ri-check-line text-success me-2"></i>Itaquaquecetuba</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Poá</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Mogi das Cruzes</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Suzano</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Ferraz de Vasconcelos</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Itaquaquecetuba</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Poá</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Mogi das Cruzes</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Suzano</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Ferraz de Vasconcelos</li>
 
-                            <li><i class="ri-check-line text-success me-2"></i>Arujá</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Salesópolis</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Biritiba Mirim</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Guaranema</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Riberão Pires</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Santa Isabel</li>
-                            <li><i class="ri-check-line text-success me-2"></i>Guarulhos</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Arujá</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Salesópolis</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Biritiba Mirim</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Guaranema</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Riberão Pires</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Santa Isabel</li>
+                            <li><i class="ri-check-line text-success me-2" aria-hidden="true" title="Ícone de confirmação"></i>Guarulhos</li>
                         </ul>
                     </div>
                 </div>
@@ -438,15 +403,10 @@
 
     <!-- Botão de voltar ao topo -->
     <button id="backToTopBtn" class="back-to-top" aria-label="Voltar ao topo">
-        <svg class="arrow-icon" viewBox="0 0 24 24">
+        <svg class="arrow-icon" viewBox="0 0 24 24" aria-label="Seta para cima indicando voltar ao topo" role="img">
             <path d="M12 4l-8 8h5v8h6v-8h5z" />
         </svg>
     </button>
-    <!-- Ícone do WhatsApp -->
-    <div class="whatsapp-icon"
-        onclick="window.open('https://wa.me/5511981050511?text=Olá,%20venho%20pelo%20site%20da%20WG%20Convênios%20Funerários.', '_blank')">
-        <i class="fab fa-whatsapp fa-3x" aria-label="Ícone do WhatsApp"></i>
-    </div>
     <!-- Scripts -->
     <script src="../assets/js/components/navpages.js"></script>
     <script src="../assets/js/nav.js"></script>

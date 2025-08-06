@@ -244,42 +244,11 @@ body {
     box-shadow: 0 0 0 3px var(--show-more-btn-bg);
 }
 
-.coverage {
-    background-color: #fff;
-    padding: 40px 20px;
-    border-radius: 15px;
-    box-shadow: var(--box-shadow);
-    margin-top: 40px;
-}
-
-.coverage h2 {
-    text-align: center;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.coverage h3 {
-    color: #000000;
-    margin-top: 20px;
-}
-
-.coverage ul {
-    columns: 2;
-    list-style: disc;
-    margin-left: 20px;
-}
-
 footer {
     background-color: var(--primary-color);
     color: white;
     padding: 10px;
     margin-top: 40px;
-}
-
-@media (max-width: 600px) {
-    .coverage ul {
-        columns: 1;
-    }
 }
 
 .plans {
@@ -377,96 +346,6 @@ footer {
 
 .plan-footer button:hover {
     background-color: var(--plan-footer-btn-hover);
-}
-
-.coverage {
-    background-color: #ffffff;
-    border-radius: 16px;
-    margin-top: 50px;
-    padding: 40px 30px 50px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-.coverage:hover {
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.coverage-header h2 {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: #222;
-    margin-bottom: 12px;
-}
-
-.coverage-header p {
-    color: #666;
-    font-size: 1rem;
-    margin-bottom: 40px;
-}
-
-.coverage-card {
-    border-radius: 12px;
-    padding: 25px 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    background-color: #fafafa;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.coverage-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-}
-
-.coverage-card-header h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 24px;
-}
-
-.coverage-card-body ul {
-    margin: 0;
-    padding-left: 1.25rem;
-    color: #444;
-    font-size: 0.9375rem;
-    line-height: 1.6;
-}
-
-.coverage-card-body li {
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.coverage-card-body li i {
-    color: var(--success-green);
-    font-size: 1.125rem;
-}
-
-.coverage-card.bronze {
-    border: 2px solid #b87333;
-    background: linear-gradient(135deg, #f0e1d2, #f9f5f1);
-}
-
-.coverage-card.prata {
-    border: 2px solid var(--prata);
-    background: linear-gradient(135deg, #e7e8ea, #f9f9fa);
-}
-
-.coverage-card.ouro {
-    border: 2px solid var(--ouro);
-    background: linear-gradient(135deg, #fff9d6, #fffbea);
 }
 
 .modal-overlay {
