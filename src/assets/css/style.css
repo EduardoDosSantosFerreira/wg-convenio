@@ -958,178 +958,178 @@ body {
 }
 
 .promo-section {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 30px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    border: 2px dashed #e67e22;
-    position: relative;
-    overflow: hidden;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 30px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 2px dashed #e67e22;
+  position: relative;
+  overflow: hidden;
 }
 
 .promo-section::before {
-    content: "PROMOÇÃO";
-    position: absolute;
-    top: 10px;
-    right: -30px;
-    background: #e74c3c;
-    color: white;
-    padding: 5px 40px;
-    transform: rotate(45deg);
-    font-weight: bold;
-    font-size: 14px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  content: "PROMOÇÃO";
+  position: absolute;
+  top: 10px;
+  right: -30px;
+  background: #e74c3c;
+  color: white;
+  padding: 5px 40px;
+  transform: rotate(45deg);
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .promo-title {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .promo-subtitle {
-    font-size: 1.2rem;
-    color: #7f8c8d;
-    margin-bottom: 30px;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-bottom: 30px;
 }
 
 .price-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 40px 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 40px 0;
 }
 
 .price-box {
-    background: white;
-    padding: 25px 20px;
-    border-radius: 10px;
-    width: 28%;
-    min-width: 200px;
-    margin: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background: white;
+  padding: 25px 20px;
+  border-radius: 10px;
+  width: 28%;
+  min-width: 200px;
+  margin: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .price-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .plan-name {
-    font-size: 1.5rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
-    font-weight: bold;
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .plan-price {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .bronze .plan-price {
-    color: #cd7f32;
-    /* Cor bronze */
+  color: #cd7f32;
+  /* Cor bronze */
 }
 
 .silver .plan-price {
-    color: #c0c0c0;
-    /* Cor prata */
+  color: #c0c0c0;
+  /* Cor prata */
 }
 
 .gold .plan-price {
-    color: #ffd700;
-    /* Cor ouro */
+  color: #ffd700;
+  /* Cor ouro */
 }
 
 .plan-price span {
-    font-size: 1rem;
-    color: #7f8c8d;
+  font-size: 1rem;
+  color: #7f8c8d;
 }
 
 .promo-badge {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background: #e74c3c;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #e74c3c;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
 .promo-footer {
-    font-size: 1rem;
-    color: #7f8c8d;
-    margin-top: 20px;
-    font-style: italic;
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-top: 20px;
+  font-style: italic;
 }
 
 .highlight2 {
-    background: #f1c40f;
-    padding: 2px 5px;
-    border-radius: 3px;
-    font-weight: bold;
+  background: #f1c40f;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-weight: bold;
 }
 
 .plan-button {
-    margin-top: auto;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 50px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: white;
-    text-decoration: none;
+  margin-top: auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
 }
 
 .bronze .plan-button {
-    background: linear-gradient(135deg, #cd7f32, #b87333);
-    box-shadow: 0 4px 15px rgba(205, 127, 50, 0.3);
+  background: linear-gradient(135deg, #cd7f32, #b87333);
+  box-shadow: 0 4px 15px rgba(205, 127, 50, 0.3);
 }
 
 .silver .plan-button {
-    background: linear-gradient(135deg, #c0c0c0, #a8a8a8);
-    box-shadow: 0 4px 15px rgba(192, 192, 192, 0.3);
+  background: linear-gradient(135deg, #c0c0c0, #a8a8a8);
+  box-shadow: 0 4px 15px rgba(192, 192, 192, 0.3);
 }
 
 .gold .plan-button {
-    background: linear-gradient(135deg, #ffd700, #daa520);
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  background: linear-gradient(135deg, #ffd700, #daa520);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
 }
 
 .plan-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
 }
 
 .plan-button:active {
-    transform: translateY(1px);
+  transform: translateY(1px);
 }
 
 @media (max-width: 768px) {
-    .price-container {
-        flex-direction: column;
-        align-items: center;
-    }
+  .price-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .price-box {
-        width: 80%;
-        margin-bottom: 20px;
-    }
+  .price-box {
+    width: 80%;
+    margin-bottom: 20px;
+  }
 }
