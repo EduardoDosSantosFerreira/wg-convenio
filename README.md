@@ -1,6 +1,6 @@
 # WG Convênios Funerários
 
-A WG Convênios Funerários é uma empresa com mais de 30 anos de experiência no mercado funerário, dedicada a oferecer serviços de qualidade e tranquilidade para seus associados e familiares. Com sede em Itaquaquecetuba, SP, a empresa atua em diversas cidades da Grande São Paulo, Alto Tietê e Interior, proporcionando cobertura funerária completa e benefícios exclusivos.([wgconvenio.com.br][1])
+A WG Convênios Funerários é uma empresa com mais de 40 anos de experiência no mercado funerário, dedicada a oferecer serviços de qualidade e tranquilidade para seus associados e familiares. Com sede em Itaquaquecetuba, SP, a empresa atua em diversas cidades da Grande São Paulo, Alto Tietê e Interior, proporcionando cobertura funerária completa e benefícios exclusivos.([wgconvenio.com.br][1])
 
 ---
 
@@ -56,7 +56,7 @@ A WG Convênios Funerários oferece três planos com cobertura funerária comple
 
 ## ✅ Vantagens de Escolher a WG
 
-* **Experiência**: Mais de 30 anos de atuação no mercado funerário.
+* **Experiência**: Mais de 40 anos de atuação no mercado funerário.
 * **Cobertura Ampla**: Atendimento em diversas cidades da Grande São Paulo e Interior.
 * **Atendimento Humanizado**: Equipe capacitada para oferecer suporte em momentos delicados.
 ---
