@@ -1,7 +1,7 @@
 // Função para adicionar o HTML ao DOM
 function adicionarLoginAoDOM() {
-    var div = document.createElement("div");
-    div.innerHTML = `
+  var div = document.createElement("div");
+  div.innerHTML = `
 <!-- Footer -->
 <footer id="Footer" class="bg-dark text-light py-5">
     <div class="container">
@@ -89,7 +89,7 @@ function adicionarLoginAoDOM() {
 </footer>
     `;
 
-    document.body.appendChild(div);
+  document.body.appendChild(div);
 }
 
 adicionarLoginAoDOM();

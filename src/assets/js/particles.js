@@ -1,11 +1,10 @@
-
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Animação de contagem para estatísticas
-  const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+  const statNumbers = document.querySelectorAll(".stat-number[data-target]");
   const duration = 2000; // 2 segundos
 
-  statNumbers.forEach(stat => {
-    const target = parseInt(stat.getAttribute('data-target'));
+  statNumbers.forEach((stat) => {
+    const target = parseInt(stat.getAttribute("data-target"));
     const increment = target / (duration / 16);
     let current = 0;
 
@@ -31,19 +30,23 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Cria partículas dinâmicas
-  const particlesContainer = document.querySelector('.particles-container');
+  const particlesContainer = document.querySelector(".particles-container");
   const particleCount = 50;
 
   for (let i = 0; i < particleCount; i++) {
-    const particle = document.createElement('div');
-    particle.style.position = 'absolute';
+    const particle = document.createElement("div");
+    particle.style.position = "absolute";
     particle.style.width = `${Math.random() * 5 + 1}px`;
     particle.style.height = particle.style.width;
-    particle.style.backgroundColor = `rgba(0, 180, 255, ${Math.random() * 0.5 + 0.1})`;
-    particle.style.borderRadius = '50%';
+    particle.style.backgroundColor = `rgba(0, 180, 255, ${
+      Math.random() * 0.5 + 0.1
+    })`;
+    particle.style.borderRadius = "50%";
     particle.style.top = `${Math.random() * 100}%`;
     particle.style.left = `${Math.random() * 100}%`;
-    particle.style.animation = `float ${Math.random() * 10 + 5}s linear infinite`;
+    particle.style.animation = `float ${
+      Math.random() * 10 + 5
+    }s linear infinite`;
     particle.style.animationDelay = `${Math.random() * 5}s`;
     particlesContainer.appendChild(particle);
   }

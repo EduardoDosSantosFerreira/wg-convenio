@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const navbar = document.querySelector('.navbar');
-  navbar.style.transition = 'top 0.8s ease, opacity 0.8s ease';
-  navbar.classList.add('hidden');
+  const navbar = document.querySelector(".navbar");
+  navbar.style.transition = "top 0.8s ease, opacity 0.8s ease";
+  navbar.classList.add("hidden");
 
   setTimeout(() => {
-    navbar.classList.remove('hidden');
+    navbar.classList.remove("hidden");
     setTimeout(() => {
-      navbar.style.transition = 'top 0.3s ease-in-out, opacity 0.3s ease-in-out';
+      navbar.style.transition =
+        "top 0.3s ease-in-out, opacity 0.3s ease-in-out";
     }, 800);
   }, 100);
 
@@ -16,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 let prevScrollPos = window.pageYOffset;
 window.addEventListener("scroll", () => {
   const currentScrollPos = window.pageYOffset;
-  const navbar = document.querySelector('.navbar');
+  const navbar = document.querySelector(".navbar");
 
   if (prevScrollPos < currentScrollPos) {
     navbar.style.top = "-100px";
@@ -41,7 +42,7 @@ function ajustarFonte(incremento) {
   if (novoTamanho > 24) novoTamanho = 24;
 
   html.style.fontSize = `${novoTamanho}px`;
-  localStorage.setItem('tamanhoFonte', novoTamanho);
+  localStorage.setItem("tamanhoFonte", novoTamanho);
 }
 
 function toggleDarkMode(button = null) {
@@ -59,9 +60,9 @@ function toggleDarkMode(button = null) {
 }
 
 function atualizarTextoModoEscuro(isDark) {
-  const textoBtn = document.querySelector('#modoEscuroTexto');
+  const textoBtn = document.querySelector("#modoEscuroTexto");
   if (textoBtn) {
-    textoBtn.textContent = isDark ? 'Modo Claro' : 'Modo Escuro';
+    textoBtn.textContent = isDark ? "Modo Claro" : "Modo Escuro";
   }
 }
 

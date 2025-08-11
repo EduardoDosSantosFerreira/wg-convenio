@@ -4,11 +4,11 @@ import {
   collection,
   query,
   orderBy,
-  onSnapshot
-} from '../../../admin/firebase/firebase.config.js';
+  onSnapshot,
+} from "../../../admin/firebase/firebase.config.js";
 
-const feed = document.getElementById('feed');
-const loadingPosts = document.getElementById('loadingPosts');
+const feed = document.getElementById("feed");
+const loadingPosts = document.getElementById("loadingPosts");
 
 const LIMITE_CARACTERES = 350;
 
@@ -17,41 +17,52 @@ criarModalImagem();
 loadPosts();
 
 function loadPosts() {
-  loadingPosts.style.display = 'block';
-  feed.innerHTML = '';
+  loadingPosts.style.display = "block";
+  feed.innerHTML = "";
 
   const q = query(collection(db, "posts"), orderBy("criadoEm", "desc"));
 
-  const unsubscribe = onSnapshot(q, (snapshot) => {
-    loadingPosts.style.display = 'none';
+  const unsubscribe = onSnapshot(
+    q,
+    (snapshot) => {
+      loadingPosts.style.display = "none";
 
-    if (snapshot.empty) {
-      feed.innerHTML = '<div class="alert alert-info text-center">Nenhuma postagem encontrada.</div>';
-      return;
+      if (snapshot.empty) {
+        feed.innerHTML =
+          '<div class="alert alert-info text-center">Nenhuma postagem encontrada.</div>';
+        return;
+      }
+
+      feed.innerHTML = snapshot.docs
+        .map((doc) => createPostElement(doc))
+        .join("");
+
+      document.querySelectorAll(".btn-leia-mais").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const postId = this.getAttribute("data-id");
+          const textoCompleto = this.getAttribute("data-texto");
+          const textoContainer =
+            this.closest(".card-body").querySelector(".card-text");
+          textoContainer.innerHTML = textoCompleto;
+          this.style.display = "none";
+        });
+      });
+
+      document
+        .querySelectorAll(".card-img-top[data-img-full]")
+        .forEach((img) => {
+          img.addEventListener("click", function () {
+            abrirModalImagem(this.getAttribute("data-img-full"));
+          });
+        });
+    },
+    (error) => {
+      console.error("Erro ao carregar postagens:", error);
+      loadingPosts.style.display = "none";
+      feed.innerHTML =
+        '<div class="alert alert-danger text-center">Erro ao carregar postagens.</div>';
     }
-
-    feed.innerHTML = snapshot.docs.map(doc => createPostElement(doc)).join('');
-
-    document.querySelectorAll('.btn-leia-mais').forEach(btn => {
-      btn.addEventListener('click', function () {
-        const postId = this.getAttribute('data-id');
-        const textoCompleto = this.getAttribute('data-texto');
-        const textoContainer = this.closest('.card-body').querySelector('.card-text');
-        textoContainer.innerHTML = textoCompleto;
-        this.style.display = 'none';
-      });
-    });
-
-    document.querySelectorAll('.card-img-top[data-img-full]').forEach(img => {
-      img.addEventListener('click', function () {
-        abrirModalImagem(this.getAttribute('data-img-full'));
-      });
-    });
-  }, (error) => {
-    console.error("Erro ao carregar postagens:", error);
-    loadingPosts.style.display = 'none';
-    feed.innerHTML = '<div class="alert alert-danger text-center">Erro ao carregar postagens.</div>';
-  });
+  );
 
   return unsubscribe;
 }
@@ -59,17 +70,20 @@ function loadPosts() {
 function createPostElement(doc) {
   const post = doc.data();
   const dataFormatada = formatDate(post.criadoEm);
-  const imagem = post.imagem || 'https://via.placeholder.com/800x400?text=Sem+Imagem';
-  const titulo = post.titulo || 'Postagem sem título';
-  const texto = post.texto || '';
+  const imagem =
+    post.imagem || "https://via.placeholder.com/800x400?text=Sem+Imagem";
+  const titulo = post.titulo || "Postagem sem título";
+  const texto = post.texto || "";
   const postId = doc.id;
 
-  let textoHtml = '';
+  let textoHtml = "";
   if (texto.length > LIMITE_CARACTERES) {
     const textoCortado = texto.slice(0, LIMITE_CARACTERES).trim();
     textoHtml = `
       ${textoCortado}...
-      <button class="btn btn-link btn-leia-mais p-0" data-id="${postId}" data-texto="${encodeHtml(texto)}" style="font-size:0.98em; color: #415ce1 !important;">Leia mais</button>
+      <button class="btn btn-link btn-leia-mais p-0" data-id="${postId}" data-texto="${encodeHtml(
+      texto
+    )}" style="font-size:0.98em; color: #415ce1 !important;">Leia mais</button>
     `;
   } else {
     textoHtml = encodeHtml(texto);
@@ -94,28 +108,36 @@ function createPostElement(doc) {
 
 // Função para escapar HTML e evitar XSS
 function encodeHtml(str) {
-  if (!str) return '';
-  return str.replace(/[&<>"']/g, function (m) {
-    switch (m) {
-      case '&': return '&amp;';
-      case '<': return '&lt;';
-      case '>': return '&gt;';
-      case '"': return '&quot;';
-      case "'": return '&#39;';
-      default: return m;
-    }
-  }).replace(/\n/g, '<br>');
+  if (!str) return "";
+  return str
+    .replace(/[&<>"']/g, function (m) {
+      switch (m) {
+        case "&":
+          return "&amp;";
+        case "<":
+          return "&lt;";
+        case ">":
+          return "&gt;";
+        case '"':
+          return "&quot;";
+        case "'":
+          return "&#39;";
+        default:
+          return m;
+      }
+    })
+    .replace(/\n/g, "<br>");
 }
 
 function formatDate(timestamp) {
-  if (!timestamp) return 'Data desconhecida';
+  if (!timestamp) return "Data desconhecida";
   const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
-  return date.toLocaleString('pt-BR');
+  return date.toLocaleString("pt-BR");
 }
 
 // Cria o modal de visualização de imagem (apenas uma vez)
 function criarModalImagem() {
-  if (document.getElementById('modalImagemBlog')) return;
+  if (document.getElementById("modalImagemBlog")) return;
   const modalHtml = `
     <div class="modal fade" id="modalImagemBlog" tabindex="-1" aria-labelledby="modalImagemBlogLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -128,16 +150,18 @@ function criarModalImagem() {
       </div>
     </div>
   `;
-  document.body.insertAdjacentHTML('beforeend', modalHtml);
+  document.body.insertAdjacentHTML("beforeend", modalHtml);
 }
 
 // Função para abrir o modal e mostrar a imagem em tamanho grande
 function abrirModalImagem(url) {
-  const img = document.getElementById('imagemModalBlog');
+  const img = document.getElementById("imagemModalBlog");
   if (img) {
     img.src = url;
     // Usa o Bootstrap Modal
-    const modal = new bootstrap.Modal(document.getElementById('modalImagemBlog'));
+    const modal = new bootstrap.Modal(
+      document.getElementById("modalImagemBlog")
+    );
     modal.show();
   }
 }
