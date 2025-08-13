@@ -1,68 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - WG Convênios Funerários</title>
     <meta name="description"
         content="Entre em contato com a WG Convênios Funerários. Estamos prontos para atender você e sua família com planos funerários acessíveis e assistência completa.">
-
-    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/logos/logo.png">
-
-    <!-- Google Fonts: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../assets/css/utils/bootstrap.min.css">
-
-    <!-- Font Awesome (versão 6.5.0) - CDN oficial -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Estilos customizados do site -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/contato.css">
     <link rel="stylesheet" href="../assets/css/components/footer.css">
     <link rel="stylesheet" href="../assets/css/components/navbar.css">
-
-    <!-- Animate.css para animações -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-    <!-- Ícones adicionais: Remixicon e Boxicons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
-
 <body>
-
     <div class="contact-container">
         <div class="contact-wrapper">
-
-            <!-- Informações de Contato -->
             <div class="contact-card">
                 <div class="contact-header">
                     <i class="fas fa-phone-alt contact-icon"></i>
                     <h2 style="color: #000000 !important" class="contact-title">Fale Conosco</h2>
                 </div>
-
                 <div class="contact-details">
                     <div class="contact-item">
                         <i class="fas fa-phone contact-detail-icon"></i>
                         <span style="color: #000000 !important" class="contact-text">(11) 4639-8437 / 4640-2289</span>
                     </div>
-
                     <div class="contact-item highlight">
                         <i class="fab fa-whatsapp contact-detail-icon"></i>
                         <span style="color: #000000 !important" class="contact-text">+55 11 98105-0511</span>
                     </div>
-
                     <div class="contact-item">
                         <i class="fas fa-envelope contact-detail-icon"></i>
                         <span style="color: #000000 !important" class="contact-text">contato@wgconvenios.com.br</span>
                     </div>
-
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt contact-detail-icon"></i>
                         <span style="color: #000000 !important" class="contact-text">R. Uberlândia, 220 - Vila
@@ -70,7 +47,6 @@
                             08573-020</span>
                     </div>
                 </div>
-
                 <!-- Mapa do Google -->
                 <div class="contact-map">
                     <iframe
@@ -79,7 +55,6 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-
                 <div class="contact-social">
                     <a href="https://www.facebook.com/wgconvenio/" class="social-link" aria-label="Facebook"><i
                             class="fab fa-facebook-f"></i></a>
@@ -89,36 +64,29 @@
                         class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-
-            <!-- Formulário de Contato -->
             <div class="contact-form-container">
                 <form id="contactForm" class="contact-form">
                     <div class="form-header">
                         <i class="fas fa-paper-plane form-icon"></i>
                         <h2 class="form-title" style="color: #000000 !important;">Enviar Mensagem</h2>
                     </div>
-
                     <div class="form-group">
                         <label for="name" class="form-label" style="color: #000000 !important;">Nome Completo</label>
                         <input type="text" id="name" class="form-input" placeholder="Digite seu nome" required>
                     </div>
-
                     <div class="form-group">
                         <label for="email" class="form-label" style="color: #000000 !important;">E-mail</label>
                         <input type="email" id="email" class="form-input" placeholder="seuemail@exemplo.com" required>
                     </div>
-
                     <div class="form-group">
                         <label for="phone" class="form-label" style="color: #000000 !important;">Telefone</label>
                         <input type="tel" id="phone" class="form-input" placeholder="(11) 98765-4321" required>
                     </div>
-
                     <div class="form-group">
                         <label for="message" class="form-label" style="color: #000000 !important;">Mensagem</label>
                         <textarea id="message" class="form-textarea" rows="5" placeholder="Como podemos te ajudar?"
                             required></textarea>
                     </div>
-
                     <button type="button" onclick="enviarWhatsapp()" class="form-button">
                         <i class="fab fa-whatsapp button-icon" style="color: #000000 !important;"></i>
                         Enviar via WhatsApp
@@ -127,45 +95,34 @@
             </div>
         </div>
     </div>
-
-    <!-- Botão de voltar ao topo -->
     <button id="backToTopBtn" class="back-to-top" aria-label="Voltar ao topo">
         <svg class="arrow-icon" viewBox="0 0 24 24">
             <path d="M12 4l-8 8h5v8h6v-8h5z" />
         </svg>
     </button>
-
-    <!-- Ícone do WhatsApp -->
     <div class="whatsapp-icon"
         onclick="window.open('https://wa.me/5511981050511?text=Olá,%20venho%20pelo%20site%20da%20WG%20Convênios%20Funerários.', '_blank')">
         <i class="fab fa-whatsapp fa-3x" aria-label="Ícone do WhatsApp"></i>
     </div>
-
     <script>
         function enviarWhatsapp() {
             const nome = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const telefone = document.getElementById('phone').value.trim();
             const mensagem = document.getElementById('message').value.trim();
-
             if (!nome || !email || !telefone || !mensagem) {
                 alert('Por favor, preencha todos os campos!');
                 return;
             }
-
             const numero = '13981492795';
             const texto = `Olá! Me chamo *${nome}*.
-    
     E-mail: ${email}
     Telefone: ${telefone}
-    
     *Mensagem:* ${mensagem}`;
-
             const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
             window.open(url, '_blank');
         }
     </script>
-
     <script src="../assets/js/components/navpages.js"></script>
     <script src="../assets/js/nav.js"></script>
     <script src="../assets/js/contato.js"></script>
@@ -184,5 +141,4 @@
     </div>
     <!-- Eduardo Dos Santos Ferreira -->
 </body>
-
 </html>
