@@ -6,7 +6,6 @@
   --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   --transition: all 0.3s ease;
 }
-
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
@@ -14,7 +13,6 @@ body {
   color: #000;
   margin-top: 100px;
 }
-
 .post {
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -22,7 +20,6 @@ body {
   margin-bottom: 1.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .post img {
   width: 100%;
   height: 300px;
@@ -31,16 +28,13 @@ body {
   margin-bottom: 1rem;
   display: block;
 }
-
 .post-date {
   font-size: 0.85rem;
   color: #6c757d;
 }
-
 #loadingPosts {
   display: none;
 }
-
 .blog-container {
   max-width: 900px;
   margin: 40px auto;
@@ -49,26 +43,22 @@ body {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
   padding: 32px 24px;
 }
-
 .blog-title {
   font-size: 2.2rem;
   font-weight: 700;
   color: #002f6c;
   margin-bottom: 12px;
 }
-
 .blog-subtitle {
   color: #666;
   font-size: 1.1rem;
   margin-bottom: 32px;
 }
-
 .posts-list {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
-
 .post-card {
   background: #f4f8fb;
   border-radius: 8px;
@@ -76,89 +66,67 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: box-shadow 0.2s;
 }
-
 .post-card:hover {
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
 }
-
 .post-title {
   font-size: 1.4rem;
   font-weight: 600;
   color: #003366;
   margin-bottom: 8px;
 }
-
 .post-meta {
   font-size: 0.95rem;
   color: #888;
   margin-bottom: 16px;
 }
-
 .post-content {
   color: #333;
   font-size: 1.05rem;
   line-height: 1.7;
 }
-
 .no-posts {
   text-align: center;
   color: #aaa;
   font-size: 1.1rem;
   margin-top: 40px;
 }
-
 .post-text {
   white-space: pre-wrap;
 }
-
-/* Efeitos base */
 .hover-effect {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform: translateY(0);
 }
-
 .hover-effect:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(8, 60, 140, 0.4) !important;
-  /* azul mais escuro */
 }
-
-/* Divisor  */
 .divider-custom {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 2rem 0;
 }
-
 .divider-custom-line {
   width: 100%;
   max-width: 10rem;
   height: 0.4rem;
   border-radius: 1rem;
   background: linear-gradient(90deg, transparent, #083c8c, transparent);
-  /* azul mais escuro */
 }
-
 .divider-custom-icon {
   padding: 0 1.5rem;
   font-size: 2.5rem;
   animation: pulse 2s infinite;
 }
-
-/* Animação do texto WG */
 .wg-animated-gradient {
   background: linear-gradient(135deg,
       #083c8c 0%,
-      /* azul mais escuro */
       #0060a8 25%,
-      /* azul intermediário mais escuro */
       #0090cc 50%,
-      /* azul claro mais escuro */
       #0060a8 75%,
-      /* azul intermediário mais escuro */
       #083c8c 100%
-      /* azul mais escuro */
     );
   background-size: 300% 300%;
   -webkit-background-clip: text;
@@ -166,13 +134,11 @@ body {
   color: transparent;
   font-weight: 900;
   letter-spacing: 3px;
-  /* azul mais escuro */
   animation: gradientShift 6s ease infinite;
   position: relative;
   display: inline-block;
   padding: 0 10px;
 }
-
 .wg-animated-gradient::after {
   content: '';
   position: absolute;
@@ -181,13 +147,10 @@ body {
   width: 80%;
   height: 3px;
   background: linear-gradient(90deg, transparent, #0090cc, transparent);
-  /* azul claro mais escuro */
   border-radius: 100%;
   filter: blur(2px);
   animation: linePulse 3s ease infinite;
 }
-
-/* Texto de excelência */
 .excellence-text {
   font-weight: 700;
   background: linear-gradient(45deg, #ffd700, #ffcc00, #ffd700);
@@ -197,8 +160,6 @@ body {
   position: relative;
   animation: shine 3s ease infinite;
 }
-
-/* Elementos flutuantes decorativos */
 .floating-elements {
   position: absolute;
   width: 100%;
@@ -208,180 +169,139 @@ body {
   pointer-events: none;
   z-index: -1;
 }
-
 .floating-element {
   position: absolute;
   border-radius: 50%;
   filter: blur(40px);
   opacity: 0.3;
 }
-
 .element-1 {
   width: 200px;
   height: 200px;
   background: #083c8c;
-  /* azul mais escuro */
   top: 20%;
   left: 100%;
   animation: float 8s ease-in-out infinite;
 }
-
 .element-2 {
   width: 300px;
   height: 300px;
   background: #0060a8;
-  /* azul intermediário mais escuro */
   bottom: 20%;
   right: 10%;
   animation: float 10s ease-in-out infinite reverse;
 }
-
 .element-3 {
   width: 150px;
   height: 150px;
   background: #0090cc;
-  /* azul claro mais escuro */
   top: 50%;
   left: 50%;
   animation: float 12s ease-in-out infinite;
 }
-
-/* Esconde os elementos flutuantes em telas pequenas (responsivo) */
 @media (max-width: 768px) {
-
   .element-1,
   .element-2,
   .element-3 {
     display: none !important;
   }
 }
-
-/* Estatísticas */
 .stat-item {
   position: relative;
   z-index: 1;
 }
-
 .stat-number {
   font-size: 3rem;
   font-weight: 800;
   color: #343a40;
-  /* azul mais escuro */
   margin-bottom: 0.5rem;
 }
-
 .stat-number-plus::after {
   content: "+";
   margin-left: 4px;
   font-weight: bold;
   color: #083c8c;
-  /* azul mais escuro */
 }
-
 .stat-label {
   font-size: 1.2rem;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.8);
   letter-spacing: 1px;
 }
-
-/* Animações */
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%
   }
-
   50% {
     background-position: 100% 50%
   }
-
   100% {
     background-position: 0% 50%
   }
 }
-
 @keyframes linePulse {
-
   0%,
   100% {
     opacity: 0.5;
     transform: scaleX(0.8);
   }
-
   50% {
     opacity: 1;
     transform: scaleX(1);
   }
 }
-
 @keyframes pulse {
-
   0%,
   100% {
     transform: scale(1);
     opacity: 1;
   }
-
   50% {
     transform: scale(1.2);
     opacity: 0.8;
   }
 }
-
 @keyframes shine {
   0% {
     background-position: 0% 50%
   }
-
   100% {
     background-position: 200% 50%
   }
 }
-
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0) translateX(0);
   }
-
   50% {
     transform: translateY(-50px) translateX(20px);
   }
 }
-
-/* Responsividade */
 @media (max-width: 992px) {
   .blog-title {
     font-size: 3.5rem !important;
   }
-
   .blog-subtitle {
     font-size: 1.8rem !important;
   }
-
   .stat-number {
     font-size: 2rem !important;
   }
-
   .stat-label {
     font-size: 1rem !important;
   }
 }
-
 @media (max-width: 768px) {
   .blog-title {
     font-size: 2.5rem !important;
   }
-
   .blog-subtitle {
     font-size: 1.4rem !important;
   }
-
   .divider-custom-line {
     max-width: 5rem;
   }
-
   .divider-custom-icon {
     font-size: 1.8rem;
   }
@@ -390,7 +310,6 @@ body {
   color: #000000 !important;
   text-decoration: none;
 }
-
 .dark-mode h1,
 .dark-mode h2,
 .dark-mode h3,

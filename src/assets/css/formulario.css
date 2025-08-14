@@ -10,19 +10,16 @@
     --transition: all 0.3s ease;
     --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
-
 body {
     padding-top: 10vh;
     background-color: var(--bg-light);
     color: var(--text-dark);
 }
-
 #plano-whatsapp {
     padding: 60px 20px;
     background-color: var(--bg-light);
     color: var(--text-dark);
 }
-
 #plano-whatsapp .container {
     max-width: 700px;
     margin: auto;
@@ -31,18 +28,15 @@ body {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
 }
-
 #plano-whatsapp h2 {
     font-size: 1.8rem;
     margin-bottom: 30px;
     color: var(--text-dark);
     font-weight: 600;
 }
-
 .steps-indicator {
     gap: 1.5rem;
 }
-
 .step-circle {
     width: 55px;
     height: 55px;
@@ -58,14 +52,12 @@ body {
     transition: var(--transition);
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
 }
-
 .step-circle.active {
     background: var(--primary-color);
     color: white;
     border-color: var(--primary-color);
     box-shadow: 0 0 15px rgba(0, 32, 175, 0.5);
 }
-
 .step-line {
     height: 4px;
     width: 70px;
@@ -73,19 +65,15 @@ body {
     border-radius: 2px;
     transition: var(--transition);
 }
-
 .step-circle.active+.step-line {
     background: var(--primary-color);
 }
-
 .step {
     display: none;
 }
-
 .step.active {
     display: block;
 }
-
 input,
 select {
     width: 100%;
@@ -98,22 +86,18 @@ select {
     transition: var(--transition);
     font-size: 1rem;
 }
-
 input::placeholder {
     color: #aaa;
 }
-
 input:focus,
 select:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 5px var(--primary-color);
 }
-
 .invalido {
     border-color: var(--error-color) !important;
     background-color: rgba(231, 76, 60, 0.05);
 }
-
 .btn-primary,
 .btn-secondary {
     padding: 12px 25px;
@@ -128,66 +112,54 @@ select:focus {
     justify-content: center;
     gap: 8px;
 }
-
 .btn-primary {
     background-color: var(--primary-color);
     color: white;
 }
-
 .btn-secondary {
     background-color: var(--secondary-color);
     color: white;
 }
-
 .btn-primary:hover,
 .btn-secondary:hover {
     opacity: 0.9;
     transform: translateY(-2px);
 }
-
 @keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-
 @keyframes fadeOut {
     from {
         opacity: 1;
         transform: translateY(0);
     }
-
     to {
         opacity: 0;
         transform: translateY(-20px);
     }
 }
-
 .fade-in {
     animation: fadeIn 0.5s forwards;
 }
-
 .fade-out {
     animation: fadeOut 0.5s forwards;
 }
-
 @media (max-width: 600px) {
     .step-circle {
         width: 45px;
         height: 45px;
         font-size: 1.1rem;
     }
-
     .step-line {
         width: 50px;
     }
-
     #plano-whatsapp h2 {
         font-size: 1.5rem;
     }

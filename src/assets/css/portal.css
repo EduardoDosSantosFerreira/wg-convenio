@@ -26,13 +26,11 @@
   --small-color: #888;
   --small-margin-top: 0.2rem;
 }
-
 body {
   background-color: var(--background-color);
   color: var(--text-color);
   padding-top: 20px;
 }
-
 .card-funcionalidade {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: var(--card-funcionalidade-radius);
@@ -41,12 +39,10 @@ body {
   border: none;
   box-shadow: var(--card-funcionalidade-box-shadow);
 }
-
 .card-funcionalidade:hover {
   transform: var(--card-funcionalidade-hover-transform);
   box-shadow: var(--card-funcionalidade-hover-box-shadow);
 }
-
 .card-funcionalidade .icon-circle {
   width: var(--icon-circle-size);
   height: var(--icon-circle-size);
@@ -60,18 +56,15 @@ body {
   color: inherit;
   transition: background 0.3s, color 0.3s;
 }
-
 .card-funcionalidade:hover .icon-circle {
   background: var(--icon-circle-hover-bg);
 }
-
 .card-funcionalidade .card-title,
 .card-funcionalidade h5 {
   font-weight: var(--card-title-font-weight);
   color: var(--card-title-color);
   margin-bottom: var(--card-title-margin-bottom);
 }
-
 .card-funcionalidade .btn {
   font-weight: var(--btn-font-weight);
   border-radius: var(--btn-radius);
@@ -79,26 +72,22 @@ body {
   transition: box-shadow 0.2s;
   box-shadow: var(--btn-box-shadow);
 }
-
 .card-funcionalidade .btn:active,
 .card-funcionalidade .btn:focus {
   box-shadow: var(--btn-active-focus-box-shadow);
 }
-
 .card-funcionalidade p,
 .card-funcionalidade .card-text {
   color: var(--card-text-color);
   font-size: var(--card-text-font-size);
   margin-bottom: var(--card-text-margin-bottom);
 }
-
 .card-funcionalidade small {
   font-size: var(--small-font-size);
   color: var(--small-color);
   display: block;
   margin-top: var(--small-margin-top);
 }
-
 .whatsapp-icon {
   position: fixed;
   bottom: 1.25rem;
@@ -106,7 +95,6 @@ body {
   cursor: pointer;
   z-index: 999;
 }
-
 .whatsapp-icon i {
   color: #25d366;
 }

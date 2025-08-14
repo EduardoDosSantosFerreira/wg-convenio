@@ -18,7 +18,6 @@
     --transition-fade: opacity 0.15s linear;
     --transition-collapse: height 0.35s ease;
 }
-
 *,
 *::before,
 *::after {
@@ -26,7 +25,6 @@
     margin: 0;
     padding: 0;
 }
-
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
@@ -36,7 +34,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
 h1,
 h2,
 h3,
@@ -48,16 +45,13 @@ h6 {
     margin-bottom: 0.5rem;
     color: var(--dark-color);
 }
-
 p {
     margin-bottom: 1rem;
 }
-
 a {
     text-decoration: none;
     transition: var(--transition-base);
 }
-
 .hero-section {
     position: relative;
     background:
@@ -73,7 +67,6 @@ a {
     padding: 4rem 1rem;
     isolation: isolate;
 }
-
 .hero-section::after {
     content: '';
     position: absolute;
@@ -84,7 +77,6 @@ a {
     background: linear-gradient(to bottom, transparent 0%, var(--white) 100%);
     z-index: 1;
 }
-
 .service-card {
     position: relative;
     border-radius: var(--border-radius-xl);
@@ -95,30 +87,25 @@ a {
     height: 100%;
     background-color: var(--white);
 }
-
 .service-card:hover {
     transform: translateY(-0.75rem);
     box-shadow: var(--shadow-lg);
     z-index: 10;
 }
-
 .card-img-container {
     position: relative;
     height: 280px;
     overflow: hidden;
 }
-
 .card-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.8s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
-
 .service-card:hover .card-img {
     transform: scale(1.1);
 }
-
 .card-img-overlay {
     position: absolute;
     top: 0;
@@ -137,18 +124,15 @@ a {
     opacity: 1;
     transition: var(--transition-base);
 }
-
 .card-body {
     padding: 2rem;
 }
-
 .service-icon {
     font-size: 2.75rem;
     margin-bottom: 1.25rem;
     color: var(--primary-color);
     transition: var(--transition-base);
 }
-
 .feature-box {
     padding: 2.5rem;
     border-radius: var(--border-radius-lg);
@@ -158,18 +142,15 @@ a {
     box-shadow: var(--shadow-sm);
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
-
 .feature-box:hover {
     background-color: var(--light-color);
     transform: translateY(-0.5rem);
     box-shadow: var(--shadow);
 }
-
 .feature-box:hover .service-icon {
     transform: scale(1.1);
     color: var(--secondary-color);
 }
-
 .divider {
     width: 80px;
     height: 4px;
@@ -177,7 +158,6 @@ a {
     margin: 1.75rem auto;
     position: relative;
 }
-
 .divider::after {
     content: '';
     position: absolute;
@@ -187,19 +167,15 @@ a {
     left: 50%;
     transform: translateX(-50%);
 }
-
 .bg-primary-custom {
     background-color: var(--primary-color) !important;
 }
-
 .text-primary-custom {
     color: var(--primary-color) !important;
 }
-
 .text-secondary-custom {
     color: var(--secondary-color) !important;
 }
-
 .btn-primary-custom {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
@@ -208,13 +184,11 @@ a {
     font-weight: 600;
     letter-spacing: 0.5px;
 }
-
 .btn-primary-custom:hover {
     background-color: var(--primary-hover);
     border-color: var(--primary-hover);
     transform: translateY(-2px);
 }
-
 .btn-outline-primary-custom {
     color: var(--primary-color);
     border-color: var(--primary-color);
@@ -222,13 +196,11 @@ a {
     font-weight: 600;
     letter-spacing: 0.5px;
 }
-
 .btn-outline-primary-custom:hover {
     background-color: var(--primary-color);
     color: var(--white);
     transform: translateY(-2px);
 }
-
 .testimonial-card {
     position: relative;
     background-color: var(--white);
@@ -239,12 +211,10 @@ a {
     border-left: 4px solid var(--primary-color);
     transition: var(--transition-base);
 }
-
 .testimonial-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow);
 }
-
 .testimonial-card::before {
     content: '\201C';
     position: absolute;
@@ -255,61 +225,49 @@ a {
     font-family: Georgia, serif;
     line-height: 1;
 }
-
 .py-6 {
     padding-top: 5rem;
     padding-bottom: 5rem;
 }
-
 .mb-6 {
     margin-bottom: 5rem;
 }
-
 :focus-visible {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
-
 @media (max-width: 992px) {
     .hero-section {
         min-height: 55vh;
     }
-
     .card-img-container {
         height: 240px;
     }
 }
-
 @media (max-width: 768px) {
     .hero-section {
         min-height: 50vh;
         padding: 3rem 1rem;
     }
-
     .card-img-container {
         height: 200px;
     }
-
     .feature-box {
         padding: 1.5rem;
     }
-
     .py-6 {
         padding-top: 3.5rem;
         padding-bottom: 3.5rem;
     }
 }
-
 @media (max-width: 576px) {
     .hero-section {
         min-height: 45vh;
     }
-
     .divider {
         width: 60px;
         height: 3px;
     }
-
     .service-icon {
         font-size: 2.25rem;
     }

@@ -4,25 +4,21 @@
     --light-color: #f8f9fa;
     --dark-color: #212529;
 }
-
 body {
     font-family: 'Poppins', sans-serif;
     color: var(--dark-color);
     background-color: #fff;
     padding-top: 0;
 }
-
 .partners-hero {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     padding: 5rem 0;
     margin-bottom: 3rem;
 }
-
 .partners-hero h1 {
     font-weight: 700;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .section-title {
     font-weight: 600;
     color: var(--primary-color);
@@ -30,7 +26,6 @@ body {
     display: inline-block;
     margin-bottom: 0.5rem;
 }
-
 .section-title:after {
     content: '';
     position: absolute;
@@ -40,39 +35,32 @@ body {
     bottom: -8px;
     left: 25%;
 }
-
 .section-subtitle {
     color: #6c757d;
     margin-bottom: 2rem;
 }
-
 .category-section {
     margin-bottom: 3rem;
     padding: 1.5rem 0;
 }
-
 .category-header {
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--primary-color);
 }
-
 .category-title {
     font-weight: 600;
     color: var(--primary-color);
     margin: 0;
 }
-
 .partner-card {
     transition: all 0.3s ease;
     border-radius: 0.5rem;
     overflow: hidden;
 }
-
 .partner-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
-
 .partner-card .card-img-top {
     height: 120px;
     display: flex;
@@ -81,22 +69,18 @@ body {
     background: #fff;
     padding: 1rem;
 }
-
 .partner-card img {
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
 }
-
 .partner-name {
     color: var(--primary-color);
     font-weight: 600;
 }
-
 .partner-specialty {
     font-size: 0.85rem;
 }
-
 .icon-box {
     width: 60px;
     height: 60px;
@@ -105,41 +89,33 @@ body {
     align-items: center;
     justify-content: center;
 }
-
 .cta-section {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
 }
-
 .category-filter {
     overflow-x: auto;
     white-space: nowrap;
     padding-bottom: 1rem;
 }
-
 .category-filter .btn-group {
     flex-wrap: nowrap;
 }
-
 .filter-btn.active {
     background-color: var(--primary-color);
     color: white;
 }
-
 @media (max-width: 768px) {
     .partners-hero {
         padding: 3rem 0;
     }
-
     .partners-hero h1 {
         font-size: 2rem;
     }
-
     .category-filter .btn {
         padding: 0.375rem 0.5rem;
         font-size: 0.875rem;
     }
 }
-
 .whatsapp-icon {
     position: fixed;
     bottom: 1.25rem;
@@ -147,7 +123,6 @@ body {
     cursor: pointer;
     z-index: 999;
 }
-
 .whatsapp-icon i {
     color: #25d366;
 }
