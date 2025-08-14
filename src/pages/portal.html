@@ -1,55 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <!-- Metadados essenciais -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portal do Cliente | WG Convênios</title>
   <meta name="description"
     content="Área exclusiva para clientes da WG Convênios Funerários. Acesse seus dados, serviços e suporte.">
-
-  <!-- Google Fonts: Poppins para tipografia moderna e legível -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- CSS Principal e Componentes -->
   <link rel="stylesheet" href="../assets/css/utils/bootstrap.min.css" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/portal.css" />
   <link rel="stylesheet" href="../assets/css/components/footer.css" />
   <link rel="stylesheet" href="../assets/css/components/navbar.css" />
-
-  <!-- Font Awesome: apenas a versão mais recente é necessária, evite duplicidade -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Remixicon e Boxicons para ícones adicionais -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
-  <!-- Biblioteca de animações visuais -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-  <!-- Favicon para diferentes dispositivos -->
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/logos/logo.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/logos/logo.png">
-
-  <!-- Performance: pré-busca de domínios de fontes para carregamento mais rápido -->
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
-
 </head>
-
 <body>
-
   <main class="py-5 bg-light">
     <div class="container">
       <h2 class="mb-4 text-center" style="font-weight: 700; color: #003366;">
         Portal do Cliente WG Convênios
       </h2>
       <div class="row g-4 justify-content-center">
-
-        <!-- Cartão 1 -->
         <div class="col-md-4 col-sm-6">
           <div class="card card-funcionalidade text-center h-100 shadow-sm">
             <div class="card-body d-flex flex-column align-items-center">
@@ -63,8 +42,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Cartão 2 -->
         <div class="col-md-4 col-sm-6">
           <div class="card card-funcionalidade text-center h-100 shadow-sm">
             <div class="card-body d-flex flex-column align-items-center">
@@ -78,8 +55,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Cartão 3 -->
         <div class="col-md-4 col-sm-6">
           <div class="card card-funcionalidade text-center h-100 shadow-sm">
             <div class="card-body d-flex flex-column align-items-center">
@@ -93,8 +68,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Cartão 5 -->
         <div class="col-md-4 col-sm-6">
           <div class="card card-funcionalidade text-center h-100 shadow-sm">
             <div class="card-body d-flex flex-column align-items-center">
@@ -108,8 +81,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Cartão 6 -->
         <div class="col-md-4 col-sm-6">
           <div class="card card-funcionalidade text-center h-100 shadow-sm">
             <div class="card-body d-flex flex-column align-items-center">
@@ -126,29 +97,21 @@
       </div>
     </div>
   </main>
-
-  <!-- Botão de voltar ao topo -->
   <button id="backToTopBtn" class="back-to-top" aria-label="Voltar ao topo">
     <svg class="arrow-icon" viewBox="0 0 24 24">
       <path d="M12 4l-8 8h5v8h6v-8h5z" />
     </svg>
   </button>
-
-  <!-- VLibras -->
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
     <div vw-plugin-wrapper>
       <div class="vw-plugin-top-wrapper"></div>
     </div>
   </div>
-
-  <!-- Ícone do WhatsApp -->
   <div class="whatsapp-icon"
     onclick="window.open('https://wa.me/5511981050511?text=Olá,%20venho%20pelo%20site%20da%20WG%20Convênios%20Funerários.', '_blank')">
     <i class="fab fa-whatsapp fa-3x" aria-label="Ícone do WhatsApp"></i>
   </div>
-
-  <!-- Scripts -->
   <script src="../assets/js/components/navpages.js"></script>
   <script src="../assets/js/utils/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/nav.js"></script>
@@ -159,7 +122,5 @@
     new window.VLibras.Widget('https://vlibras.gov.br/app');
   </script>
   <!-- Eduardo Dos Santos Ferreira -->
-
 </body>
-
 </html>

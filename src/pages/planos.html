@@ -1,50 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WG Convênios Funerários | Planos e Assistência</title>
     <meta name="description"
         content="Conheça os planos funerários da WG Convênios. Assistência completa, cobertura em diversas cidades e benefícios exclusivos para sua família.">
-
-    <!-- Favicon para diferentes dispositivos -->
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/logos/logo.png"
         alt="Logo WG Convênios Funerários">
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/logos/logo.png"
         alt="Logo WG Convênios Funerários para dispositivos Apple">
-
-    <!-- Google Fonts: Poppins para tipografia moderna e legível -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap para responsividade e componentes prontos -->
     <link rel="stylesheet" href="../assets/css/utils/bootstrap.min.css">
-
-    <!-- Font Awesome para ícones (versão mais recente) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Remixicon e Boxicons para ícones adicionais -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
-    <!-- Animate.css para animações visuais -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-    <!-- Estilos customizados do site -->
     <link rel="stylesheet" href="../assets/css/planos.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/components/footer.css">
     <link rel="stylesheet" href="../assets/css/components/navbar.css">
 </head>
-
 <body>
     <header class="hero-header">
         <div class="hero-background">
             <div class="particles" aria-hidden="true"></div>
             <div class="gradient-overlay" aria-hidden="true"></div>
         </div>
-
         <div class="hero-content">
             <div class="hero-badge animate__animated animate__fadeInDown">
                 <span>
@@ -52,15 +35,12 @@
                     Segurança Familiar
                 </span>
             </div>
-
             <h1 class="animate__animated animate__fadeInUp animate__delay-1s">
                 <span class="highlight-text">Tranquilidade</span> para quem você ama
             </h1>
-
             <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1-5s">
                 Conheça nossos planos e garanta segurança e acolhimento nos momentos mais delicados da vida.
             </p>
-
             <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-2s">
                 <a href="#contato" class="btn-secondary magnetic" aria-label="Fale Conosco">
                     <span class="btn-content">
@@ -71,7 +51,6 @@
                 </a>
             </div>
         </div>
-
         <a href="#plans" aria-label="Rolar para os planos">
             <div class="scroll-indicator animate__animated animate__bounce animate__infinite">
                 <i class="fas fa-chevron-down" aria-hidden="true"
@@ -79,10 +58,7 @@
             </div>
         </a>
     </header>
-
-    <!-- Inclua a biblioteca Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
     <script>
         // Efeito magnético nos botões
         document.querySelectorAll('.magnetic').forEach(button => {
@@ -90,21 +66,16 @@
                 const rect = button.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
-
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
-
                 const angleX = (x - centerX) / 10;
                 const angleY = (y - centerY) / 10;
-
                 button.style.transform = `translateY(-3px) rotateX(${angleY}deg) rotateY(${-angleX}deg)`;
             });
-
             button.addEventListener('mouseleave', () => {
                 button.style.transform = 'translateY(-3px)';
             });
         });
-
         // Função para abrir o modal de cidades do plano correspondente
         function abrirModalCidades(plano) {
             if (plano === 'bronze') {
@@ -120,11 +91,8 @@
         }
     </script>
     <div class="space"></div>
-
     <div class="container-fluid">
         <div id="plans" class="plans">
-
-            <!-- Plano Bronze -->
             <div class="plan-card bronze">
                 <div class="plan-header">
                     <h2
@@ -182,8 +150,6 @@
                     </button>
                 </div>
             </div>
-
-            <!-- Plano Prata -->
             <div class="plan-card prata destaque">
                 <div class="plan-header">
                     <h2
@@ -239,7 +205,6 @@
                     </button>
                 </div>
             </div>
-            <!-- Plano Ouro -->
             <div class="plan-card ouro destaque">
                 <div class="plan-header">
                     <h2
@@ -253,9 +218,7 @@
                         <span style="color: #000000 !important" class="h4 fw-bold" style="margin: 0 4px;">R$
                             900,00</span>/mês
                         <div class="plan-installments">Parcele em até <strong>6x</strong></div>
-
                     </div>
-
                     <p><strong>Maior cobertura! <br> Atendimento em 53 cidades </strong></p>
                 </div>
                 <div class="plan-body">
@@ -299,8 +262,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Modal de detalhes -->
         <div class="modal-overlay" id="planModal" aria-modal="true" role="dialog" aria-label="Detalhes do Plano">
             <div class="modal-content">
                 <button class="modal-close-btn" id="modalCloseBtn" aria-label="Fechar detalhes do plano">
@@ -308,7 +269,6 @@
                 </button>
                 <h3 id="modalTitle">Título do Plano</h3>
                 <ul id="modalList">
-                    <!-- Lista completa será inserida aqui via JS -->
                 </ul>
                 <div class="text-center mt-4">
                     <button class="btn btn-secondary" id="modalBottomCloseBtn"
@@ -316,8 +276,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Modal Bronze -->
         <div class="modal fade" id="modalBronze" tabindex="-1" aria-labelledby="modalBronzeLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
@@ -345,8 +303,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Modal Ouro -->
         <div class="modal fade" id="modalOuro" tabindex="-1" aria-labelledby="modalOuroLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
@@ -369,7 +325,6 @@
                                     title="Ícone de confirmação"></i>Suzano</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Ferraz de Vasconcelos</li>
-
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Arujá</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
@@ -382,7 +337,6 @@
                                     title="Ícone de confirmação"></i>Barueri</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Jandira</li>
-
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Santana de Parnaíba</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
@@ -391,21 +345,18 @@
                                     title="Ícone de confirmação"></i>Itapevi</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Vargem Grande Paulista</li>
-
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Cotia</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Taboão da Serra</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Embu das Artes</li>
-
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Itapecerica da Serra</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Juquitiba</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>São Lourenço da Serra</li>
-
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Embu-Guaçu</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
@@ -414,14 +365,12 @@
                                     title="Ícone de confirmação"></i>Mairiporã</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>São Bernardo do Campo</li>
-
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Caieiras</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Cajamar</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Franco da Rocha</li>
-
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Francisco Morato</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
@@ -430,7 +379,6 @@
                                     title="Ícone de confirmação"></i>Rio Grande da Serra</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Mauá</li>
-
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Salesópolis</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
@@ -439,7 +387,6 @@
                                     title="Ícone de confirmação"></i>Guaranema</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Riberão Pires</li>
-
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Diadema</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
@@ -456,7 +403,6 @@
                                     title="Ícone de confirmação"></i>Praia Grande</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Caraguatatuba</li>
-
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>São Sebastião</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
@@ -478,8 +424,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Modal Prata -->
         <div class="modal fade" id="modalPrata" tabindex="-1" aria-labelledby="modalPrataLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
@@ -500,7 +444,6 @@
                                     title="Ícone de confirmação"></i>Suzano</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Ferraz de Vasconcelos</li>
-
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
                                     title="Ícone de confirmação"></i>Arujá</li>
                             <li><i class="ri-check-line text-success me-2" aria-hidden="true"
@@ -521,14 +464,11 @@
             </div>
         </div>
     </div>
-
-    <!-- Botão de voltar ao topo -->
     <button id="backToTopBtn" class="back-to-top" aria-label="Voltar ao topo">
         <svg class="arrow-icon" viewBox="0 0 24 24" aria-label="Seta para cima indicando voltar ao topo" role="img">
             <path d="M12 4l-8 8h5v8h6v-8h5z" />
         </svg>
     </button>
-    <!-- Scripts -->
     <script src="../assets/js/components/navpages.js"></script>
     <script src="../assets/js/nav.js"></script>
     <script src="../assets/js/utils/bootstrap.bundle.min.js"></script>
@@ -547,5 +487,4 @@
     </div>
     <!-- Eduardo Dos Santos Ferreira -->
 </body>
-
 </html>
